@@ -21,7 +21,7 @@ function getCsvData() {
 
     // 发起同步 AJAX GET 请求
     $.ajax({
-        url: '/assets/excel/game_list.csv',
+        url: '/assets/excel/game_list.csv?date=' + (new Date().getTime()),
         type: 'GET',
         async: false, // 设置为同步
         success: function(data, status, xhr) {
