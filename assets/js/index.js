@@ -101,6 +101,11 @@ function appendCsvDataToHtml() {
     var isAddPopularGame = false;
     var isAddGoogleAds = false;
 
+    var googleAdsIndex = 4;
+    if (getDeviceType() == 'mobile') {
+        googleAdsIndex = 3;
+    }
+
     for (var i = 0; i < gameUrlLi.length; i++) {
         var nineGridItemTemplateHtml = $("#nineGridItemTemplate").html();
         nineGridItemTemplateHtml = nineGridItemTemplateHtml.replace(/{gameUrl}/g, gameUrlLi[i][0].trim());
@@ -120,7 +125,7 @@ function appendCsvDataToHtml() {
             nineGridItemTemplateHtmlLi = [];
         }
 
-        if (resultHtmlLi.length == 3) {
+        if (resultHtmlLi.length == (googleAdsIndex - 1)) {
             appendGoogleAdsTemplate(resultHtmlLi);
             isAddGoogleAds = true;
         }
