@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="icon" type="image/x-icon" href="/assets/images/favicon.ico" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link id="manifest" rel="manifest" href="/assets/other/webmanifest.json" />
+    <title>Play Game Page of FreeGameHub</title>
+    <meta name="keywords" content="Play Game Page. Online games, free games, h5 games, free online games, browser games, mobile games, popular games, puzzle games, action games, adventure games, sport games, arcade games, casual games, racing games, ball games, shooting games, gun games"/>
+    <meta name="description" content="Play Game Page. Play the best games on freegamehub.top. Including sport games, arcade games and more. Instantly play online for free!">
+    <meta name="google-adsense-account" content="ca-pub-4694110216243855">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4694110216243855" crossorigin="anonymous"></script>
+    <meta name="monetag" content="3a5f021ae2709e1a64886c7b4731a837">
+    <!--monetag多标签广告-->
+    <!--<script src="https://alwingulla.com/88/tag.min.js" data-zone="35437" async data-cfasync="false"></script>-->
+    <script type="text/javascript" src="/assets/js/jquery-3.7.1.min.js"></script>
+    <script type="text/javascript" src="/assets/js/game.js"></script>
+    <style>
+        * {
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body,
+        html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%
+        }
+
+        .globalMain {
+            display: flex;
+            position: relative;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            min-height: 100vh
+        }
+
+        .globalMain:after {
+            position: fixed;
+            left: 0;
+            top: 0;
+            z-index: -1;
+            width: 100vw;
+            height: 100vh;
+            content: ""
+        }
+
+        .mainStyle {
+            display: flex;
+            overflow-x: hidden;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            min-height: calc(100vh - 125px)
+        }
+
+        .clickEnlarge:active {
+            -webkit-tap-highlight-color: transparent;
+            animation: clickEnlarge 0.2s linear;
+        }
+
+        @keyframes clickEnlarge {
+            0% {
+                transform: scale(1);
+                box-shadow: 0 3px 18px 0 rgb(0 0 0 / 16%);
+            }
+            100% {
+                transform: scale(1.4);
+                box-shadow: 0 3px 18px 0 rgb(0 0 0 / 16%);
+            }
+        }
+
+        body {
+            font-family: Poppins, serif
+        }
+
+        a {
+            text-decoration: none
+        }
+
+        @-webkit-keyframes move {
+            0% {
+                transform: translateX(var(--card-ul-width-start))
+            }
+            30% {
+                transform: translateX(var(--card-ul-width-middle1))
+            }
+            70% {
+                transform: translateX(var(--card-ul-width-middle2))
+            }
+            to {
+                transform: translateX(var(--card-ul-width-end))
+            }
+        }
+
+        @keyframes move {
+            0% {
+                transform: translateX(var(--card-ul-width-start))
+            }
+            30% {
+                transform: translateX(var(--card-ul-width-middle1))
+            }
+            70% {
+                transform: translateX(var(--card-ul-width-middle2))
+            }
+            to {
+                transform: translateX(var(--card-ul-width-end))
+            }
+        }
+
+        /* --------------- 动态宽度开始 -------------- */
+        .cardLayout {
+            margin: 15px 10px 25px 10px;
+            justify-content: center;
+            display: grid;
+            height: 100%;
+            grid-auto-rows: 66px;
+            grid-gap: 16px;
+            /*grid-template-columns: repeat(4, 66px);*/
+        }
+        .cardIframe {
+            border: 1px solid red;
+            position: relative;
+            z-index: 2;
+            /*border-radius: 15px;*/
+            height: 100%;
+            box-shadow: 0 3px 18px 0 rgb(0 0 0/16%);
+            /*
+            grid-row: span 9;
+            grid-column: span 4;
+            */
+        }
+
+        /* css 页面文件, 由 assets/css/gameGen.py 生成 */
+
+        .nine_grid_area {
+            position: relative;
+            z-index: 2;
+            border-radius: 15px;
+            height: 100%;
+            box-shadow: 0 3px 18px 0 rgb(0 0 0/16%);
+            grid-row: span 1;
+            grid-column: span 1;
+        }
+        .nine_grid_area>div img[css-ninegridarea] {
+            border-radius: 15px;
+            width: 100%;
+            height: 100%
+        }
+        /* --------------- 动态宽度结束 -------------- */
+
+        .globalBtn[css-index],
+        img[css-index] {
+            border-radius: 15px
+        }
+
+        .indexStyle[css-index] {
+            height: 100%
+        }
+
+        ins[css-index] {
+            position: relative;
+            z-index: 2
+        }
+
+        ins.adsbygoogle[data-ad-status=unfilled][css-index] {
+            display: none !important
+        }
+
+        .navLayout[css-nav] {
+            display: flex;
+            top: 0;
+            z-index: 3;
+            height: 3rem;
+            transition: top .5s
+        }
+
+        .whiteBackground[css-nav] {
+            position: relative;
+            width: 100%
+        }
+
+        .navLeft[css-nav] {
+            margin-left: 10px;
+            height: 100%
+        }
+
+        .navLogo[css-nav] {
+            font-weight: bold;
+            font-size: 32px;
+            text-overflow: ellipsis;
+            font-family: Helvetica;
+            color: #000;
+            line-height: 60px;
+            height: 100%
+        }
+
+        .foot[css-foot] {
+            width: 100%;
+            font-size: 18px;
+        }
+
+        .footStyle[css-foot] {
+            position: relative;
+            margin-top: 22px;
+            padding-bottom: 80px;
+            width: 100%;
+            background-color: #fff;
+            box-shadow: 0 15px 64px 16px rgba(0, 0, 0, .15);
+            text-align: center;
+            font-family: Helvetica;
+            font-weight: 400;
+            color: #747474 !important
+        }
+
+        .logoStyle[css-foot] {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            width: 100%;
+            min-height: 50px
+        }
+
+        .logoStyle>p[css-foot] {
+            margin-top: 6px !important;
+            margin-top: 0;
+            margin-bottom: 0
+        }
+
+        .logoStyle>a[css-foot]:-webkit-any-link {
+            margin-top: 10px;
+            cursor: pointer;
+            text-decoration: none
+        }
+
+        .logoStyle>a>span[css-foot] {
+            font-family: Helvetica;
+            font-weight: 400;
+            color: #747474 !important
+        }
+
+        .linkText[css-foot] {
+            padding-top: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-decoration: none;
+            color: #747474 !important
+        }
+
+        .linkText>a[css-foot]:-webkit-any-link {
+            margin-right: 15px;
+            cursor: pointer;
+            text-decoration: none;
+            color: #747474 !important
+        }
+
+        #selectLanguage>img[css-foot] {
+            margin: 0 0 2px 6px
+        }
+
+        .openSelectStyle[css-foot] {
+            position: absolute;
+            right: calc(50% - 150px);
+            bottom: 90%;
+            width: 200px
+        }
+    </style>
+    <link rel="stylesheet" href="/assets/css/game.css">
+</head>
+
+<body>
+    <div id="globalMain" class="globalMain globalImg" css-index>
+        <div class="mainStyle" css-index>
+            <div id="indexStyle" class="indexStyle" css-index css-index>
+                <div id="navLayout" class="navLayout " css-nav>
+                    <div id="whiteBackground" class="whiteBackground" css-nav>
+                        <div id="navigationStyle" class="navigationStyle" css-nav>
+                            <div class="navLeft" css-nav>
+                                <a class="navLogo" css-nav href="./"><span style="color:red;">F</span>reeGameHub</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="cardLayoutDiv" class="cardLayout" style="" css-index>
+                    <div class="cardIframe">
+                        <iframe src="about:blank" frameborder="0" class="cardIframeCls"></iframe>
+                    </div>
+                    <div class="nine_grid_area" css-ninegridarea displayOrder="0">
+                        <div class="clickEnlarge">
+                            <a href="/game/SortItOut/" target="_self">
+                                <img css-ninegridarea data-src="/assets/images/test.webp"
+                                     src="/assets/images/test.webp"
+                                     lazy="loading" alt="Overtaking - Traffic Rider">
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- 复制 begin -->
+                    <div class="nine_grid_area" css-ninegridarea displayOrder="0">
+                        <div class="clickEnlarge">
+                            <a href="/game/SortItOut/" target="_self">
+                                <img css-ninegridarea data-src="/assets/images/test.webp"
+                                     src="/assets/images/test.webp"
+                                     lazy="loading" alt="Overtaking - Traffic Rider">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="nine_grid_area" css-ninegridarea displayOrder="0">
+                        <div class="clickEnlarge">
+                            <a href="/game/SortItOut/" target="_self">
+                                <img css-ninegridarea data-src="/assets/images/test.webp"
+                                     src="/assets/images/test.webp"
+                                     lazy="loading" alt="Overtaking - Traffic Rider">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="nine_grid_area" css-ninegridarea displayOrder="0">
+                        <div class="clickEnlarge">
+                            <a href="/game/SortItOut/" target="_self">
+                                <img css-ninegridarea data-src="/assets/images/test.webp"
+                                     src="/assets/images/test.webp"
+                                     lazy="loading" alt="Overtaking - Traffic Rider">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="nine_grid_area" css-ninegridarea displayOrder="0">
+                        <div class="clickEnlarge">
+                            <a href="/game/SortItOut/" target="_self">
+                                <img css-ninegridarea data-src="/assets/images/test.webp"
+                                     src="/assets/images/test.webp"
+                                     lazy="loading" alt="Overtaking - Traffic Rider">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="nine_grid_area" css-ninegridarea displayOrder="0">
+                        <div class="clickEnlarge">
+                            <a href="/game/SortItOut/" target="_self">
+                                <img css-ninegridarea data-src="/assets/images/test.webp"
+                                     src="/assets/images/test.webp"
+                                     lazy="loading" alt="Overtaking - Traffic Rider">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="nine_grid_area" css-ninegridarea displayOrder="0">
+                        <div class="clickEnlarge">
+                            <a href="/game/SortItOut/" target="_self">
+                                <img css-ninegridarea data-src="/assets/images/test.webp"
+                                     src="/assets/images/test.webp"
+                                     lazy="loading" alt="Overtaking - Traffic Rider">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="nine_grid_area" css-ninegridarea displayOrder="0">
+                        <div class="clickEnlarge">
+                            <a href="/game/SortItOut/" target="_self">
+                                <img css-ninegridarea data-src="/assets/images/test.webp"
+                                     src="/assets/images/test.webp"
+                                     lazy="loading" alt="Overtaking - Traffic Rider">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="nine_grid_area" css-ninegridarea displayOrder="0">
+                        <div class="clickEnlarge">
+                            <a href="/game/SortItOut/" target="_self">
+                                <img css-ninegridarea data-src="/assets/images/test.webp"
+                                     src="/assets/images/test.webp"
+                                     lazy="loading" alt="Overtaking - Traffic Rider">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="nine_grid_area" css-ninegridarea displayOrder="0">
+                        <div class="clickEnlarge">
+                            <a href="/game/SortItOut/" target="_self">
+                                <img css-ninegridarea data-src="/assets/images/test.webp"
+                                     src="/assets/images/test.webp"
+                                     lazy="loading" alt="Overtaking - Traffic Rider">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="nine_grid_area" css-ninegridarea displayOrder="0">
+                        <div class="clickEnlarge">
+                            <a href="/game/SortItOut/" target="_self">
+                                <img css-ninegridarea data-src="/assets/images/test.webp"
+                                     src="/assets/images/test.webp"
+                                     lazy="loading" alt="Overtaking - Traffic Rider">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="nine_grid_area" css-ninegridarea displayOrder="0">
+                        <div class="clickEnlarge">
+                            <a href="/game/SortItOut/" target="_self">
+                                <img css-ninegridarea data-src="/assets/images/test.webp"
+                                     src="/assets/images/test.webp"
+                                     lazy="loading" alt="Overtaking - Traffic Rider">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="nine_grid_area" css-ninegridarea displayOrder="0">
+                        <div class="clickEnlarge">
+                            <a href="/game/SortItOut/" target="_self">
+                                <img css-ninegridarea data-src="/assets/images/test.webp"
+                                     src="/assets/images/test.webp"
+                                     lazy="loading" alt="Overtaking - Traffic Rider">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="nine_grid_area" css-ninegridarea displayOrder="0">
+                        <div class="clickEnlarge">
+                            <a href="/game/SortItOut/" target="_self">
+                                <img css-ninegridarea data-src="/assets/images/test.webp"
+                                     src="/assets/images/test.webp"
+                                     lazy="loading" alt="Overtaking - Traffic Rider">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="nine_grid_area" css-ninegridarea displayOrder="0">
+                        <div class="clickEnlarge">
+                            <a href="/game/SortItOut/" target="_self">
+                                <img css-ninegridarea data-src="/assets/images/test.webp"
+                                     src="/assets/images/test.webp"
+                                     lazy="loading" alt="Overtaking - Traffic Rider">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="nine_grid_area" css-ninegridarea displayOrder="0">
+                        <div class="clickEnlarge">
+                            <a href="/game/SortItOut/" target="_self">
+                                <img css-ninegridarea data-src="/assets/images/test.webp"
+                                     src="/assets/images/test.webp"
+                                     lazy="loading" alt="Overtaking - Traffic Rider">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="nine_grid_area" css-ninegridarea displayOrder="0">
+                        <div class="clickEnlarge">
+                            <a href="/game/SortItOut/" target="_self">
+                                <img css-ninegridarea data-src="/assets/images/test.webp"
+                                     src="/assets/images/test.webp"
+                                     lazy="loading" alt="Overtaking - Traffic Rider">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="nine_grid_area" css-ninegridarea displayOrder="0">
+                        <div class="clickEnlarge">
+                            <a href="/game/SortItOut/" target="_self">
+                                <img css-ninegridarea data-src="/assets/images/test.webp"
+                                     src="/assets/images/test.webp"
+                                     lazy="loading" alt="Overtaking - Traffic Rider">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="nine_grid_area" css-ninegridarea displayOrder="0">
+                        <div class="clickEnlarge">
+                            <a href="/game/SortItOut/" target="_self">
+                                <img css-ninegridarea data-src="/assets/images/test.webp"
+                                     src="/assets/images/test.webp"
+                                     lazy="loading" alt="Overtaking - Traffic Rider">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="nine_grid_area" css-ninegridarea displayOrder="0">
+                        <div class="clickEnlarge">
+                            <a href="/game/SortItOut/" target="_self">
+                                <img css-ninegridarea data-src="/assets/images/test.webp"
+                                     src="/assets/images/test.webp"
+                                     lazy="loading" alt="Overtaking - Traffic Rider">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="nine_grid_area" css-ninegridarea displayOrder="0">
+                        <div class="clickEnlarge">
+                            <a href="/game/SortItOut/" target="_self">
+                                <img css-ninegridarea data-src="/assets/images/test.webp"
+                                     src="/assets/images/test.webp"
+                                     lazy="loading" alt="Overtaking - Traffic Rider">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="nine_grid_area" css-ninegridarea displayOrder="0">
+                        <div class="clickEnlarge">
+                            <a href="/game/SortItOut/" target="_self">
+                                <img css-ninegridarea data-src="/assets/images/test.webp"
+                                     src="/assets/images/test.webp"
+                                     lazy="loading" alt="Overtaking - Traffic Rider">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="nine_grid_area" css-ninegridarea displayOrder="0">
+                        <div class="clickEnlarge">
+                            <a href="/game/SortItOut/" target="_self">
+                                <img css-ninegridarea data-src="/assets/images/test.webp"
+                                     src="/assets/images/test.webp"
+                                     lazy="loading" alt="Overtaking - Traffic Rider">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="nine_grid_area" css-ninegridarea displayOrder="0">
+                        <div class="clickEnlarge">
+                            <a href="/game/SortItOut/" target="_self">
+                                <img css-ninegridarea data-src="/assets/images/test.webp"
+                                     src="/assets/images/test.webp"
+                                     lazy="loading" alt="Overtaking - Traffic Rider">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="nine_grid_area" css-ninegridarea displayOrder="0">
+                        <div class="clickEnlarge">
+                            <a href="/game/SortItOut/" target="_self">
+                                <img css-ninegridarea data-src="/assets/images/test.webp"
+                                     src="/assets/images/test.webp"
+                                     lazy="loading" alt="Overtaking - Traffic Rider">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="nine_grid_area" css-ninegridarea displayOrder="0">
+                            <div class="clickEnlarge">
+                                <a href="/game/SortItOut/" target="_self">
+                                    <img css-ninegridarea data-src="/assets/images/test.webp"
+                                         src="/assets/images/test.webp"
+                                         lazy="loading" alt="Overtaking - Traffic Rider">
+                                </a>
+                            </div>
+                        </div>
+                        <!-- 复制 end -->
+                </div>
+            </div>
+        </div>
+        <div class="foot" css-foot>
+            <div class="footStyle" css-foot>
+                <div class="div1" css-foot>
+                    <div class="linkText" style="height: 10px; line-height: 10px" css-foot>
+                        <a href="./terms_of_service.html" css-foot target="_blank">Terms</a>
+                        <a href="./privacy_policy.html" css-foot target="_blank">Privacy</a>
+                        <a href="./cookies_policy.html" css-foot target="_blank">Cookies</a>
+                    </div>
+                    <div class="logoStyle" css-foot>
+                        <p css-foot>
+                            © 2024 freegamehub.top
+                        </p>
+                    </div>
+                </div>
+                <div class="openSelectStyle" css-foot>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,1764 @@
+@media screen and (min-width:0px) and (max-width:265px) and (min-height:0px) and (max-height:265px) {
+            .cardLayout {
+                grid-template-columns: repeat(2, 66px);
+            }
+            .cardIframe {
+                grid-row: span 2;
+                grid-column: span 2;
+            }
+        }
+@media screen and (min-width:0px) and (max-width:265px) and (min-height:266px) and (max-height:347px) {
+            .cardLayout {
+                grid-template-columns: repeat(2, 66px);
+            }
+            .cardIframe {
+                grid-row: span 3;
+                grid-column: span 2;
+            }
+        }
+@media screen and (min-width:0px) and (max-width:265px) and (min-height:348px) and (max-height:429px) {
+            .cardLayout {
+                grid-template-columns: repeat(2, 66px);
+            }
+            .cardIframe {
+                grid-row: span 4;
+                grid-column: span 2;
+            }
+        }
+@media screen and (min-width:0px) and (max-width:265px) and (min-height:430px) and (max-height:511px) {
+            .cardLayout {
+                grid-template-columns: repeat(2, 66px);
+            }
+            .cardIframe {
+                grid-row: span 5;
+                grid-column: span 2;
+            }
+        }
+@media screen and (min-width:0px) and (max-width:265px) and (min-height:512px) and (max-height:593px) {
+            .cardLayout {
+                grid-template-columns: repeat(2, 66px);
+            }
+            .cardIframe {
+                grid-row: span 6;
+                grid-column: span 2;
+            }
+        }
+@media screen and (min-width:0px) and (max-width:265px) and (min-height:594px) and (max-height:675px) {
+            .cardLayout {
+                grid-template-columns: repeat(2, 66px);
+            }
+            .cardIframe {
+                grid-row: span 7;
+                grid-column: span 2;
+            }
+        }
+@media screen and (min-width:0px) and (max-width:265px) and (min-height:676px) and (max-height:757px) {
+            .cardLayout {
+                grid-template-columns: repeat(2, 66px);
+            }
+            .cardIframe {
+                grid-row: span 8;
+                grid-column: span 2;
+            }
+        }
+@media screen and (min-width:0px) and (max-width:265px) and (min-height:758px) and (max-height:839px) {
+            .cardLayout {
+                grid-template-columns: repeat(2, 66px);
+            }
+            .cardIframe {
+                grid-row: span 9;
+                grid-column: span 2;
+            }
+        }
+@media screen and (min-width:0px) and (max-width:265px) and (min-height:840px) and (max-height:921px) {
+            .cardLayout {
+                grid-template-columns: repeat(2, 66px);
+            }
+            .cardIframe {
+                grid-row: span 10;
+                grid-column: span 2;
+            }
+        }
+@media screen and (min-width:0px) and (max-width:265px) and (min-height:922px) and (max-height:1003px) {
+            .cardLayout {
+                grid-template-columns: repeat(2, 66px);
+            }
+            .cardIframe {
+                grid-row: span 11;
+                grid-column: span 2;
+            }
+        }
+@media screen and (min-width:0px) and (max-width:265px) and (min-height:1004px) and (max-height:1085px) {
+            .cardLayout {
+                grid-template-columns: repeat(2, 66px);
+            }
+            .cardIframe {
+                grid-row: span 12;
+                grid-column: span 2;
+            }
+        }
+@media screen and (min-width:0px) and (max-width:265px) and (min-height:1086px) and (max-height:1167px) {
+            .cardLayout {
+                grid-template-columns: repeat(2, 66px);
+            }
+            .cardIframe {
+                grid-row: span 13;
+                grid-column: span 2;
+            }
+        }
+@media screen and (min-width:0px) and (max-width:265px) and (min-height:1168px) and (max-height:1249px) {
+            .cardLayout {
+                grid-template-columns: repeat(2, 66px);
+            }
+            .cardIframe {
+                grid-row: span 14;
+                grid-column: span 2;
+            }
+        }
+@media screen and (min-width:0px) and (max-width:265px) and (min-height:1250px) and (max-height:3000px) {
+            .cardLayout {
+                grid-template-columns: repeat(2, 66px);
+            }
+            .cardIframe {
+                grid-row: span 15;
+                grid-column: span 2;
+            }
+        }
+@media screen and (min-width:266px) and (max-width:347px) and (min-height:0px) and (max-height:265px) {
+            .cardLayout {
+                grid-template-columns: repeat(3, 66px);
+            }
+            .cardIframe {
+                grid-row: span 2;
+                grid-column: span 3;
+            }
+        }
+@media screen and (min-width:266px) and (max-width:347px) and (min-height:266px) and (max-height:347px) {
+            .cardLayout {
+                grid-template-columns: repeat(3, 66px);
+            }
+            .cardIframe {
+                grid-row: span 3;
+                grid-column: span 3;
+            }
+        }
+@media screen and (min-width:266px) and (max-width:347px) and (min-height:348px) and (max-height:429px) {
+            .cardLayout {
+                grid-template-columns: repeat(3, 66px);
+            }
+            .cardIframe {
+                grid-row: span 4;
+                grid-column: span 3;
+            }
+        }
+@media screen and (min-width:266px) and (max-width:347px) and (min-height:430px) and (max-height:511px) {
+            .cardLayout {
+                grid-template-columns: repeat(3, 66px);
+            }
+            .cardIframe {
+                grid-row: span 5;
+                grid-column: span 3;
+            }
+        }
+@media screen and (min-width:266px) and (max-width:347px) and (min-height:512px) and (max-height:593px) {
+            .cardLayout {
+                grid-template-columns: repeat(3, 66px);
+            }
+            .cardIframe {
+                grid-row: span 6;
+                grid-column: span 3;
+            }
+        }
+@media screen and (min-width:266px) and (max-width:347px) and (min-height:594px) and (max-height:675px) {
+            .cardLayout {
+                grid-template-columns: repeat(3, 66px);
+            }
+            .cardIframe {
+                grid-row: span 7;
+                grid-column: span 3;
+            }
+        }
+@media screen and (min-width:266px) and (max-width:347px) and (min-height:676px) and (max-height:757px) {
+            .cardLayout {
+                grid-template-columns: repeat(3, 66px);
+            }
+            .cardIframe {
+                grid-row: span 8;
+                grid-column: span 3;
+            }
+        }
+@media screen and (min-width:266px) and (max-width:347px) and (min-height:758px) and (max-height:839px) {
+            .cardLayout {
+                grid-template-columns: repeat(3, 66px);
+            }
+            .cardIframe {
+                grid-row: span 9;
+                grid-column: span 3;
+            }
+        }
+@media screen and (min-width:266px) and (max-width:347px) and (min-height:840px) and (max-height:921px) {
+            .cardLayout {
+                grid-template-columns: repeat(3, 66px);
+            }
+            .cardIframe {
+                grid-row: span 10;
+                grid-column: span 3;
+            }
+        }
+@media screen and (min-width:266px) and (max-width:347px) and (min-height:922px) and (max-height:1003px) {
+            .cardLayout {
+                grid-template-columns: repeat(3, 66px);
+            }
+            .cardIframe {
+                grid-row: span 11;
+                grid-column: span 3;
+            }
+        }
+@media screen and (min-width:266px) and (max-width:347px) and (min-height:1004px) and (max-height:1085px) {
+            .cardLayout {
+                grid-template-columns: repeat(3, 66px);
+            }
+            .cardIframe {
+                grid-row: span 12;
+                grid-column: span 3;
+            }
+        }
+@media screen and (min-width:266px) and (max-width:347px) and (min-height:1086px) and (max-height:1167px) {
+            .cardLayout {
+                grid-template-columns: repeat(3, 66px);
+            }
+            .cardIframe {
+                grid-row: span 13;
+                grid-column: span 3;
+            }
+        }
+@media screen and (min-width:266px) and (max-width:347px) and (min-height:1168px) and (max-height:1249px) {
+            .cardLayout {
+                grid-template-columns: repeat(3, 66px);
+            }
+            .cardIframe {
+                grid-row: span 14;
+                grid-column: span 3;
+            }
+        }
+@media screen and (min-width:266px) and (max-width:347px) and (min-height:1250px) and (max-height:3000px) {
+            .cardLayout {
+                grid-template-columns: repeat(3, 66px);
+            }
+            .cardIframe {
+                grid-row: span 15;
+                grid-column: span 3;
+            }
+        }
+@media screen and (min-width:348px) and (max-width:429px) and (min-height:0px) and (max-height:265px) {
+            .cardLayout {
+                grid-template-columns: repeat(4, 66px);
+            }
+            .cardIframe {
+                grid-row: span 2;
+                grid-column: span 4;
+            }
+        }
+@media screen and (min-width:348px) and (max-width:429px) and (min-height:266px) and (max-height:347px) {
+            .cardLayout {
+                grid-template-columns: repeat(4, 66px);
+            }
+            .cardIframe {
+                grid-row: span 3;
+                grid-column: span 4;
+            }
+        }
+@media screen and (min-width:348px) and (max-width:429px) and (min-height:348px) and (max-height:429px) {
+            .cardLayout {
+                grid-template-columns: repeat(4, 66px);
+            }
+            .cardIframe {
+                grid-row: span 4;
+                grid-column: span 4;
+            }
+        }
+@media screen and (min-width:348px) and (max-width:429px) and (min-height:430px) and (max-height:511px) {
+            .cardLayout {
+                grid-template-columns: repeat(4, 66px);
+            }
+            .cardIframe {
+                grid-row: span 5;
+                grid-column: span 4;
+            }
+        }
+@media screen and (min-width:348px) and (max-width:429px) and (min-height:512px) and (max-height:593px) {
+            .cardLayout {
+                grid-template-columns: repeat(4, 66px);
+            }
+            .cardIframe {
+                grid-row: span 6;
+                grid-column: span 4;
+            }
+        }
+@media screen and (min-width:348px) and (max-width:429px) and (min-height:594px) and (max-height:675px) {
+            .cardLayout {
+                grid-template-columns: repeat(4, 66px);
+            }
+            .cardIframe {
+                grid-row: span 7;
+                grid-column: span 4;
+            }
+        }
+@media screen and (min-width:348px) and (max-width:429px) and (min-height:676px) and (max-height:757px) {
+            .cardLayout {
+                grid-template-columns: repeat(4, 66px);
+            }
+            .cardIframe {
+                grid-row: span 8;
+                grid-column: span 4;
+            }
+        }
+@media screen and (min-width:348px) and (max-width:429px) and (min-height:758px) and (max-height:839px) {
+            .cardLayout {
+                grid-template-columns: repeat(4, 66px);
+            }
+            .cardIframe {
+                grid-row: span 9;
+                grid-column: span 4;
+            }
+        }
+@media screen and (min-width:348px) and (max-width:429px) and (min-height:840px) and (max-height:921px) {
+            .cardLayout {
+                grid-template-columns: repeat(4, 66px);
+            }
+            .cardIframe {
+                grid-row: span 10;
+                grid-column: span 4;
+            }
+        }
+@media screen and (min-width:348px) and (max-width:429px) and (min-height:922px) and (max-height:1003px) {
+            .cardLayout {
+                grid-template-columns: repeat(4, 66px);
+            }
+            .cardIframe {
+                grid-row: span 11;
+                grid-column: span 4;
+            }
+        }
+@media screen and (min-width:348px) and (max-width:429px) and (min-height:1004px) and (max-height:1085px) {
+            .cardLayout {
+                grid-template-columns: repeat(4, 66px);
+            }
+            .cardIframe {
+                grid-row: span 12;
+                grid-column: span 4;
+            }
+        }
+@media screen and (min-width:348px) and (max-width:429px) and (min-height:1086px) and (max-height:1167px) {
+            .cardLayout {
+                grid-template-columns: repeat(4, 66px);
+            }
+            .cardIframe {
+                grid-row: span 13;
+                grid-column: span 4;
+            }
+        }
+@media screen and (min-width:348px) and (max-width:429px) and (min-height:1168px) and (max-height:1249px) {
+            .cardLayout {
+                grid-template-columns: repeat(4, 66px);
+            }
+            .cardIframe {
+                grid-row: span 14;
+                grid-column: span 4;
+            }
+        }
+@media screen and (min-width:348px) and (max-width:429px) and (min-height:1250px) and (max-height:3000px) {
+            .cardLayout {
+                grid-template-columns: repeat(4, 66px);
+            }
+            .cardIframe {
+                grid-row: span 15;
+                grid-column: span 4;
+            }
+        }
+@media screen and (min-width:430px) and (max-width:511px) and (min-height:0px) and (max-height:265px) {
+            .cardLayout {
+                grid-template-columns: repeat(5, 66px);
+            }
+            .cardIframe {
+                grid-row: span 2;
+                grid-column: span 5;
+            }
+        }
+@media screen and (min-width:430px) and (max-width:511px) and (min-height:266px) and (max-height:347px) {
+            .cardLayout {
+                grid-template-columns: repeat(5, 66px);
+            }
+            .cardIframe {
+                grid-row: span 3;
+                grid-column: span 5;
+            }
+        }
+@media screen and (min-width:430px) and (max-width:511px) and (min-height:348px) and (max-height:429px) {
+            .cardLayout {
+                grid-template-columns: repeat(5, 66px);
+            }
+            .cardIframe {
+                grid-row: span 4;
+                grid-column: span 5;
+            }
+        }
+@media screen and (min-width:430px) and (max-width:511px) and (min-height:430px) and (max-height:511px) {
+            .cardLayout {
+                grid-template-columns: repeat(5, 66px);
+            }
+            .cardIframe {
+                grid-row: span 5;
+                grid-column: span 5;
+            }
+        }
+@media screen and (min-width:430px) and (max-width:511px) and (min-height:512px) and (max-height:593px) {
+            .cardLayout {
+                grid-template-columns: repeat(5, 66px);
+            }
+            .cardIframe {
+                grid-row: span 6;
+                grid-column: span 5;
+            }
+        }
+@media screen and (min-width:430px) and (max-width:511px) and (min-height:594px) and (max-height:675px) {
+            .cardLayout {
+                grid-template-columns: repeat(5, 66px);
+            }
+            .cardIframe {
+                grid-row: span 7;
+                grid-column: span 5;
+            }
+        }
+@media screen and (min-width:430px) and (max-width:511px) and (min-height:676px) and (max-height:757px) {
+            .cardLayout {
+                grid-template-columns: repeat(5, 66px);
+            }
+            .cardIframe {
+                grid-row: span 8;
+                grid-column: span 5;
+            }
+        }
+@media screen and (min-width:430px) and (max-width:511px) and (min-height:758px) and (max-height:839px) {
+            .cardLayout {
+                grid-template-columns: repeat(5, 66px);
+            }
+            .cardIframe {
+                grid-row: span 9;
+                grid-column: span 5;
+            }
+        }
+@media screen and (min-width:430px) and (max-width:511px) and (min-height:840px) and (max-height:921px) {
+            .cardLayout {
+                grid-template-columns: repeat(5, 66px);
+            }
+            .cardIframe {
+                grid-row: span 10;
+                grid-column: span 5;
+            }
+        }
+@media screen and (min-width:430px) and (max-width:511px) and (min-height:922px) and (max-height:1003px) {
+            .cardLayout {
+                grid-template-columns: repeat(5, 66px);
+            }
+            .cardIframe {
+                grid-row: span 11;
+                grid-column: span 5;
+            }
+        }
+@media screen and (min-width:430px) and (max-width:511px) and (min-height:1004px) and (max-height:1085px) {
+            .cardLayout {
+                grid-template-columns: repeat(5, 66px);
+            }
+            .cardIframe {
+                grid-row: span 12;
+                grid-column: span 5;
+            }
+        }
+@media screen and (min-width:430px) and (max-width:511px) and (min-height:1086px) and (max-height:1167px) {
+            .cardLayout {
+                grid-template-columns: repeat(5, 66px);
+            }
+            .cardIframe {
+                grid-row: span 13;
+                grid-column: span 5;
+            }
+        }
+@media screen and (min-width:430px) and (max-width:511px) and (min-height:1168px) and (max-height:1249px) {
+            .cardLayout {
+                grid-template-columns: repeat(5, 66px);
+            }
+            .cardIframe {
+                grid-row: span 14;
+                grid-column: span 5;
+            }
+        }
+@media screen and (min-width:430px) and (max-width:511px) and (min-height:1250px) and (max-height:3000px) {
+            .cardLayout {
+                grid-template-columns: repeat(5, 66px);
+            }
+            .cardIframe {
+                grid-row: span 15;
+                grid-column: span 5;
+            }
+        }
+@media screen and (min-width:512px) and (max-width:593px) and (min-height:0px) and (max-height:265px) {
+            .cardLayout {
+                grid-template-columns: repeat(6, 66px);
+            }
+            .cardIframe {
+                grid-row: span 2;
+                grid-column: span 6;
+            }
+        }
+@media screen and (min-width:512px) and (max-width:593px) and (min-height:266px) and (max-height:347px) {
+            .cardLayout {
+                grid-template-columns: repeat(6, 66px);
+            }
+            .cardIframe {
+                grid-row: span 3;
+                grid-column: span 6;
+            }
+        }
+@media screen and (min-width:512px) and (max-width:593px) and (min-height:348px) and (max-height:429px) {
+            .cardLayout {
+                grid-template-columns: repeat(6, 66px);
+            }
+            .cardIframe {
+                grid-row: span 4;
+                grid-column: span 6;
+            }
+        }
+@media screen and (min-width:512px) and (max-width:593px) and (min-height:430px) and (max-height:511px) {
+            .cardLayout {
+                grid-template-columns: repeat(6, 66px);
+            }
+            .cardIframe {
+                grid-row: span 5;
+                grid-column: span 6;
+            }
+        }
+@media screen and (min-width:512px) and (max-width:593px) and (min-height:512px) and (max-height:593px) {
+            .cardLayout {
+                grid-template-columns: repeat(6, 66px);
+            }
+            .cardIframe {
+                grid-row: span 6;
+                grid-column: span 6;
+            }
+        }
+@media screen and (min-width:512px) and (max-width:593px) and (min-height:594px) and (max-height:675px) {
+            .cardLayout {
+                grid-template-columns: repeat(6, 66px);
+            }
+            .cardIframe {
+                grid-row: span 7;
+                grid-column: span 6;
+            }
+        }
+@media screen and (min-width:512px) and (max-width:593px) and (min-height:676px) and (max-height:757px) {
+            .cardLayout {
+                grid-template-columns: repeat(6, 66px);
+            }
+            .cardIframe {
+                grid-row: span 8;
+                grid-column: span 6;
+            }
+        }
+@media screen and (min-width:512px) and (max-width:593px) and (min-height:758px) and (max-height:839px) {
+            .cardLayout {
+                grid-template-columns: repeat(6, 66px);
+            }
+            .cardIframe {
+                grid-row: span 9;
+                grid-column: span 6;
+            }
+        }
+@media screen and (min-width:512px) and (max-width:593px) and (min-height:840px) and (max-height:921px) {
+            .cardLayout {
+                grid-template-columns: repeat(6, 66px);
+            }
+            .cardIframe {
+                grid-row: span 10;
+                grid-column: span 6;
+            }
+        }
+@media screen and (min-width:512px) and (max-width:593px) and (min-height:922px) and (max-height:1003px) {
+            .cardLayout {
+                grid-template-columns: repeat(6, 66px);
+            }
+            .cardIframe {
+                grid-row: span 11;
+                grid-column: span 6;
+            }
+        }
+@media screen and (min-width:512px) and (max-width:593px) and (min-height:1004px) and (max-height:1085px) {
+            .cardLayout {
+                grid-template-columns: repeat(6, 66px);
+            }
+            .cardIframe {
+                grid-row: span 12;
+                grid-column: span 6;
+            }
+        }
+@media screen and (min-width:512px) and (max-width:593px) and (min-height:1086px) and (max-height:1167px) {
+            .cardLayout {
+                grid-template-columns: repeat(6, 66px);
+            }
+            .cardIframe {
+                grid-row: span 13;
+                grid-column: span 6;
+            }
+        }
+@media screen and (min-width:512px) and (max-width:593px) and (min-height:1168px) and (max-height:1249px) {
+            .cardLayout {
+                grid-template-columns: repeat(6, 66px);
+            }
+            .cardIframe {
+                grid-row: span 14;
+                grid-column: span 6;
+            }
+        }
+@media screen and (min-width:512px) and (max-width:593px) and (min-height:1250px) and (max-height:3000px) {
+            .cardLayout {
+                grid-template-columns: repeat(6, 66px);
+            }
+            .cardIframe {
+                grid-row: span 15;
+                grid-column: span 6;
+            }
+        }
+@media screen and (min-width:594px) and (max-width:675px) and (min-height:0px) and (max-height:265px) {
+            .cardLayout {
+                grid-template-columns: repeat(7, 66px);
+            }
+            .cardIframe {
+                grid-row: span 2;
+                grid-column: span 7;
+            }
+        }
+@media screen and (min-width:594px) and (max-width:675px) and (min-height:266px) and (max-height:347px) {
+            .cardLayout {
+                grid-template-columns: repeat(7, 66px);
+            }
+            .cardIframe {
+                grid-row: span 3;
+                grid-column: span 7;
+            }
+        }
+@media screen and (min-width:594px) and (max-width:675px) and (min-height:348px) and (max-height:429px) {
+            .cardLayout {
+                grid-template-columns: repeat(7, 66px);
+            }
+            .cardIframe {
+                grid-row: span 4;
+                grid-column: span 7;
+            }
+        }
+@media screen and (min-width:594px) and (max-width:675px) and (min-height:430px) and (max-height:511px) {
+            .cardLayout {
+                grid-template-columns: repeat(7, 66px);
+            }
+            .cardIframe {
+                grid-row: span 5;
+                grid-column: span 7;
+            }
+        }
+@media screen and (min-width:594px) and (max-width:675px) and (min-height:512px) and (max-height:593px) {
+            .cardLayout {
+                grid-template-columns: repeat(7, 66px);
+            }
+            .cardIframe {
+                grid-row: span 6;
+                grid-column: span 7;
+            }
+        }
+@media screen and (min-width:594px) and (max-width:675px) and (min-height:594px) and (max-height:675px) {
+            .cardLayout {
+                grid-template-columns: repeat(7, 66px);
+            }
+            .cardIframe {
+                grid-row: span 7;
+                grid-column: span 7;
+            }
+        }
+@media screen and (min-width:594px) and (max-width:675px) and (min-height:676px) and (max-height:757px) {
+            .cardLayout {
+                grid-template-columns: repeat(7, 66px);
+            }
+            .cardIframe {
+                grid-row: span 8;
+                grid-column: span 7;
+            }
+        }
+@media screen and (min-width:594px) and (max-width:675px) and (min-height:758px) and (max-height:839px) {
+            .cardLayout {
+                grid-template-columns: repeat(7, 66px);
+            }
+            .cardIframe {
+                grid-row: span 9;
+                grid-column: span 7;
+            }
+        }
+@media screen and (min-width:594px) and (max-width:675px) and (min-height:840px) and (max-height:921px) {
+            .cardLayout {
+                grid-template-columns: repeat(7, 66px);
+            }
+            .cardIframe {
+                grid-row: span 10;
+                grid-column: span 7;
+            }
+        }
+@media screen and (min-width:594px) and (max-width:675px) and (min-height:922px) and (max-height:1003px) {
+            .cardLayout {
+                grid-template-columns: repeat(7, 66px);
+            }
+            .cardIframe {
+                grid-row: span 11;
+                grid-column: span 7;
+            }
+        }
+@media screen and (min-width:594px) and (max-width:675px) and (min-height:1004px) and (max-height:1085px) {
+            .cardLayout {
+                grid-template-columns: repeat(7, 66px);
+            }
+            .cardIframe {
+                grid-row: span 12;
+                grid-column: span 7;
+            }
+        }
+@media screen and (min-width:594px) and (max-width:675px) and (min-height:1086px) and (max-height:1167px) {
+            .cardLayout {
+                grid-template-columns: repeat(7, 66px);
+            }
+            .cardIframe {
+                grid-row: span 13;
+                grid-column: span 7;
+            }
+        }
+@media screen and (min-width:594px) and (max-width:675px) and (min-height:1168px) and (max-height:1249px) {
+            .cardLayout {
+                grid-template-columns: repeat(7, 66px);
+            }
+            .cardIframe {
+                grid-row: span 14;
+                grid-column: span 7;
+            }
+        }
+@media screen and (min-width:594px) and (max-width:675px) and (min-height:1250px) and (max-height:3000px) {
+            .cardLayout {
+                grid-template-columns: repeat(7, 66px);
+            }
+            .cardIframe {
+                grid-row: span 15;
+                grid-column: span 7;
+            }
+        }
+@media screen and (min-width:676px) and (max-width:757px) and (min-height:0px) and (max-height:265px) {
+            .cardLayout {
+                grid-template-columns: repeat(8, 66px);
+            }
+            .cardIframe {
+                grid-row: span 2;
+                grid-column: span 8;
+            }
+        }
+@media screen and (min-width:676px) and (max-width:757px) and (min-height:266px) and (max-height:347px) {
+            .cardLayout {
+                grid-template-columns: repeat(8, 66px);
+            }
+            .cardIframe {
+                grid-row: span 3;
+                grid-column: span 8;
+            }
+        }
+@media screen and (min-width:676px) and (max-width:757px) and (min-height:348px) and (max-height:429px) {
+            .cardLayout {
+                grid-template-columns: repeat(8, 66px);
+            }
+            .cardIframe {
+                grid-row: span 4;
+                grid-column: span 8;
+            }
+        }
+@media screen and (min-width:676px) and (max-width:757px) and (min-height:430px) and (max-height:511px) {
+            .cardLayout {
+                grid-template-columns: repeat(8, 66px);
+            }
+            .cardIframe {
+                grid-row: span 5;
+                grid-column: span 8;
+            }
+        }
+@media screen and (min-width:676px) and (max-width:757px) and (min-height:512px) and (max-height:593px) {
+            .cardLayout {
+                grid-template-columns: repeat(8, 66px);
+            }
+            .cardIframe {
+                grid-row: span 6;
+                grid-column: span 8;
+            }
+        }
+@media screen and (min-width:676px) and (max-width:757px) and (min-height:594px) and (max-height:675px) {
+            .cardLayout {
+                grid-template-columns: repeat(8, 66px);
+            }
+            .cardIframe {
+                grid-row: span 7;
+                grid-column: span 8;
+            }
+        }
+@media screen and (min-width:676px) and (max-width:757px) and (min-height:676px) and (max-height:757px) {
+            .cardLayout {
+                grid-template-columns: repeat(8, 66px);
+            }
+            .cardIframe {
+                grid-row: span 8;
+                grid-column: span 8;
+            }
+        }
+@media screen and (min-width:676px) and (max-width:757px) and (min-height:758px) and (max-height:839px) {
+            .cardLayout {
+                grid-template-columns: repeat(8, 66px);
+            }
+            .cardIframe {
+                grid-row: span 9;
+                grid-column: span 8;
+            }
+        }
+@media screen and (min-width:676px) and (max-width:757px) and (min-height:840px) and (max-height:921px) {
+            .cardLayout {
+                grid-template-columns: repeat(8, 66px);
+            }
+            .cardIframe {
+                grid-row: span 10;
+                grid-column: span 8;
+            }
+        }
+@media screen and (min-width:676px) and (max-width:757px) and (min-height:922px) and (max-height:1003px) {
+            .cardLayout {
+                grid-template-columns: repeat(8, 66px);
+            }
+            .cardIframe {
+                grid-row: span 11;
+                grid-column: span 8;
+            }
+        }
+@media screen and (min-width:676px) and (max-width:757px) and (min-height:1004px) and (max-height:1085px) {
+            .cardLayout {
+                grid-template-columns: repeat(8, 66px);
+            }
+            .cardIframe {
+                grid-row: span 12;
+                grid-column: span 8;
+            }
+        }
+@media screen and (min-width:676px) and (max-width:757px) and (min-height:1086px) and (max-height:1167px) {
+            .cardLayout {
+                grid-template-columns: repeat(8, 66px);
+            }
+            .cardIframe {
+                grid-row: span 13;
+                grid-column: span 8;
+            }
+        }
+@media screen and (min-width:676px) and (max-width:757px) and (min-height:1168px) and (max-height:1249px) {
+            .cardLayout {
+                grid-template-columns: repeat(8, 66px);
+            }
+            .cardIframe {
+                grid-row: span 14;
+                grid-column: span 8;
+            }
+        }
+@media screen and (min-width:676px) and (max-width:757px) and (min-height:1250px) and (max-height:3000px) {
+            .cardLayout {
+                grid-template-columns: repeat(8, 66px);
+            }
+            .cardIframe {
+                grid-row: span 15;
+                grid-column: span 8;
+            }
+        }
+@media screen and (min-width:758px) and (max-width:839px) and (min-height:0px) and (max-height:265px) {
+            .cardLayout {
+                grid-template-columns: repeat(9, 66px);
+            }
+            .cardIframe {
+                grid-row: span 2;
+                grid-column: span 9;
+            }
+        }
+@media screen and (min-width:758px) and (max-width:839px) and (min-height:266px) and (max-height:347px) {
+            .cardLayout {
+                grid-template-columns: repeat(9, 66px);
+            }
+            .cardIframe {
+                grid-row: span 3;
+                grid-column: span 9;
+            }
+        }
+@media screen and (min-width:758px) and (max-width:839px) and (min-height:348px) and (max-height:429px) {
+            .cardLayout {
+                grid-template-columns: repeat(9, 66px);
+            }
+            .cardIframe {
+                grid-row: span 4;
+                grid-column: span 9;
+            }
+        }
+@media screen and (min-width:758px) and (max-width:839px) and (min-height:430px) and (max-height:511px) {
+            .cardLayout {
+                grid-template-columns: repeat(9, 66px);
+            }
+            .cardIframe {
+                grid-row: span 5;
+                grid-column: span 9;
+            }
+        }
+@media screen and (min-width:758px) and (max-width:839px) and (min-height:512px) and (max-height:593px) {
+            .cardLayout {
+                grid-template-columns: repeat(9, 66px);
+            }
+            .cardIframe {
+                grid-row: span 6;
+                grid-column: span 9;
+            }
+        }
+@media screen and (min-width:758px) and (max-width:839px) and (min-height:594px) and (max-height:675px) {
+            .cardLayout {
+                grid-template-columns: repeat(9, 66px);
+            }
+            .cardIframe {
+                grid-row: span 7;
+                grid-column: span 9;
+            }
+        }
+@media screen and (min-width:758px) and (max-width:839px) and (min-height:676px) and (max-height:757px) {
+            .cardLayout {
+                grid-template-columns: repeat(9, 66px);
+            }
+            .cardIframe {
+                grid-row: span 8;
+                grid-column: span 9;
+            }
+        }
+@media screen and (min-width:758px) and (max-width:839px) and (min-height:758px) and (max-height:839px) {
+            .cardLayout {
+                grid-template-columns: repeat(9, 66px);
+            }
+            .cardIframe {
+                grid-row: span 9;
+                grid-column: span 9;
+            }
+        }
+@media screen and (min-width:758px) and (max-width:839px) and (min-height:840px) and (max-height:921px) {
+            .cardLayout {
+                grid-template-columns: repeat(9, 66px);
+            }
+            .cardIframe {
+                grid-row: span 10;
+                grid-column: span 9;
+            }
+        }
+@media screen and (min-width:758px) and (max-width:839px) and (min-height:922px) and (max-height:1003px) {
+            .cardLayout {
+                grid-template-columns: repeat(9, 66px);
+            }
+            .cardIframe {
+                grid-row: span 11;
+                grid-column: span 9;
+            }
+        }
+@media screen and (min-width:758px) and (max-width:839px) and (min-height:1004px) and (max-height:1085px) {
+            .cardLayout {
+                grid-template-columns: repeat(9, 66px);
+            }
+            .cardIframe {
+                grid-row: span 12;
+                grid-column: span 9;
+            }
+        }
+@media screen and (min-width:758px) and (max-width:839px) and (min-height:1086px) and (max-height:1167px) {
+            .cardLayout {
+                grid-template-columns: repeat(9, 66px);
+            }
+            .cardIframe {
+                grid-row: span 13;
+                grid-column: span 9;
+            }
+        }
+@media screen and (min-width:758px) and (max-width:839px) and (min-height:1168px) and (max-height:1249px) {
+            .cardLayout {
+                grid-template-columns: repeat(9, 66px);
+            }
+            .cardIframe {
+                grid-row: span 14;
+                grid-column: span 9;
+            }
+        }
+@media screen and (min-width:758px) and (max-width:839px) and (min-height:1250px) and (max-height:3000px) {
+            .cardLayout {
+                grid-template-columns: repeat(9, 66px);
+            }
+            .cardIframe {
+                grid-row: span 15;
+                grid-column: span 9;
+            }
+        }
+@media screen and (min-width:840px) and (max-width:921px) and (min-height:0px) and (max-height:265px) {
+            .cardLayout {
+                grid-template-columns: repeat(10, 66px);
+            }
+            .cardIframe {
+                grid-row: span 2;
+                grid-column: span 9;
+            }
+        }
+@media screen and (min-width:840px) and (max-width:921px) and (min-height:266px) and (max-height:347px) {
+            .cardLayout {
+                grid-template-columns: repeat(10, 66px);
+            }
+            .cardIframe {
+                grid-row: span 3;
+                grid-column: span 9;
+            }
+        }
+@media screen and (min-width:840px) and (max-width:921px) and (min-height:348px) and (max-height:429px) {
+            .cardLayout {
+                grid-template-columns: repeat(10, 66px);
+            }
+            .cardIframe {
+                grid-row: span 4;
+                grid-column: span 9;
+            }
+        }
+@media screen and (min-width:840px) and (max-width:921px) and (min-height:430px) and (max-height:511px) {
+            .cardLayout {
+                grid-template-columns: repeat(10, 66px);
+            }
+            .cardIframe {
+                grid-row: span 5;
+                grid-column: span 9;
+            }
+        }
+@media screen and (min-width:840px) and (max-width:921px) and (min-height:512px) and (max-height:593px) {
+            .cardLayout {
+                grid-template-columns: repeat(10, 66px);
+            }
+            .cardIframe {
+                grid-row: span 6;
+                grid-column: span 9;
+            }
+        }
+@media screen and (min-width:840px) and (max-width:921px) and (min-height:594px) and (max-height:675px) {
+            .cardLayout {
+                grid-template-columns: repeat(10, 66px);
+            }
+            .cardIframe {
+                grid-row: span 7;
+                grid-column: span 9;
+            }
+        }
+@media screen and (min-width:840px) and (max-width:921px) and (min-height:676px) and (max-height:757px) {
+            .cardLayout {
+                grid-template-columns: repeat(10, 66px);
+            }
+            .cardIframe {
+                grid-row: span 8;
+                grid-column: span 9;
+            }
+        }
+@media screen and (min-width:840px) and (max-width:921px) and (min-height:758px) and (max-height:839px) {
+            .cardLayout {
+                grid-template-columns: repeat(10, 66px);
+            }
+            .cardIframe {
+                grid-row: span 9;
+                grid-column: span 9;
+            }
+        }
+@media screen and (min-width:840px) and (max-width:921px) and (min-height:840px) and (max-height:921px) {
+            .cardLayout {
+                grid-template-columns: repeat(10, 66px);
+            }
+            .cardIframe {
+                grid-row: span 10;
+                grid-column: span 9;
+            }
+        }
+@media screen and (min-width:840px) and (max-width:921px) and (min-height:922px) and (max-height:1003px) {
+            .cardLayout {
+                grid-template-columns: repeat(10, 66px);
+            }
+            .cardIframe {
+                grid-row: span 11;
+                grid-column: span 9;
+            }
+        }
+@media screen and (min-width:840px) and (max-width:921px) and (min-height:1004px) and (max-height:1085px) {
+            .cardLayout {
+                grid-template-columns: repeat(10, 66px);
+            }
+            .cardIframe {
+                grid-row: span 12;
+                grid-column: span 9;
+            }
+        }
+@media screen and (min-width:840px) and (max-width:921px) and (min-height:1086px) and (max-height:1167px) {
+            .cardLayout {
+                grid-template-columns: repeat(10, 66px);
+            }
+            .cardIframe {
+                grid-row: span 13;
+                grid-column: span 9;
+            }
+        }
+@media screen and (min-width:840px) and (max-width:921px) and (min-height:1168px) and (max-height:1249px) {
+            .cardLayout {
+                grid-template-columns: repeat(10, 66px);
+            }
+            .cardIframe {
+                grid-row: span 14;
+                grid-column: span 9;
+            }
+        }
+@media screen and (min-width:840px) and (max-width:921px) and (min-height:1250px) and (max-height:3000px) {
+            .cardLayout {
+                grid-template-columns: repeat(10, 66px);
+            }
+            .cardIframe {
+                grid-row: span 15;
+                grid-column: span 9;
+            }
+        }
+@media screen and (min-width:922px) and (max-width:1003px) and (min-height:0px) and (max-height:265px) {
+            .cardLayout {
+                grid-template-columns: repeat(11, 66px);
+            }
+            .cardIframe {
+                grid-row: span 2;
+                grid-column: span 9;
+            }
+        }
+@media screen and (min-width:922px) and (max-width:1003px) and (min-height:266px) and (max-height:347px) {
+            .cardLayout {
+                grid-template-columns: repeat(11, 66px);
+            }
+            .cardIframe {
+                grid-row: span 3;
+                grid-column: span 9;
+            }
+        }
+@media screen and (min-width:922px) and (max-width:1003px) and (min-height:348px) and (max-height:429px) {
+            .cardLayout {
+                grid-template-columns: repeat(11, 66px);
+            }
+            .cardIframe {
+                grid-row: span 4;
+                grid-column: span 9;
+            }
+        }
+@media screen and (min-width:922px) and (max-width:1003px) and (min-height:430px) and (max-height:511px) {
+            .cardLayout {
+                grid-template-columns: repeat(11, 66px);
+            }
+            .cardIframe {
+                grid-row: span 5;
+                grid-column: span 9;
+            }
+        }
+@media screen and (min-width:922px) and (max-width:1003px) and (min-height:512px) and (max-height:593px) {
+            .cardLayout {
+                grid-template-columns: repeat(11, 66px);
+            }
+            .cardIframe {
+                grid-row: span 6;
+                grid-column: span 9;
+            }
+        }
+@media screen and (min-width:922px) and (max-width:1003px) and (min-height:594px) and (max-height:675px) {
+            .cardLayout {
+                grid-template-columns: repeat(11, 66px);
+            }
+            .cardIframe {
+                grid-row: span 7;
+                grid-column: span 9;
+            }
+        }
+@media screen and (min-width:922px) and (max-width:1003px) and (min-height:676px) and (max-height:757px) {
+            .cardLayout {
+                grid-template-columns: repeat(11, 66px);
+            }
+            .cardIframe {
+                grid-row: span 8;
+                grid-column: span 9;
+            }
+        }
+@media screen and (min-width:922px) and (max-width:1003px) and (min-height:758px) and (max-height:839px) {
+            .cardLayout {
+                grid-template-columns: repeat(11, 66px);
+            }
+            .cardIframe {
+                grid-row: span 9;
+                grid-column: span 9;
+            }
+        }
+@media screen and (min-width:922px) and (max-width:1003px) and (min-height:840px) and (max-height:921px) {
+            .cardLayout {
+                grid-template-columns: repeat(11, 66px);
+            }
+            .cardIframe {
+                grid-row: span 10;
+                grid-column: span 9;
+            }
+        }
+@media screen and (min-width:922px) and (max-width:1003px) and (min-height:922px) and (max-height:1003px) {
+            .cardLayout {
+                grid-template-columns: repeat(11, 66px);
+            }
+            .cardIframe {
+                grid-row: span 11;
+                grid-column: span 9;
+            }
+        }
+@media screen and (min-width:922px) and (max-width:1003px) and (min-height:1004px) and (max-height:1085px) {
+            .cardLayout {
+                grid-template-columns: repeat(11, 66px);
+            }
+            .cardIframe {
+                grid-row: span 12;
+                grid-column: span 9;
+            }
+        }
+@media screen and (min-width:922px) and (max-width:1003px) and (min-height:1086px) and (max-height:1167px) {
+            .cardLayout {
+                grid-template-columns: repeat(11, 66px);
+            }
+            .cardIframe {
+                grid-row: span 13;
+                grid-column: span 9;
+            }
+        }
+@media screen and (min-width:922px) and (max-width:1003px) and (min-height:1168px) and (max-height:1249px) {
+            .cardLayout {
+                grid-template-columns: repeat(11, 66px);
+            }
+            .cardIframe {
+                grid-row: span 14;
+                grid-column: span 9;
+            }
+        }
+@media screen and (min-width:922px) and (max-width:1003px) and (min-height:1250px) and (max-height:3000px) {
+            .cardLayout {
+                grid-template-columns: repeat(11, 66px);
+            }
+            .cardIframe {
+                grid-row: span 15;
+                grid-column: span 9;
+            }
+        }
+@media screen and (min-width:1004px) and (max-width:1085px) and (min-height:0px) and (max-height:265px) {
+            .cardLayout {
+                grid-template-columns: repeat(12, 66px);
+            }
+            .cardIframe {
+                grid-row: span 2;
+                grid-column: span 10;
+            }
+        }
+@media screen and (min-width:1004px) and (max-width:1085px) and (min-height:266px) and (max-height:347px) {
+            .cardLayout {
+                grid-template-columns: repeat(12, 66px);
+            }
+            .cardIframe {
+                grid-row: span 3;
+                grid-column: span 10;
+            }
+        }
+@media screen and (min-width:1004px) and (max-width:1085px) and (min-height:348px) and (max-height:429px) {
+            .cardLayout {
+                grid-template-columns: repeat(12, 66px);
+            }
+            .cardIframe {
+                grid-row: span 4;
+                grid-column: span 10;
+            }
+        }
+@media screen and (min-width:1004px) and (max-width:1085px) and (min-height:430px) and (max-height:511px) {
+            .cardLayout {
+                grid-template-columns: repeat(12, 66px);
+            }
+            .cardIframe {
+                grid-row: span 5;
+                grid-column: span 10;
+            }
+        }
+@media screen and (min-width:1004px) and (max-width:1085px) and (min-height:512px) and (max-height:593px) {
+            .cardLayout {
+                grid-template-columns: repeat(12, 66px);
+            }
+            .cardIframe {
+                grid-row: span 6;
+                grid-column: span 10;
+            }
+        }
+@media screen and (min-width:1004px) and (max-width:1085px) and (min-height:594px) and (max-height:675px) {
+            .cardLayout {
+                grid-template-columns: repeat(12, 66px);
+            }
+            .cardIframe {
+                grid-row: span 7;
+                grid-column: span 10;
+            }
+        }
+@media screen and (min-width:1004px) and (max-width:1085px) and (min-height:676px) and (max-height:757px) {
+            .cardLayout {
+                grid-template-columns: repeat(12, 66px);
+            }
+            .cardIframe {
+                grid-row: span 8;
+                grid-column: span 10;
+            }
+        }
+@media screen and (min-width:1004px) and (max-width:1085px) and (min-height:758px) and (max-height:839px) {
+            .cardLayout {
+                grid-template-columns: repeat(12, 66px);
+            }
+            .cardIframe {
+                grid-row: span 9;
+                grid-column: span 10;
+            }
+        }
+@media screen and (min-width:1004px) and (max-width:1085px) and (min-height:840px) and (max-height:921px) {
+            .cardLayout {
+                grid-template-columns: repeat(12, 66px);
+            }
+            .cardIframe {
+                grid-row: span 10;
+                grid-column: span 10;
+            }
+        }
+@media screen and (min-width:1004px) and (max-width:1085px) and (min-height:922px) and (max-height:1003px) {
+            .cardLayout {
+                grid-template-columns: repeat(12, 66px);
+            }
+            .cardIframe {
+                grid-row: span 11;
+                grid-column: span 10;
+            }
+        }
+@media screen and (min-width:1004px) and (max-width:1085px) and (min-height:1004px) and (max-height:1085px) {
+            .cardLayout {
+                grid-template-columns: repeat(12, 66px);
+            }
+            .cardIframe {
+                grid-row: span 12;
+                grid-column: span 10;
+            }
+        }
+@media screen and (min-width:1004px) and (max-width:1085px) and (min-height:1086px) and (max-height:1167px) {
+            .cardLayout {
+                grid-template-columns: repeat(12, 66px);
+            }
+            .cardIframe {
+                grid-row: span 13;
+                grid-column: span 10;
+            }
+        }
+@media screen and (min-width:1004px) and (max-width:1085px) and (min-height:1168px) and (max-height:1249px) {
+            .cardLayout {
+                grid-template-columns: repeat(12, 66px);
+            }
+            .cardIframe {
+                grid-row: span 14;
+                grid-column: span 10;
+            }
+        }
+@media screen and (min-width:1004px) and (max-width:1085px) and (min-height:1250px) and (max-height:3000px) {
+            .cardLayout {
+                grid-template-columns: repeat(12, 66px);
+            }
+            .cardIframe {
+                grid-row: span 15;
+                grid-column: span 10;
+            }
+        }
+@media screen and (min-width:1086px) and (max-width:1167px) and (min-height:0px) and (max-height:265px) {
+            .cardLayout {
+                grid-template-columns: repeat(13, 66px);
+            }
+            .cardIframe {
+                grid-row: span 2;
+                grid-column: span 10;
+            }
+        }
+@media screen and (min-width:1086px) and (max-width:1167px) and (min-height:266px) and (max-height:347px) {
+            .cardLayout {
+                grid-template-columns: repeat(13, 66px);
+            }
+            .cardIframe {
+                grid-row: span 3;
+                grid-column: span 10;
+            }
+        }
+@media screen and (min-width:1086px) and (max-width:1167px) and (min-height:348px) and (max-height:429px) {
+            .cardLayout {
+                grid-template-columns: repeat(13, 66px);
+            }
+            .cardIframe {
+                grid-row: span 4;
+                grid-column: span 10;
+            }
+        }
+@media screen and (min-width:1086px) and (max-width:1167px) and (min-height:430px) and (max-height:511px) {
+            .cardLayout {
+                grid-template-columns: repeat(13, 66px);
+            }
+            .cardIframe {
+                grid-row: span 5;
+                grid-column: span 10;
+            }
+        }
+@media screen and (min-width:1086px) and (max-width:1167px) and (min-height:512px) and (max-height:593px) {
+            .cardLayout {
+                grid-template-columns: repeat(13, 66px);
+            }
+            .cardIframe {
+                grid-row: span 6;
+                grid-column: span 10;
+            }
+        }
+@media screen and (min-width:1086px) and (max-width:1167px) and (min-height:594px) and (max-height:675px) {
+            .cardLayout {
+                grid-template-columns: repeat(13, 66px);
+            }
+            .cardIframe {
+                grid-row: span 7;
+                grid-column: span 10;
+            }
+        }
+@media screen and (min-width:1086px) and (max-width:1167px) and (min-height:676px) and (max-height:757px) {
+            .cardLayout {
+                grid-template-columns: repeat(13, 66px);
+            }
+            .cardIframe {
+                grid-row: span 8;
+                grid-column: span 10;
+            }
+        }
+@media screen and (min-width:1086px) and (max-width:1167px) and (min-height:758px) and (max-height:839px) {
+            .cardLayout {
+                grid-template-columns: repeat(13, 66px);
+            }
+            .cardIframe {
+                grid-row: span 9;
+                grid-column: span 10;
+            }
+        }
+@media screen and (min-width:1086px) and (max-width:1167px) and (min-height:840px) and (max-height:921px) {
+            .cardLayout {
+                grid-template-columns: repeat(13, 66px);
+            }
+            .cardIframe {
+                grid-row: span 10;
+                grid-column: span 10;
+            }
+        }
+@media screen and (min-width:1086px) and (max-width:1167px) and (min-height:922px) and (max-height:1003px) {
+            .cardLayout {
+                grid-template-columns: repeat(13, 66px);
+            }
+            .cardIframe {
+                grid-row: span 11;
+                grid-column: span 10;
+            }
+        }
+@media screen and (min-width:1086px) and (max-width:1167px) and (min-height:1004px) and (max-height:1085px) {
+            .cardLayout {
+                grid-template-columns: repeat(13, 66px);
+            }
+            .cardIframe {
+                grid-row: span 12;
+                grid-column: span 10;
+            }
+        }
+@media screen and (min-width:1086px) and (max-width:1167px) and (min-height:1086px) and (max-height:1167px) {
+            .cardLayout {
+                grid-template-columns: repeat(13, 66px);
+            }
+            .cardIframe {
+                grid-row: span 13;
+                grid-column: span 10;
+            }
+        }
+@media screen and (min-width:1086px) and (max-width:1167px) and (min-height:1168px) and (max-height:1249px) {
+            .cardLayout {
+                grid-template-columns: repeat(13, 66px);
+            }
+            .cardIframe {
+                grid-row: span 14;
+                grid-column: span 10;
+            }
+        }
+@media screen and (min-width:1086px) and (max-width:1167px) and (min-height:1250px) and (max-height:3000px) {
+            .cardLayout {
+                grid-template-columns: repeat(13, 66px);
+            }
+            .cardIframe {
+                grid-row: span 15;
+                grid-column: span 10;
+            }
+        }
+@media screen and (min-width:1168px) and (max-width:1249px) and (min-height:0px) and (max-height:265px) {
+            .cardLayout {
+                grid-template-columns: repeat(14, 66px);
+            }
+            .cardIframe {
+                grid-row: span 2;
+                grid-column: span 10;
+            }
+        }
+@media screen and (min-width:1168px) and (max-width:1249px) and (min-height:266px) and (max-height:347px) {
+            .cardLayout {
+                grid-template-columns: repeat(14, 66px);
+            }
+            .cardIframe {
+                grid-row: span 3;
+                grid-column: span 10;
+            }
+        }
+@media screen and (min-width:1168px) and (max-width:1249px) and (min-height:348px) and (max-height:429px) {
+            .cardLayout {
+                grid-template-columns: repeat(14, 66px);
+            }
+            .cardIframe {
+                grid-row: span 4;
+                grid-column: span 10;
+            }
+        }
+@media screen and (min-width:1168px) and (max-width:1249px) and (min-height:430px) and (max-height:511px) {
+            .cardLayout {
+                grid-template-columns: repeat(14, 66px);
+            }
+            .cardIframe {
+                grid-row: span 5;
+                grid-column: span 10;
+            }
+        }
+@media screen and (min-width:1168px) and (max-width:1249px) and (min-height:512px) and (max-height:593px) {
+            .cardLayout {
+                grid-template-columns: repeat(14, 66px);
+            }
+            .cardIframe {
+                grid-row: span 6;
+                grid-column: span 10;
+            }
+        }
+@media screen and (min-width:1168px) and (max-width:1249px) and (min-height:594px) and (max-height:675px) {
+            .cardLayout {
+                grid-template-columns: repeat(14, 66px);
+            }
+            .cardIframe {
+                grid-row: span 7;
+                grid-column: span 10;
+            }
+        }
+@media screen and (min-width:1168px) and (max-width:1249px) and (min-height:676px) and (max-height:757px) {
+            .cardLayout {
+                grid-template-columns: repeat(14, 66px);
+            }
+            .cardIframe {
+                grid-row: span 8;
+                grid-column: span 10;
+            }
+        }
+@media screen and (min-width:1168px) and (max-width:1249px) and (min-height:758px) and (max-height:839px) {
+            .cardLayout {
+                grid-template-columns: repeat(14, 66px);
+            }
+            .cardIframe {
+                grid-row: span 9;
+                grid-column: span 10;
+            }
+        }
+@media screen and (min-width:1168px) and (max-width:1249px) and (min-height:840px) and (max-height:921px) {
+            .cardLayout {
+                grid-template-columns: repeat(14, 66px);
+            }
+            .cardIframe {
+                grid-row: span 10;
+                grid-column: span 10;
+            }
+        }
+@media screen and (min-width:1168px) and (max-width:1249px) and (min-height:922px) and (max-height:1003px) {
+            .cardLayout {
+                grid-template-columns: repeat(14, 66px);
+            }
+            .cardIframe {
+                grid-row: span 11;
+                grid-column: span 10;
+            }
+        }
+@media screen and (min-width:1168px) and (max-width:1249px) and (min-height:1004px) and (max-height:1085px) {
+            .cardLayout {
+                grid-template-columns: repeat(14, 66px);
+            }
+            .cardIframe {
+                grid-row: span 12;
+                grid-column: span 10;
+            }
+        }
+@media screen and (min-width:1168px) and (max-width:1249px) and (min-height:1086px) and (max-height:1167px) {
+            .cardLayout {
+                grid-template-columns: repeat(14, 66px);
+            }
+            .cardIframe {
+                grid-row: span 13;
+                grid-column: span 10;
+            }
+        }
+@media screen and (min-width:1168px) and (max-width:1249px) and (min-height:1168px) and (max-height:1249px) {
+            .cardLayout {
+                grid-template-columns: repeat(14, 66px);
+            }
+            .cardIframe {
+                grid-row: span 14;
+                grid-column: span 10;
+            }
+        }
+@media screen and (min-width:1168px) and (max-width:1249px) and (min-height:1250px) and (max-height:3000px) {
+            .cardLayout {
+                grid-template-columns: repeat(14, 66px);
+            }
+            .cardIframe {
+                grid-row: span 15;
+                grid-column: span 10;
+            }
+        }
+@media screen and (min-width:1250px) and (max-width:3000px) and (min-height:0px) and (max-height:265px) {
+            .cardLayout {
+                grid-template-columns: repeat(15, 66px);
+            }
+            .cardIframe {
+                grid-row: span 2;
+                grid-column: span 10;
+            }
+        }
+@media screen and (min-width:1250px) and (max-width:3000px) and (min-height:266px) and (max-height:347px) {
+            .cardLayout {
+                grid-template-columns: repeat(15, 66px);
+            }
+            .cardIframe {
+                grid-row: span 3;
+                grid-column: span 10;
+            }
+        }
+@media screen and (min-width:1250px) and (max-width:3000px) and (min-height:348px) and (max-height:429px) {
+            .cardLayout {
+                grid-template-columns: repeat(15, 66px);
+            }
+            .cardIframe {
+                grid-row: span 4;
+                grid-column: span 10;
+            }
+        }
+@media screen and (min-width:1250px) and (max-width:3000px) and (min-height:430px) and (max-height:511px) {
+            .cardLayout {
+                grid-template-columns: repeat(15, 66px);
+            }
+            .cardIframe {
+                grid-row: span 5;
+                grid-column: span 10;
+            }
+        }
+@media screen and (min-width:1250px) and (max-width:3000px) and (min-height:512px) and (max-height:593px) {
+            .cardLayout {
+                grid-template-columns: repeat(15, 66px);
+            }
+            .cardIframe {
+                grid-row: span 6;
+                grid-column: span 10;
+            }
+        }
+@media screen and (min-width:1250px) and (max-width:3000px) and (min-height:594px) and (max-height:675px) {
+            .cardLayout {
+                grid-template-columns: repeat(15, 66px);
+            }
+            .cardIframe {
+                grid-row: span 7;
+                grid-column: span 10;
+            }
+        }
+@media screen and (min-width:1250px) and (max-width:3000px) and (min-height:676px) and (max-height:757px) {
+            .cardLayout {
+                grid-template-columns: repeat(15, 66px);
+            }
+            .cardIframe {
+                grid-row: span 8;
+                grid-column: span 10;
+            }
+        }
+@media screen and (min-width:1250px) and (max-width:3000px) and (min-height:758px) and (max-height:839px) {
+            .cardLayout {
+                grid-template-columns: repeat(15, 66px);
+            }
+            .cardIframe {
+                grid-row: span 9;
+                grid-column: span 10;
+            }
+        }
+@media screen and (min-width:1250px) and (max-width:3000px) and (min-height:840px) and (max-height:921px) {
+            .cardLayout {
+                grid-template-columns: repeat(15, 66px);
+            }
+            .cardIframe {
+                grid-row: span 10;
+                grid-column: span 10;
+            }
+        }
+@media screen and (min-width:1250px) and (max-width:3000px) and (min-height:922px) and (max-height:1003px) {
+            .cardLayout {
+                grid-template-columns: repeat(15, 66px);
+            }
+            .cardIframe {
+                grid-row: span 11;
+                grid-column: span 10;
+            }
+        }
+@media screen and (min-width:1250px) and (max-width:3000px) and (min-height:1004px) and (max-height:1085px) {
+            .cardLayout {
+                grid-template-columns: repeat(15, 66px);
+            }
+            .cardIframe {
+                grid-row: span 12;
+                grid-column: span 10;
+            }
+        }
+@media screen and (min-width:1250px) and (max-width:3000px) and (min-height:1086px) and (max-height:1167px) {
+            .cardLayout {
+                grid-template-columns: repeat(15, 66px);
+            }
+            .cardIframe {
+                grid-row: span 13;
+                grid-column: span 10;
+            }
+        }
+@media screen and (min-width:1250px) and (max-width:3000px) and (min-height:1168px) and (max-height:1249px) {
+            .cardLayout {
+                grid-template-columns: repeat(15, 66px);
+            }
+            .cardIframe {
+                grid-row: span 14;
+                grid-column: span 10;
+            }
+        }
+@media screen and (min-width:1250px) and (max-width:3000px) and (min-height:1250px) and (max-height:3000px) {
+            .cardLayout {
+                grid-template-columns: repeat(15, 66px);
+            }
+            .cardIframe {
+                grid-row: span 15;
+                grid-column: span 10;
+            }
+        }
