@@ -1,17 +1,4 @@
 /**
- * 判断是移动端, 还是 pc 端
- * @returns {*}
- */
-function getDeviceType() {
-    var userAgent = navigator.userAgent;
-    if(/Mobi|Android/i.test(userAgent)) {
-        return "mobile";
-    } else {
-        return "pc";
-    }
-}
-
-/**
  * 获取 csv 游戏内容
  * @returns {Array}
  */
@@ -108,7 +95,8 @@ function appendCsvDataToHtml() {
 
     for (var i = 0; i < gameUrlLi.length; i++) {
         var nineGridItemTemplateHtml = $("#nineGridItemTemplate").html();
-        nineGridItemTemplateHtml = nineGridItemTemplateHtml.replace(/{gameUrl}/g, gameUrlLi[i][0].trim());
+        var gameUrl = '/game.html?game=' + gameUrlLi[i][0].trim();
+        nineGridItemTemplateHtml = nineGridItemTemplateHtml.replace(/{gameUrl}/g, gameUrl);
         nineGridItemTemplateHtml = nineGridItemTemplateHtml.replace(/{gamePic}/g, gameUrlLi[i][1].trim());
 
         nineGridItemTemplateHtmlLi.push(nineGridItemTemplateHtml);
