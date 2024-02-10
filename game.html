@@ -196,8 +196,20 @@
             width: 100%
         }
 
+        .navigationStyle[css-nav] {
+            display: flex;
+            justify-content: space-between;
+            /*align-items: center;*/
+            height: 100%;
+        }
+
         .navLeft[css-nav] {
             margin-left: 10px;
+            height: 100%
+        }
+
+        .navRight[css-nav] {
+            margin-right: 10px;
             height: 100%
         }
 
@@ -209,6 +221,12 @@
             color: #000;
             line-height: 60px;
             height: 100%
+        }
+
+        @media screen and (max-width:435px) {
+            .navLogo[css-nav] {
+                font-size: 24px;
+            }
         }
 
         .foot[css-foot] {
@@ -347,6 +365,10 @@
                         <div id="navigationStyle" class="navigationStyle" css-nav>
                             <div class="navLeft" css-nav>
                                 <a class="navLogo" css-nav href="./"><span style="color:red;">F</span>reeGameHub</a>
+                            </div>
+                            <div class="navRight" css-nav>
+                                <script async src="https://cse.google.com/cse.js?cx=0dce7f404286643a3"></script>
+                                <div class="gcse-search"></div>
                             </div>
                         </div>
                     </div>
