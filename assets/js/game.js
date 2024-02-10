@@ -10,7 +10,6 @@ function getGameUrl() {
 
 function iframeLoadFunc() {
     if (getDeviceType() == 'pc') {
-        // console.log("^^^^^^^^^^^^^^^ iframeLoadFunc ^^^^^^^^^^^^^^^^^^^^");
         var iframeContentWindow = document.getElementById("gameIframeElem").contentWindow;
         var iframeWidth = parseInt($("#gameIframeElem").width());
         var iframeHeight = parseInt($("#gameIframeElem").height());
@@ -22,14 +21,33 @@ function iframeLoadFunc() {
     }
 }
 
+/**
+ * csv 数据添加到 html 中
+ */
+function appendCsvDataToHtml() {
+    var gameUrlLi = getCsvData();
+
+    var nineGridItemTemplateHtmlLi = [];
+
+    for (var i = 0; i < gameUrlLi.length; i++) {
+        var nineGridItemTemplateHtml = $("#nineGridAreaTemplate").html();
+        var gameUrl = '/game.html?game=' + gameUrlLi[i][0].trim();
+        nineGridItemTemplateHtml = nineGridItemTemplateHtml.replace(/{gameUrl}/g, gameUrl);
+        nineGridItemTemplateHtml = nineGridItemTemplateHtml.replace(/{gamePic}/g, gameUrlLi[i][1].trim());
+
+        nineGridItemTemplateHtmlLi.push(nineGridItemTemplateHtml);
+    }
+
+    $("#cardLayoutDiv").append(nineGridItemTemplateHtmlLi.join(""));
+}
+
 $(document).ready(function(){
     var gameUrl = getGameUrl();
     if (gameUrl) {
         frames['gameIframe'].location.href = gameUrl;
 
-        if (getDeviceType() == 'pc') {
-            // var iframeCanvas = frames['gameIframe'].contentWindow.canvas;
-            // console.log("style is:" + iframeCanvas.style);
-        }
+        // if (getDeviceType() == 'pc') {
+        // }
     }
+    appendCsvDataToHtml();
 });

@@ -297,6 +297,7 @@
                     <div class="cardIframe">
                         <iframe id="gameIframeElem" name="gameIframe" src="about:blank" frameborder="0" class="cardIframeCls" scrolling="no" onload="iframeLoadFunc()"></iframe>
                     </div>
+                    <!--
                     <div class="nine_grid_area" css-ninegridarea displayOrder="0">
                         <div class="clickEnlarge">
                             <a href="/game/SortItOut/" target="_self">
@@ -307,7 +308,6 @@
                         </div>
                     </div>
 
-                    <!-- 复制 begin -->
                     <div class="nine_grid_area" css-ninegridarea displayOrder="0">
                         <div class="clickEnlarge">
                             <a href="/game/SortItOut/" target="_self">
@@ -533,7 +533,7 @@
                                 </a>
                             </div>
                         </div>
-                        <!-- 复制 end -->
+                    -->
                 </div>
             </div>
         </div>
@@ -557,5 +557,15 @@
             </div>
         </div>
     </div>
+
+    <script id="nineGridAreaTemplate" type="text/template">
+        <div class="nine_grid_area" css-ninegridarea displayOrder="0">
+            <div class="clickEnlarge">
+                <a href="{gameUrl}" css-ninegridarea target="_self">
+                    <img css-ninegridarea data-src="{gamePic}" src="{gamePic}" lazy="loaded" alt="Traffic Intersection">
+                </a>
+            </div>
+        </div>
+    </script>
 </body>
 </html>
