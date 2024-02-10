@@ -41,13 +41,55 @@ function appendCsvDataToHtml() {
     $("#cardLayoutDiv").append(nineGridItemTemplateHtmlLi.join(""));
 }
 
+/**
+ * 匹配游戏的 url
+ * @param gameUrl
+ */
+function getImageURL(gameUrl) {
+    var gameUrlLi = getCsvData();
+    for (var i = 0; i < gameUrlLi.length; i++) {
+        if (gameUrlLi[i][0].trim() == gameUrl) {
+            return gameUrlLi[i][1].trim();
+        }
+    }
+    return null;
+}
+
+/**
+ * 追加 GoogleAdsTemplate
+ * @param resultHtmlLi
+ */
+function appendGoogleAdsTemplate() {
+    var googleAdsTemplateHtml = $("#googleAdsTemplate").html();
+    googleAdsTemplateHtml = googleAdsTemplateHtml.replace(/{adsbygoogleScriptContent}/g, adsbygoogleScript);
+    googleAdsTemplateHtml = googleAdsTemplateHtml.replace(/{adsbygoogleBottomScriptContent}/g, adsbygoogleBottomScript);
+    $("#cardIframeAdsContentDiv").html(googleAdsTemplateHtml);
+}
+
+/**
+ * 点击开始游戏
+ */
+function play() {
+    var gameUrl = getGameUrl();
+    if (gameUrl) {
+        $("#cardIframeAdsDiv").css("display", "none");
+        frames['gameIframe'].location.href = gameUrl;
+    }
+}
+
 $(document).ready(function(){
     var gameUrl = getGameUrl();
     if (gameUrl) {
-        frames['gameIframe'].location.href = gameUrl;
+        // frames['gameIframe'].location.href = gameUrl;
 
         // if (getDeviceType() == 'pc') {
         // }
+        var imageUrl = getImageURL(gameUrl);
+        if (imageUrl) {
+            $("#playGameImg").attr("src", imageUrl);
+            $("#playGameImg").css("display", "block");
+        }
     }
     appendCsvDataToHtml();
+    appendGoogleAdsTemplate();
 });
