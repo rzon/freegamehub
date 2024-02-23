@@ -134,17 +134,26 @@
             grid-gap: 16px;
             /*grid-template-columns: repeat(4, 66px);*/
         }
+        .cardIframeWrapper {
+            position: relative;
+            justify-content: center;
+            display: grid;
+            height: 100%;
+            grid-auto-rows: 66px;
+            grid-gap: 16px;
+        }
         .cardIframe {
-            /*border: 1px solid red;*/
             position: relative;
             z-index: 2;
-            /*border-radius: 15px;*/
             height: 100%;
             box-shadow: 0 3px 18px 0 rgb(0 0 0/16%);
-            /*
-            grid-row: span 9;
-            grid-column: span 4;
-            */
+        }
+        .cardIframeAds {
+            position: relative;
+            height: 100%;
+            /*border: 1px solid red;*/
+            box-shadow: 0 3px 18px 0 rgb(0 0 0/16%);
+            overflow: hidden;
         }
 
         /* css 页面文件, 由 assets/css/gameGen.py 生成 */
@@ -282,7 +291,7 @@
             width: 200px
         }
 
-        .cardIframeAds {
+        .cardIframeSuperpose {
             z-index: 3;
             position: absolute;
             width: 100%;
@@ -293,7 +302,7 @@
             flex-direction: column;
         }
 
-        .cardIframeAdsBottom {
+        .cardIframeSuperposeBottom {
             width: 100%;
             /*height: 50px;*/
             height: 100%;
@@ -346,19 +355,36 @@
                     </div>
                 </div>
                 <div id="cardLayoutDiv" class="cardLayout" style="" css-index>
-                    <div class="cardIframe">
-                        <div id="cardIframeAdsDiv" class="cardIframeAds">
-                            <div class="cardIframeAdsBottom">
-                                <a href="javascript:play()" class="play-button">
-                                    <!--PLAY-->
-                                    <div class="link-container">
-                                        <img id="playGameImg" src="about:blank" alt="示例图片" width="32" height="32" style="display: none">
-                                        <span>PLAY</span>
-                                    </div>
-                                </a>
+                    <div class="cardIframeWrapper">
+                        <div class="cardIframe">
+                            <div id="cardIframeSuperposeDiv" class="cardIframeSuperpose">
+                                <div class="cardIframeSuperposeBottom">
+                                    <a href="javascript:play()" class="play-button">
+                                        <!--PLAY-->
+                                        <div class="link-container">
+                                            <img id="playGameImg" src="about:blank" alt="示例图片" width="32" height="32" style="display: none">
+                                            <span>PLAY</span>
+                                        </div>
+                                    </a>
+                                </div>
                             </div>
+                            <iframe id="gameIframeElem" name="gameIframe" src="about:blank" frameborder="0" class="cardIframeCls" scrolling="no" onload="iframeLoadFunc()"></iframe>
                         </div>
-                        <iframe id="gameIframeElem" name="gameIframe" src="about:blank" frameborder="0" class="cardIframeCls" scrolling="no" onload="iframeLoadFunc()"></iframe>
+
+                        <div class="cardIframeAds">
+                            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4694110216243855"
+                                    crossorigin="anonymous"></script>
+                            <!-- freegamehub-展示广告1 -->
+                            <ins class="adsbygoogle"
+                                 style="display:block"
+                                 data-ad-client="ca-pub-4694110216243855"
+                                 data-ad-slot="8338320676"
+                                 data-ad-format="auto"
+                                 data-full-width-responsive="true"></ins>
+                            <script>
+                                (adsbygoogle = window.adsbygoogle || []).push({});
+                            </script>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -394,10 +420,11 @@
         </div>
     </script>
 
+    <!--
     <script id="googleAdsTemplate" type="text/template">
         <div class="card">
             {adsbygoogleScriptContent}
-            <!-- 展示广告1 -->
+            &lt;!&ndash; 展示广告1 &ndash;&gt;
             <ins class="adsbygoogle"
                  style="display:block"
                  data-ad-client="ca-pub-4694110216243855"
@@ -407,5 +434,6 @@
             {adsbygoogleBottomScriptContent}
         </div>
     </script>
+    -->
 </body>
 </html>

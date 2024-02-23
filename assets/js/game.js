@@ -64,7 +64,7 @@ function appendGoogleAdsTemplate() {
     var googleAdsTemplateHtml = $("#googleAdsTemplate").html();
     googleAdsTemplateHtml = googleAdsTemplateHtml.replace(/{adsbygoogleScriptContent}/g, adsbygoogleScript);
     googleAdsTemplateHtml = googleAdsTemplateHtml.replace(/{adsbygoogleBottomScriptContent}/g, adsbygoogleBottomScript);
-    $("#cardIframeAdsContentDiv").html(googleAdsTemplateHtml);
+    $("#cardIframeSuperposeContentDiv").html(googleAdsTemplateHtml);
 }
 */
 
@@ -74,7 +74,7 @@ function appendGoogleAdsTemplate() {
 function play() {
     var gameUrl = getGameUrl();
     if (gameUrl) {
-        $("#cardIframeAdsDiv").css("display", "none");
+        $("#cardIframeSuperposeDiv").css("display", "none");
         frames['gameIframe'].location.href = gameUrl;
     }
 }

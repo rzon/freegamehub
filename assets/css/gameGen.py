@@ -37,8 +37,17 @@ template = '''@media screen {widthText} {heightText} {
             .cardLayout {
                 grid-template-columns: repeat({cardLayoutColumns}, 66px);
             }
+            .cardIframeWrapper {
+                grid-template-columns: repeat({columns}, 66px);
+                grid-row: span {rowsLarge};
+                grid-column: span {columns};
+            }
             .cardIframe {
                 grid-row: span {rows};
+                grid-column: span {columns};
+            }
+            .cardIframeAds {
+                grid-row: span 4;
                 grid-column: span {columns};
             }
         }'''
@@ -60,6 +69,7 @@ for i in range(len(widthLi)):
         text = text.replace('{widthText}', widthText)
         text = text.replace('{heightText}', heightText)
         text = text.replace('{rows}', str(2 + j))
+        text = text.replace('{rowsLarge}', str(2 + j + 4))
         columns = 2 + i
         if widthLi[i][0] >= 758 and widthLi[i][0] < 1004:
             columns = 9
