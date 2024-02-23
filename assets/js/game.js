@@ -59,12 +59,14 @@ function getImageURL(gameUrl) {
  * 追加 GoogleAdsTemplate
  * @param resultHtmlLi
  */
+/*
 function appendGoogleAdsTemplate() {
     var googleAdsTemplateHtml = $("#googleAdsTemplate").html();
     googleAdsTemplateHtml = googleAdsTemplateHtml.replace(/{adsbygoogleScriptContent}/g, adsbygoogleScript);
     googleAdsTemplateHtml = googleAdsTemplateHtml.replace(/{adsbygoogleBottomScriptContent}/g, adsbygoogleBottomScript);
-    $("#cardIframeAdsContentDiv").html(googleAdsTemplateHtml);
+    $("#cardIframeSuperposeContentDiv").html(googleAdsTemplateHtml);
 }
+*/
 
 /**
  * 点击开始游戏
@@ -72,7 +74,7 @@ function appendGoogleAdsTemplate() {
 function play() {
     var gameUrl = getGameUrl();
     if (gameUrl) {
-        $("#cardIframeAdsDiv").css("display", "none");
+        $("#cardIframeSuperposeDiv").css("display", "none");
         frames['gameIframe'].location.href = gameUrl;
     }
 }
@@ -91,5 +93,5 @@ $(document).ready(function(){
         }
     }
     appendCsvDataToHtml();
-    appendGoogleAdsTemplate();
+    // appendGoogleAdsTemplate();
 });
