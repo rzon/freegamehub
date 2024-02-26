@@ -127,6 +127,22 @@ for i in range(len(widthLi)):
         elif widthLi[i][0] >= 1004:
             columns = 10 * 3
 
+        calcWidth = columns * 11.3 + (columns - 1) * 16
+        calcHeight = rows * 11.3 + (rows - 1) * 16
+
+        if calcWidth >= calcHeight:
+            targetWidth = calcHeight / 1.6
+            targetColumn = int((targetWidth + 16) / 27.3)
+            columns = targetColumn
+        elif (calcWidth < calcHeight) and (calcWidth >= (calcHeight / 1.6)):
+            targetWidth = calcHeight / 1.6
+            targetColumn = int((targetWidth + 16) / 27.3)
+            columns = targetColumn
+        elif (calcWidth < calcHeight) and (calcWidth < (calcHeight / 1.6)):
+            targetHeight = calcWidth * 1.6
+            targetRows = int((targetHeight + 16) / 27.3)
+            rows = targetRows
+
         text = text.replace('{columns}', str(columns))
         text = text.replace('{rows}', str(rows))
         text = text.replace('{rowsLarge}', str(rows + 12))
