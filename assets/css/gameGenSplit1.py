@@ -85,6 +85,18 @@ template = '''@media screen {widthText} {heightText} {
                 grid-row: span {rowsLarge};
                 grid-column: span {columns};
             }
+            .cardLayoutLeft {
+                grid-template-columns: repeat({cardLayoutLeftColumns}, 11.3px);
+                display: {cardLayoutLeftDisplay};
+                grid-column: span {cardLayoutLeftColumns};
+            }
+            .cardLayoutRight {
+                grid-template-columns: repeat({cardLayoutRightColumns}, 11.3px);
+                grid-column: span {cardLayoutRightColumns};
+            }
+            .cardLayoutRight div[leftInRight] {
+                display: {leftInRightDisplay};
+            }
             .cardIframe {
                 grid-row: span {rows};
                 grid-column: span {columns};
@@ -146,6 +158,25 @@ for i in range(len(widthLi)):
         text = text.replace('{columns}', str(columns))
         text = text.replace('{rows}', str(rows))
         text = text.replace('{rowsLarge}', str(rows + 12))
+
+        if cardLayoutColumns - columns >= 3:
+            cardLayoutLeftColumns = int((cardLayoutColumns - columns) / 2)
+            if (cardLayoutColumns - columns) % 2 != 0:
+                cardLayoutLeftColumns += 1
+            cardLayoutRightColumns = cardLayoutColumns - columns - cardLayoutLeftColumns
+            cardLayoutLeftDisplay = 'grid'
+            leftInRightDisplay = 'none'
+        else:
+            cardLayoutLeftColumns = 0
+            cardLayoutRightColumns = cardLayoutColumns
+            cardLayoutLeftDisplay = 'none'
+            leftInRightDisplay = 'block'
+
+        text = text.replace('{cardLayoutLeftColumns}', str(cardLayoutLeftColumns))
+        text = text.replace('{cardLayoutLeftDisplay}', cardLayoutLeftDisplay)
+        text = text.replace('{cardLayoutRightColumns}', str(cardLayoutRightColumns))
+        text = text.replace('{leftInRightDisplay}', leftInRightDisplay)
+
         resultLi.append(text)
 
 fOut = open('game.css', 'w')

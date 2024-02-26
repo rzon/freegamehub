@@ -27,8 +27,47 @@ function iframeLoadFunc() {
 function appendCsvDataToHtml() {
     var gameUrlLi = getCsvData();
 
-    var nineGridItemTemplateHtmlLi = [];
+    var leftCount = parseInt(gameUrlLi.length / 2);
+    if (gameUrlLi % 2 != 0) {
+        leftCount += 1;
+    }
 
+    var leftHtmlLi = [];
+    for (var i = 0; i < leftCount; i++) {
+        var nineGridItemTemplateHtml = $("#nineGridAreaTemplate").html();
+        var gameUrl = '/game.html?game=' + gameUrlLi[i][0].trim();
+        nineGridItemTemplateHtml = nineGridItemTemplateHtml.replace(/{gameUrl}/g, gameUrl);
+        nineGridItemTemplateHtml = nineGridItemTemplateHtml.replace(/{gamePic}/g, gameUrlLi[i][1].trim());
+        nineGridItemTemplateHtml = nineGridItemTemplateHtml.replace(/{flag}/g, "left");
+
+        leftHtmlLi.push(nineGridItemTemplateHtml);
+    }
+    $("#cardLayoutDivLeft").append(leftHtmlLi.join(""));
+
+    var rightHtmlLi = [];
+    for (var i = 0; i < leftCount; i++) {
+        var nineGridItemTemplateHtml = $("#nineGridAreaTemplate").html();
+        var gameUrl = '/game.html?game=' + gameUrlLi[i][0].trim();
+        nineGridItemTemplateHtml = nineGridItemTemplateHtml.replace(/{gameUrl}/g, gameUrl);
+        nineGridItemTemplateHtml = nineGridItemTemplateHtml.replace(/{gamePic}/g, gameUrlLi[i][1].trim());
+        nineGridItemTemplateHtml = nineGridItemTemplateHtml.replace(/{flag}/g, "leftInRight");
+
+        rightHtmlLi.push(nineGridItemTemplateHtml);
+    }
+    for (var i = leftCount; i < gameUrlLi.length; i++) {
+        var nineGridItemTemplateHtml = $("#nineGridAreaTemplate").html();
+        var gameUrl = '/game.html?game=' + gameUrlLi[i][0].trim();
+        nineGridItemTemplateHtml = nineGridItemTemplateHtml.replace(/{gameUrl}/g, gameUrl);
+        nineGridItemTemplateHtml = nineGridItemTemplateHtml.replace(/{gamePic}/g, gameUrlLi[i][1].trim());
+        nineGridItemTemplateHtml = nineGridItemTemplateHtml.replace(/{flag}/g, "right");
+
+        rightHtmlLi.push(nineGridItemTemplateHtml);
+    }
+
+    $("#cardLayoutDivRight").append(rightHtmlLi.join(""));
+
+    /*
+    var nineGridItemTemplateHtmlLi = [];
     for (var i = 0; i < gameUrlLi.length; i++) {
         var nineGridItemTemplateHtml = $("#nineGridAreaTemplate").html();
         var gameUrl = '/game.html?game=' + gameUrlLi[i][0].trim();
@@ -39,6 +78,7 @@ function appendCsvDataToHtml() {
     }
 
     $("#cardLayoutDiv").append(nineGridItemTemplateHtmlLi.join(""));
+    */
 }
 
 /**

@@ -134,7 +134,7 @@
             grid-gap: 16px;
             /*grid-template-columns: repeat(4, 66px);*/
         }
-        .cardIframeWrapper {
+        .cardIframeWrapper, .cardLayoutLeft, .cardLayoutRight {
             position: relative;
             justify-content: center;
             display: grid;
@@ -355,6 +355,8 @@
                     </div>
                 </div>
                 <div id="cardLayoutDiv" class="cardLayout" style="" css-index>
+                    <div id="cardLayoutDivLeft" class="cardLayoutLeft">
+                    </div>
                     <div class="cardIframeWrapper">
                         <div class="cardIframe">
                             <div id="cardIframeSuperposeDiv" class="cardIframeSuperpose">
@@ -386,6 +388,8 @@
                             </script>
                         </div>
                     </div>
+                    <div id="cardLayoutDivRight" class="cardLayoutRight">
+                    </div>
                 </div>
             </div>
         </div>
@@ -411,7 +415,7 @@
     </div>
 
     <script id="nineGridAreaTemplate" type="text/template">
-        <div class="nine_grid_area" css-ninegridarea displayOrder="0">
+        <div class="nine_grid_area" css-ninegridarea displayOrder="0" {flag}>
             <div class="clickEnlarge">
                 <a href="{gameUrl}" css-ninegridarea target="_self">
                     <img css-ninegridarea data-src="{gamePic}" src="{gamePic}" lazy="loaded" alt="Traffic Intersection">
