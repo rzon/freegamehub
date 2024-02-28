@@ -79,6 +79,16 @@ function play() {
     }
 }
 
+function trackClickPlay() {
+    // 确保TikTok像素代码已加载
+    if (window.ttq) {
+        // 触发追踪事件
+        window.ttq.track('clickplay', {});
+    }
+    // 调用原有的play()函数
+    play();
+}
+
 $(document).ready(function(){
     var gameUrl = getGameUrl();
     if (gameUrl) {
