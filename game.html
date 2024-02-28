@@ -138,16 +138,16 @@
             justify-content: center;
             display: grid;
             height: 100%;
-            grid-auto-rows: 66px;
+            grid-auto-rows: 11.3px;
             grid-gap: 16px;
             /*grid-template-columns: repeat(4, 66px);*/
         }
-        .cardIframeWrapper {
+        .cardIframeWrapper, .cardLayoutLeft, .cardLayoutRight {
             position: relative;
             justify-content: center;
             display: grid;
             height: 100%;
-            grid-auto-rows: 66px;
+            grid-auto-rows: 11.3px;
             grid-gap: 16px;
         }
         .cardIframe {
@@ -172,8 +172,8 @@
             border-radius: 15px;
             height: 100%;
             box-shadow: 0 3px 18px 0 rgb(0 0 0/16%);
-            grid-row: span 1;
-            grid-column: span 1;
+            grid-row: span 3;
+            grid-column: span 3;
         }
         .nine_grid_area>div img[css-ninegridarea] {
             border-radius: 15px;
@@ -363,6 +363,8 @@
                     </div>
                 </div>
                 <div id="cardLayoutDiv" class="cardLayout" style="" css-index>
+                    <div id="cardLayoutDivLeft" class="cardLayoutLeft">
+                    </div>
                     <div class="cardIframeWrapper">
                         <div class="cardIframe">
                             <div id="cardIframeSuperposeDiv" class="cardIframeSuperpose">
@@ -394,6 +396,8 @@
                             </script>
                         </div>
                     </div>
+                    <div id="cardLayoutDivRight" class="cardLayoutRight">
+                    </div>
                 </div>
             </div>
         </div>
@@ -419,7 +423,7 @@
     </div>
 
     <script id="nineGridAreaTemplate" type="text/template">
-        <div class="nine_grid_area" css-ninegridarea displayOrder="0">
+        <div class="nine_grid_area" css-ninegridarea displayOrder="0" {flag}>
             <div class="clickEnlarge">
                 <a href="{gameUrl}" css-ninegridarea target="_self">
                     <img css-ninegridarea data-src="{gamePic}" src="{gamePic}" lazy="loaded" alt="Traffic Intersection">
