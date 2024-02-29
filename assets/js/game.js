@@ -115,14 +115,7 @@ function play() {
     var gameUrl = getGameUrl();
     if (gameUrl) {
         $("#cardIframeSuperposeDiv").css("display", "none");
-        // 显示透明的覆盖层
-        $("#transparentOverlay").css("display", "block");
-        $("#transparentOverlay").one('click', function() {
-            // 隐藏透明的覆盖层
-            $("#transparentOverlay").css("display", "none");
-            // 继续加载H5游戏
-            frames['gameIframe'].location.href = gameUrl;
-        });
+        frames['gameIframe'].location.href = gameUrl;
     }
 }
 
