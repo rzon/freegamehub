@@ -77,35 +77,35 @@ heightLi.append([1303.001, 3000])
 
 
 template = '''@media screen {widthText} {heightText} {
-.cardLayout {
- grid-template-columns: repeat({cardLayoutColumns}, 11.3px);
-}
-.cardIframeWrapper {
- grid-template-columns: repeat({columns}, 11.3px);
- grid-row: span {rowsLarge};
- grid-column: span {columns};
-}
-.cardLayoutLeft {
- grid-template-columns: repeat({cardLayoutLeftColumns}, 11.3px);
- display: {cardLayoutLeftDisplay};
- grid-column: span {cardLayoutLeftColumns};
-}
-.cardLayoutRight {
- grid-template-columns: repeat({cardLayoutRightColumns}, 11.3px);
- grid-column: span {cardLayoutRightColumns};
-}
-.cardLayoutRight div[leftInRight] {
- display: {leftInRightDisplay};
-}
-.cardIframe {
- grid-row: span {rows};
- grid-column: span {columns};
-}
-.cardIframeAds {
- grid-row: span 12;
- grid-column: span {columns};
-}
-}'''
+            .cardLayout {
+                grid-template-columns: repeat({cardLayoutColumns}, 11.3px);
+            }
+            .cardIframeWrapper {
+                grid-template-columns: repeat({columns}, 11.3px);
+                grid-row: span {rowsLarge};
+                grid-column: span {columns};
+            }
+            .cardLayoutLeft {
+                grid-template-columns: repeat({cardLayoutLeftColumns}, 11.3px);
+                display: {cardLayoutLeftDisplay};
+                grid-column: span {cardLayoutLeftColumns};
+            }
+            .cardLayoutRight {
+                grid-template-columns: repeat({cardLayoutRightColumns}, 11.3px);
+                grid-column: span {cardLayoutRightColumns};
+            }
+            .cardLayoutRight div[leftInRight] {
+                display: {leftInRightDisplay};
+            }
+            .cardIframe {
+                grid-row: span {rows};
+                grid-column: span {columns};
+            }
+            .cardIframeAds {
+                grid-row: span 12;
+                grid-column: span {columns};
+            }
+        }'''
 
 widthTemplate = '''and (min-width:{minWidth}px) and (max-width:{maxWidth}px)'''
 heightTemplate = '''and (min-height:{minHeight}px) and (max-height:{maxHeight}px)'''
