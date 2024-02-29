@@ -115,7 +115,14 @@ function play() {
     var gameUrl = getGameUrl();
     if (gameUrl) {
         $("#cardIframeSuperposeDiv").css("display", "none");
-        frames['gameIframe'].location.href = gameUrl;
+        // 显示透明的覆盖层
+        $("#transparentOverlay").css("display", "block");
+        $("#transparentOverlay").one('click', function() {
+            // 隐藏透明的覆盖层
+            $("#transparentOverlay").css("display", "none");
+            // 继续加载H5游戏
+            frames['gameIframe'].location.href = gameUrl;
+        });
     }
 }
 
@@ -124,6 +131,7 @@ function trackClickPlay() {
     if (window.ttq) {
         // 触发追踪事件
         window.ttq.track('clickplay', {});
+        window.ttq.track('clickplayingame', {});
     }
     // 调用原有的play()函数
     play();
