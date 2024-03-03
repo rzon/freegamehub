@@ -18,7 +18,9 @@
         var adsbygoogleBottomScript = "<script>(adsbygoogle = window.adsbygoogle || []).push({});<\/script>";
     </script>
     <meta name="monetag" content="3a5f021ae2709e1a64886c7b4731a837">
+    <link rel="stylesheet" href="/assets/css/jquery-ui.min.css">
     <script type="text/javascript" src="/assets/js/jquery-3.7.1.min.js"></script>
+    <script type="text/javascript" src="/assets/js/jquery-ui.min.js"></script>
     <script type="text/javascript" src="/assets/js/common.js"></script>
     <script type="text/javascript" src="/assets/js/game.js"></script>
     <!-- TikTok ads -->
@@ -422,6 +424,10 @@
         </div>
     </div>
 
+    <!-- 点击 play 的弹出广告框 -->
+    <div id="clickPlayDialog" style="display: none">
+    </div>
+
     <script id="nineGridAreaTemplate" type="text/template">
         <div class="nine_grid_area" css-ninegridarea displayOrder="0" {flag}>
             <div class="clickEnlarge">
@@ -429,6 +435,20 @@
                     <img css-ninegridarea data-src="{gamePic}" src="{gamePic}" lazy="loaded" alt="Traffic Intersection">
                 </a>
             </div>
+        </div>
+    </script>
+
+    <script id="clickPlayAdsTemplate" type="text/template">
+        <div style="width: {width}px">
+            {adsbygoogleScriptContent}
+            <!-- freegamehub-展示广告竖1 -->
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-4694110216243855"
+                 data-ad-slot="8563230117"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+            {adsbygoogleBottomScriptContent}
         </div>
     </script>
 

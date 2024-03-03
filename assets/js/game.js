@@ -116,6 +116,22 @@ function play() {
     if (gameUrl) {
         $("#cardIframeSuperposeDiv").css("display", "none");
         frames['gameIframe'].location.href = gameUrl;
+        var width = $(window).width() - 10;
+        var height = $(window).height() - 10;
+        $("#clickPlayDialog").dialog({
+            modal: true,
+            title: 'Advertisement',
+            width: width,
+            height: height,
+            open: function( event, ui ) {
+                var googleAdsTemplateHtml = $("#clickPlayAdsTemplate").html();
+                googleAdsTemplateHtml = googleAdsTemplateHtml.replace(/{adsbygoogleScriptContent}/g, adsbygoogleScript);
+                googleAdsTemplateHtml = googleAdsTemplateHtml.replace(/{adsbygoogleBottomScriptContent}/g, adsbygoogleBottomScript);
+                googleAdsTemplateHtml = googleAdsTemplateHtml.replace(/{width}/g, (width - 10) + "px");
+
+                $("#clickPlayDialog").html(googleAdsTemplateHtml);
+            }
+        });
     }
 }
 
