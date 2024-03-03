@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link id="manifest" rel="manifest" href="/assets/other/webmanifest.json" />
-    <title>Play iMetaJoy and Have Fun</title>
+    <title>Play Freegame and Have Fun</title>
     <meta name="keywords" content="Online games, free games, h5 games, free online games, browser games, mobile games, popular games, puzzle games, action games, adventure games, sport games, arcade games, casual games, racing games, ball games, shooting games, gun games"
     />
     <meta name="description" content="Play the best games on freegamehub.top. Including sport games, arcade games and more. Instantly play online for free!">
@@ -21,17 +21,22 @@
     gtag('config', 'G-1RP6E6GC5H');
     </script>
     <meta name="google-adsense-account" content="ca-pub-4694110216243855">
-    <!--<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4694110216243855" crossorigin="anonymous"></script>-->
+
     <script type="text/javascript">
         var adsbygoogleScript = "<script async src=\"https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4694110216243855\" crossorigin=\"anonymous\"><\/script>";
 
         var adsbygoogleBottomScript = "<script>(adsbygoogle = window.adsbygoogle || []).push({});<\/script>";
     </script>
-    <!--
-    <meta name="monetag" content="3a5f021ae2709e1a64886c7b4731a837">
-    monetag多标签广告
-    <script src="https://alwingulla.com/88/tag.min.js" data-zone="35437" async data-cfasync="false"></script>
-    -->
+    <!-- TikTok ads -->
+    <script>
+        !function (w, d, t) {
+          w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie"],ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);ttq.instance=function(t){for(var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n]);return e},ttq.load=function(e,n){var i="https://analytics.tiktok.com/i18n/pixel/events.js";ttq._i=ttq._i||{},ttq._i[e]=[],ttq._i[e]._u=i,ttq._t=ttq._t||{},ttq._t[e]=+new Date,ttq._o=ttq._o||{},ttq._o[e]=n||{};var o=document.createElement("script");o.type="text/javascript",o.async=!0,o.src=i+"?sdkid="+e+"&lib="+t;var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(o,a)};
+        
+          ttq.load('CNFIGBJC77U60BOILT6G');
+          ttq.page();
+        }(window, document, 'ttq');
+    </script>
+    <!-- TikTok ads end -->
     <script type="text/javascript" src="/assets/js/jquery-3.7.1.min.js"></script>
     <script type="text/javascript" src="/assets/js/common.js"></script>
     <script type="text/javascript" src="/assets/js/index.js"></script>
@@ -1209,10 +1214,22 @@
 
     <script id="nineGridItemTemplate" type="text/template">
         <div class="clickEnlarge" css-ninegridarea>
-            <a href="{gameUrl}" css-ninegridarea target="_self">
+            <a href="{gameUrl}" class="css-ninegridarea" target="_self" onclick="trackGameClick('{gameUrl}')">
                 <img css-ninegridarea data-src="{gamePic}" src="{gamePic}" lazy="loaded" alt="Traffic Intersection">
             </a>
         </div>
+    </script>
+    <script>
+        function trackGameClick(gameUrl) {
+            // 确保TikTok像素代码已加载
+            if (window.ttq) {
+                // 触发追踪事件
+                window.ttq.track('ClickButton', {
+                    // 在这里添加您想要追踪的任何数据
+                    gameUrl: gameUrl
+                });
+            }
+        }
     </script>
 
     <script id="googleAdsTemplate" type="text/template">
