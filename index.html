@@ -544,6 +544,11 @@
             cursor: pointer
         }
 
+        .threeGameAreaContextDetailAdsCls {
+            overflow: hidden;
+            height: 268px;
+        }
+
         .three_game_area_static>.three_game_area_context[css-threegamearea] {
             width: 100%
         }
@@ -1265,7 +1270,9 @@
                 <div class="three_game_area_header" css-threegamearea>Popular games</div>
                 <div class="three_game_area_line" css-threegamearea></div>
                 <div class="three_game_area_context" css-threegamearea>
-                    {threeGameAreaContextDetailAdsContent}
+                    <div class="threeGameAreaContextDetailAdsCls">
+                        {threeGameAreaContextDetailAdsContent}
+                    </div>
                     <!--
                     <div css-threegamearea>
                         <div class="three_game_area_context_detail" css-threegamearea>
@@ -1287,7 +1294,25 @@
                         </div>
                     </div>
                     -->
-                    <!--
+                    <div css-threegamearea>
+                        <div class="three_game_area_context_detail" css-threegamearea>
+                            <a href="/game.html?game=/game/MoveItAll/" class="clickEnlarge" style="display: flex;" target="_self">
+                                <div css-threegamearea>
+                                    <img css-threegamearea data-src="https://play-lh.googleusercontent.com/sITBmmZFgPL1jqJQ71_4ZxtOS28VrrWzaIOJY-D50VUAEW7WYHVqpEKQpOidzTj3Eyiq=w240-h480-rw" src="https://play-lh.googleusercontent.com/sITBmmZFgPL1jqJQ71_4ZxtOS28VrrWzaIOJY-D50VUAEW7WYHVqpEKQpOidzTj3Eyiq=w240-h480-rw"
+                                         lazy="loading" alt="Move It All">
+                                </div>
+                                <div class="context_title" css-threegamearea>
+                                    <div css-threegamearea>
+                                        <div css-threegamearea>Move It All</div>
+                                        <div css-threegamearea>io game</div>
+                                    </div>
+                                    <div css-threegamearea>
+                                        <div css-threegamearea class="playtext">Play</div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
                     <div css-threegamearea>
                         <div class="three_game_area_context_detail" css-threegamearea>
                             <a href="/game.html?game=/game/ABCMergeFight/" class="clickEnlarge" style="display: flex;" target="_self">
@@ -1307,7 +1332,6 @@
                             </a>
                         </div>
                     </div>
-                    -->
                     <!--
                     <div css-threegamearea>
                         <div class="three_game_area_context_detail" css-threegamearea>
