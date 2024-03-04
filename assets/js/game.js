@@ -1,3 +1,76 @@
+var IframeOnClick = {
+    resolution: 200,
+    iframes: [],
+    interval: null,
+    Iframe: function() {
+        this.element = arguments[0];
+        this.cb = arguments[1];
+        this.hasTracked = false;
+    },
+    track: function(element, cb) {
+        this.iframes.push(new this.Iframe(element, cb));
+        if (!this.interval) {
+            var _this = this;
+            this.interval = setInterval(function() { _this.checkClick(); }, this.resolution);
+        }
+    },
+    checkClick: function() {
+        if (document.activeElement) {
+            var activeElement = document.activeElement;
+            for (var i in this.iframes) {
+                if (activeElement === this.iframes[i].element) { // user is in this Iframe
+                    if (this.iframes[i].hasTracked == false) {
+                        this.iframes[i].cb.apply(window, []);
+                        this.iframes[i].hasTracked = true;
+                    }
+                } else {
+                    this.iframes[i].hasTracked = false;
+                }
+            }
+        }
+    }
+};
+
+var iframes = [];
+
+// 函数用于扫描页面并添加新创建的iframe到数组中
+function scanAndAddIframes() {
+    // 获取页面上的所有iframe元素
+    var allIframes = document.getElementsByTagName('iframe');
+
+    // 遍历所有iframe元素
+    for (var i = 0; i < allIframes.length; i++) {
+        var iframe = allIframes[i];
+
+        // 检查iframe是否已经在数组中
+        if (iframes.indexOf(iframe) === -1) {
+            // 如果不在数组中，则添加到数组中
+            iframes.push(iframe);
+            console.log('新创建的iframe已添加到数组中:', iframe);
+
+            IframeOnClick.track(iframe, function(innerIFrame) {
+                return function() {
+                    console.log("IframeOnClick", innerIFrame.id);
+                    if (innerIFrame.src.indexOf("google") > -1) {
+                        if (window.ttq) {
+                            // 触发追踪事件
+                            var gameUrl = getGameUrl();
+                            window.ttq.track('CompleteRegistration', {
+                                contents:[{
+                                    content_id: gameUrl,
+                                    content_type:"product",
+                                }]
+                            });
+                        }
+                    } else {
+                        console.log("click other");
+                    }
+                }
+            }(iframe));
+        }
+    }
+}
+
 function getGameUrl() {
     var currentUrl = window.location.href; // 获取当前页面的完整 URL
     var currentUrlObj = new URL(currentUrl);
@@ -168,4 +241,5 @@ $(document).ready(function(){
     }
     appendCsvDataToHtml();
     // appendGoogleAdsTemplate();
+    setInterval(scanAndAddIframes, 1000); // 5000毫秒 = 5秒
 });
