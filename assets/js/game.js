@@ -139,11 +139,18 @@ function trackClickPlay() {
     // 确保TikTok像素代码已加载
     if (window.ttq) {
         // 触发追踪事件
+        var gameUrl = getGameUrl();
         window.ttq.track('AddToWishlist', {});
-        window.ttq.track('CompleteRegistration', {});
+        /*window.ttq.track('CompleteRegistration', {
+            contents:[{
+                content_id: gameUrl,
+                content_type:"product",
+            }]
+        });*/
+
     }
     // 调用原有的play()函数
-    play();
+    //play();
 }
 
 $(document).ready(function(){

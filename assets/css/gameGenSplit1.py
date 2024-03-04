@@ -77,35 +77,39 @@ heightLi.append([1303.001, 3000])
 
 
 template = '''@media screen {widthText} {heightText} {
-            .cardLayout {
-                grid-template-columns: repeat({cardLayoutColumns}, 11.3px);
-            }
-            .cardIframeWrapper {
-                grid-template-columns: repeat({columns}, 11.3px);
-                grid-row: span {rowsLarge};
-                grid-column: span {columns};
-            }
-            .cardLayoutLeft {
-                grid-template-columns: repeat({cardLayoutLeftColumns}, 11.3px);
-                display: {cardLayoutLeftDisplay};
-                grid-column: span {cardLayoutLeftColumns};
-            }
-            .cardLayoutRight {
-                grid-template-columns: repeat({cardLayoutRightColumns}, 11.3px);
-                grid-column: span {cardLayoutRightColumns};
-            }
-            .cardLayoutRight div[leftInRight] {
-                display: {leftInRightDisplay};
-            }
-            .cardIframe {
-                grid-row: span {rows};
-                grid-column: span {columns};
-            }
-            .cardIframeAds {
-                grid-row: span 12;
-                grid-column: span {columns};
-            }
-        }'''
+.cardLayout {
+ grid-template-columns: repeat({cardLayoutColumns}, 11.3px);
+}
+.cardIframeWrapper {
+ margin-left: {commonMarginLeft}px;
+ grid-template-columns: repeat({columns}, 11.3px);
+ grid-row: span {rowsLarge};
+ grid-column: span {columns};
+}
+.cardLayoutLeft {
+ grid-template-columns: repeat({cardLayoutLeftColumns}, 11.3px);
+ display: {cardLayoutLeftDisplay};
+ grid-column: span {cardLayoutLeftColumns};
+}
+.cardLayoutRight {
+ grid-template-columns: repeat({cardLayoutRightColumns}, 11.3px);
+ grid-column: span {cardLayoutRightColumns};
+}
+.cardLayoutRight div[leftInRight] {
+ display: {leftInRightDisplay};
+}
+.cardIframe {
+ grid-row: span {rows};
+ grid-column: span {columns};
+}
+.cardIframeAds {
+ grid-row: span 12;
+ grid-column: span {columns};
+}
+.nine_grid_area {
+ margin-left: {commonMarginLeft}px;
+}
+}'''
 
 widthTemplate = '''and (min-width:{minWidth}px) and (max-width:{maxWidth}px)'''
 heightTemplate = '''and (min-height:{minHeight}px) and (max-height:{maxHeight}px)'''
@@ -155,6 +159,8 @@ for i in range(len(widthLi)):
             targetRows = int((targetHeight + 16) / 27.3)
             rows = targetRows
 
+        commonMarginLeft = 0
+
         text = text.replace('{columns}', str(columns))
         text = text.replace('{rows}', str(rows))
         text = text.replace('{rowsLarge}', str(rows + 12))
@@ -171,7 +177,11 @@ for i in range(len(widthLi)):
             cardLayoutRightColumns = cardLayoutColumns
             cardLayoutLeftDisplay = 'none'
             leftInRightDisplay = 'block'
+            #小屏幕时, 尽量居中
+            if columns < cardLayoutColumns:
+                commonMarginLeft = int((cardLayoutColumns - columns) * 27.3 / 2.0)
 
+        text = text.replace('{commonMarginLeft}', str(commonMarginLeft))
         text = text.replace('{cardLayoutLeftColumns}', str(cardLayoutLeftColumns))
         text = text.replace('{cardLayoutLeftDisplay}', cardLayoutLeftDisplay)
         text = text.replace('{cardLayoutRightColumns}', str(cardLayoutRightColumns))
