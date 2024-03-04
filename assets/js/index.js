@@ -15,6 +15,13 @@ function appendCardTemplateHtml(resultHtmlLi, nineGridItemTemplateHtmlLi) {
  */
 function appendPopularGameTemplateHtml(resultHtmlLi) {
     var popularGameTemplateHtml = $("#popularGameTemplate").html();
+
+    var googleAdsTemplateHtml = $("#googleAdsTemplatePopular").html();
+    googleAdsTemplateHtml = googleAdsTemplateHtml.replace(/{adsbygoogleScriptContent}/g, adsbygoogleScript);
+    googleAdsTemplateHtml = googleAdsTemplateHtml.replace(/{adsbygoogleBottomScriptContent}/g, adsbygoogleBottomScript);
+
+    popularGameTemplateHtml = popularGameTemplateHtml.replace(/{threeGameAreaContextDetailAdsContent}/g, googleAdsTemplateHtml);
+
     resultHtmlLi.push(popularGameTemplateHtml);
 }
 

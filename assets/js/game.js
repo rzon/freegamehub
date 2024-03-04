@@ -116,6 +116,22 @@ function play() {
     if (gameUrl) {
         $("#cardIframeSuperposeDiv").css("display", "none");
         frames['gameIframe'].location.href = gameUrl;
+        var width = $(window).width() - 10;
+        var height = $(window).height() - 10;
+        $("#clickPlayDialog").dialog({
+            modal: true,
+            title: 'Advertisement',
+            width: width,
+            height: height,
+            open: function( event, ui ) {
+                var googleAdsTemplateHtml = $("#clickPlayAdsTemplate").html();
+                googleAdsTemplateHtml = googleAdsTemplateHtml.replace(/{adsbygoogleScriptContent}/g, adsbygoogleScript);
+                googleAdsTemplateHtml = googleAdsTemplateHtml.replace(/{adsbygoogleBottomScriptContent}/g, adsbygoogleBottomScript);
+                googleAdsTemplateHtml = googleAdsTemplateHtml.replace(/{width}/g, (width - 10) + "px");
+
+                $("#clickPlayDialog").html(googleAdsTemplateHtml);
+            }
+        });
     }
 }
 
@@ -123,11 +139,18 @@ function trackClickPlay() {
     // 确保TikTok像素代码已加载
     if (window.ttq) {
         // 触发追踪事件
+        var gameUrl = getGameUrl();
         window.ttq.track('AddToWishlist', {});
-        window.ttq.track('CompleteRegistration', {});
+        /*window.ttq.track('CompleteRegistration', {
+            contents:[{
+                content_id: gameUrl,
+                content_type:"product",
+            }]
+        });*/
+
     }
     // 调用原有的play()函数
-    play();
+    //play();
 }
 
 $(document).ready(function(){

@@ -27,7 +27,7 @@ function getCsvData() {
         success: function(data, status, xhr) {
             // 请求成功时的回调函数
             response = data;
-            console.log('Data received: ', data);
+            // console.log('Data received: ', data);
         },
         error: function(xhr, status, error) {
             // 请求失败时的回调函数
