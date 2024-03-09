@@ -91,8 +91,13 @@ var IframeOnClick = {
 
 var iframes = [];
 
+var isOverGoogleAd = false;
+
+var isAddBlurFunc = false;
+
 // 函数用于扫描页面并添加新创建的iframe到数组中
 function scanAndAddIframes() {
+    addWindowBlurFunc();
     // 获取页面上的所有iframe元素
     var allIframes = document.getElementsByTagName('iframe');
 
@@ -106,25 +111,57 @@ function scanAndAddIframes() {
             iframes.push(iframe);
             console.log('新创建的iframe已添加到数组中:', iframe);
 
-            IframeOnClick.track(iframe, function(innerIFrame) {
-                return function() {
-                    console.log("IframeOnClick", innerIFrame.id);
-                    if (innerIFrame.src.indexOf("google") > -1) {
-                        if (window.ttq) {
-                            // 触发追踪事件
-                            var gameUrl = getGameUrl();
-                            window.ttq.track('CompleteRegistration', {
-                                contents:[{
-                                    content_id: gameUrl,
-                                    content_type:"product",
-                                }]
-                            });
+            if (iframe.src.indexOf("google") > -1) {
+                $( iframe)
+                    .mouseover(
+                        function(){
+                            isOverGoogleAd = true;
                         }
-                    } else {
-                        console.log("click other");
+                    )
+                    .mouseout(
+                        function(){
+                            isOverGoogleAd = false;
+                        }
+                    )
+                ;
+            }
+
+        }
+    }
+}
+
+function addWindowBlurFunc() {
+    if (!isAddBlurFunc) {
+        $( window ).blur(
+            function(){
+                // Check to see if the user was over a Google
+                // AdSense ad when the window was blurred.
+                if (isOverGoogleAd){
+                    // Because the user was mousing over a
+                    // Google AdSense iFrame when the window
+                    // was blurred, it is reasonable to
+                    // estimate that the blurring is due to
+                    // the user clicking one of the ads.
+                    if (window.ttq) {
+                        // 触发追踪事件
+                        var gameUrl = 'index';
+                        if (typeof(getGameUrl) != 'undefined') {
+                            gameUrl = getGameUrl();
+                        }
+                        window.ttq.track('CompleteRegistration', {
+                            contents:[{
+                                content_id: gameUrl,
+                                content_type:"product",
+                            }]
+                        });
                     }
                 }
-            }(iframe));
-        }
+            }
+        )
+        // Focus the window by default.
+            .focus()
+        ;
+
+        isAddBlurFunc = true;
     }
 }
