@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AdSense Ads Example</title>
+<style>
+  /* 全屏自适应且80%透明的底层 */
+  .full-screen-layer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* 80%透明度的黑色背景 */
+    z-index: 0; /* 确保它在底层 */
+  }
+
+  /* 固定宽高375x667的顶层 */
+  .content-layer {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 375px;
+    height: 667px;
+    background-color: #fff; /* 白色背景 */
+    transform: translate(-50%, -50%); /* 水平垂直居中 */
+    z-index: 1; /* 确保它在顶层 */
+    overflow: auto; /* 如果内容超过容器大小，添加滚动条 */
+  }
+</style>
+</head>
+<body>
+
+<!-- 全屏自适应且80%透明的底层 -->
+<div class="full-screen-layer"></div>
+
+<!-- 固定宽高375x667的顶层 -->
+<div class="content-layer">
+  <!-- Google AdSense 广告代码 -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4694110216243855"
+       crossorigin="anonymous"></script>
+  <!-- freegamehub-展示广告-InGame -->
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-4694110216243855"
+       data-ad-slot="5973147255"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>
+       (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+</div>
+
+</body>
+</html>
