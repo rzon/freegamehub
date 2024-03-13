@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AdSense Over Canvas</title>
+    <style>
+        /* 设置body的样式以确保广告和canvas居中 */
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        /* 为canvas设置一个相对定位 */
+        #unity-canvas {
+            position: relative;
+        }
+
+        /* 为AdSense广告设置绝对定位，使其覆盖在canvas上 */
+        .adsense-ad {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 1; /* 确保广告在canvas上方 */
+        }
+    </style>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+<body>
+
+<div id="unity-canvas">
+    <canvas width="580" height="928"></canvas>
+    <!-- AdSense Ad -->
+    <ins class="adsbygoogle adsense-ad"
+         style="display:block"
+         data-ad-client="ca-pub-4694110216243855"
+         data-ad-slot="5973147255"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+</div>
+
+<script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+</body>
+</html>
