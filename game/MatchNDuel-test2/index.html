@@ -7,8 +7,12 @@
           top: 50%;
           left: 50%;
           transform: translate(-50%, -50%);
-          z-index: 1; /* 确保广告在canvas上方 */
+          z-index: 1000; /* 确保广告在canvas上方 */
+
       }
+      .example_responsive_1 { width: 320px; height: 500px; }
+@media(min-width: 500px) { .example_responsive_1 { width: 468px; height: 60px; } }
+@media(min-width: 800px) { .example_responsive_1 { width: 728px; height: 90px; } }
   </style>
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -17,6 +21,17 @@
     <link rel="stylesheet" href="TemplateData/style.css">
   </head>
   <body>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <ins class="adsbygoogle adsense-ad example_responsive_1"
+         style="display:block"
+         data-ad-client="ca-pub-4694110216243855"
+         data-ad-slot="5973147255"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+</div>
+<script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
     <div id="unity-container" class="unity-desktop">
       <canvas id="unity-canvas" width=580 height=928></canvas>
       <div id="unity-loading-bar">
