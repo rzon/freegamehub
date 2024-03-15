@@ -5,7 +5,7 @@
       body, html {
           height: 100%;
           width: 100%;
-          min-width: 500px;
+          min-width: 600px;
           margin: 0;
           padding: 0;
           display: flex;
@@ -33,6 +33,9 @@
           padding: 10px; /* 内边距 */
           border-radius: 5px; /* 圆角 */
       }
+      .example_responsive_1 { width: 320px; height: 500px; }
+@media(min-width: 500px) { .example_responsive_1 { width: 468px; height: 60px; } }
+@media(min-width: 800px) { .example_responsive_1 { width: 728px; height: 90px; } }
   </style>
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -47,7 +50,7 @@
      <div id="adsense-overlay">
       <div class="adsense-container">
           <!-- AdSense 广告单元 -->
-          <ins class="adsbygoogle"
+          <ins class="adsbygoogle example_responsive_1"
      style="display:block"
      data-ad-client="ca-pub-4694110216243855"
      data-ad-slot="5973147255"
