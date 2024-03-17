@@ -73,19 +73,38 @@ data-full-width-responsive="true"></ins>
 (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
 -->
-<ins class="adsbygoogle adsense-ad example_responsive_1" 
-     style="display:none"
-     id="myAdSenseAd"
-     data-ad-client="ca-pub-4694110216243855"
-     data-ad-slot="5973147255"
-     data-ad-format="auto"
-     data-full-width-responsive="true"></ins>
 <!---->
 
 
 
 
     <script>
+
+      //
+      window.onload = function() {
+  // 插入广告代码
+  var adScript = document.createElement("script");
+  adScript.async = true;
+  adScript.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js";
+  document.body.appendChild(adScript);
+
+  // 创建广告单元
+  var adElement = document.createElement("ins");
+  adElement.className = "adsbygoogle adsense-ad example_responsive_1";
+  adElement.style.display = "block";
+  adElement.setAttribute("data-ad-client", "ca-pub-4694110216243855");
+  adElement.setAttribute("data-ad-slot", "5973147255");
+  adElement.setAttribute("data-ad-format", "auto");
+  adElement.setAttribute("data-full-width-responsive", "true");
+  document.body.appendChild(adElement);
+
+  adScript.onload = () => {
+    (window.adsbygoogle = window.adsbygoogle || []).push({});
+  }
+}
+      //
+
+
       var container = document.querySelector("#unity-container");
       var canvas = document.querySelector("#unity-canvas");
       var loadingBar = document.querySelector("#unity-loading-bar");
@@ -168,29 +187,6 @@ data-full-width-responsive="true"></ins>
           loadingBar.style.display = "none";
           fullscreenButton.onclick = () => {
             window.vuplex.SetFullscreen(1)/*https://support.vuplex.com/articles/webgl-fullscreen*/;
-
-            ///
-            ///
-            // 获取广告单元
-  var adElement = document.getElementById('myAdSenseAd');
-
-// 显示广告单元
-adElement.style.display = 'block';
-
-// 插入广告代码
-var adScript = document.createElement("script");
-adScript.async = true;
-adScript.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js";
-document.body.appendChild(adScript);
-
-adScript.onload = () => {
-  (window.adsbygoogle = window.adsbygoogle || []).push({});
-}
-            ////
-            ////
-
-
-
           };
         }).catch((message) => {
           alert(message);
