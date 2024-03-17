@@ -59,7 +59,7 @@ data-full-width-responsive="true"></ins>
 -->
 
 <!---->
-<!---->
+<!--
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <ins class="adsbygoogle adsense-ad example_responsive_1"
      style="display:none"
@@ -72,7 +72,14 @@ data-full-width-responsive="true"></ins>
 <script>
 (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
-<!---->
+-->
+<ins class="adsbygoogle adsense-ad example_responsive_1" 
+     style="display:none"
+     id="myAdSenseAd"
+     data-ad-client="ca-pub-4694110216243855"
+     data-ad-slot="5973147255"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
 <!---->
 
 
@@ -161,6 +168,29 @@ data-full-width-responsive="true"></ins>
           loadingBar.style.display = "none";
           fullscreenButton.onclick = () => {
             window.vuplex.SetFullscreen(1)/*https://support.vuplex.com/articles/webgl-fullscreen*/;
+
+            ///
+            ///
+            // 获取广告单元
+  var adElement = document.getElementById('myAdSenseAd');
+
+// 显示广告单元
+adElement.style.display = 'block';
+
+// 插入广告代码
+var adScript = document.createElement("script");
+adScript.async = true;
+adScript.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js";
+document.body.appendChild(adScript);
+
+adScript.onload = () => {
+  (window.adsbygoogle = window.adsbygoogle || []).push({});
+}
+            ////
+            ////
+
+
+
           };
         }).catch((message) => {
           alert(message);
