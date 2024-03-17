@@ -79,12 +79,6 @@ data-full-width-responsive="true"></ins>
     <script>
       /////
       window.onload = function() {
-  // 插入广告代码
-  var adScript = document.createElement("script");
-  adScript.async = true;
-  adScript.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js";
-  document.body.appendChild(adScript);
-
   // 获取容器和关闭按钮
   var adContainer = document.getElementById('adContainer');
   var closeAdBtn = document.getElementById('closeAdBtn');
@@ -93,13 +87,29 @@ data-full-width-responsive="true"></ins>
   window.adContainer = adContainer;
   window.closeAdBtn = closeAdBtn;
 
+  // 添加点击事件监听器
+  window.closeAdBtn.addEventListener('click', hideAdContainer);
+
+  // 注释或删除以下代码
+  // var adScript = document.createElement("script");
+  // adScript.async = true;
+  // adScript.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js";
+  // document.body.appendChild(adScript);
+  // adScript.onload = () => {
+  //   (window.adsbygoogle = window.adsbygoogle || []).push({});
+  // }
+}
+// 延迟插入广告代码
+setTimeout(function() {
+  var adScript = document.createElement("script");
+  adScript.async = true;
+  adScript.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js";
+  document.body.appendChild(adScript);
+
   adScript.onload = () => {
     (window.adsbygoogle = window.adsbygoogle || []).push({});
   }
-
-  // 添加点击事件监听器
-  window.closeAdBtn.addEventListener('click', hideAdContainer);
-}
+}, 1000); // 延迟 1 秒插入广告代码
 
 // 显示广告容器
 function showAdContainer() {
