@@ -23,19 +23,7 @@
     <!---->
   </head>
   <body>
-    <!--
-
-    -->
-    <div id="adContainer" style="position: fixed; bottom: 0; left: 0; width: 100%; height: 120px; background-color: rgba(255,255,255,0.8); display: none;">
-      <div style="position: absolute; left: 50%; transform: translateX(-50%);">
-        <!-- 广告单元 -->
-        <ins class="adsbygoogle adsense-ad example_responsive_1" data-ad-client="ca-pub-4694110216243855" data-ad-slot="5973147255" data-ad-format="auto" data-full-width-responsive="true"></ins>
-      </div>
-      <button id="closeAdBtn" style="position: absolute; top: 5px; right: 5px;">关闭广告</button>
-    </div>
-    <!--
-
-    -->
+   
     <div id="unity-container" class="unity-desktop">
       <canvas id="unity-canvas" width=580 height=928></canvas>
       <div id="unity-loading-bar">
@@ -77,54 +65,29 @@ data-full-width-responsive="true"></ins>
 
 
     <script>
-      /////
-      window.onload = function() {
-  // 获取容器和关闭按钮
-  var adContainer = document.getElementById('adContainer');
-  var closeAdBtn = document.getElementById('closeAdBtn');
-
-  // 保存引用
-  window.adContainer = adContainer;
-  window.closeAdBtn = closeAdBtn;
-
-  // 添加点击事件监听器
-  window.closeAdBtn.addEventListener('click', hideAdContainer);
-
-  // 注释或删除以下代码
-  // var adScript = document.createElement("script");
-  // adScript.async = true;
-  // adScript.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js";
-  // document.body.appendChild(adScript);
-  // adScript.onload = () => {
-  //   (window.adsbygoogle = window.adsbygoogle || []).push({});
-  // }
-}
-// 延迟插入广告代码
-setTimeout(function() {
+          //
+          window.onload = function() {
+  // 插入广告代码
   var adScript = document.createElement("script");
   adScript.async = true;
   adScript.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js";
   document.body.appendChild(adScript);
 
+  // 创建广告单元
+  var adElement = document.createElement("ins");
+  adElement.className = "adsbygoogle adsense-ad example_responsive_1";
+  adElement.style.display = "block";
+  adElement.setAttribute("data-ad-client", "ca-pub-4694110216243855");
+  adElement.setAttribute("data-ad-slot", "5973147255");
+  adElement.setAttribute("data-ad-format", "auto");
+  adElement.setAttribute("data-full-width-responsive", "true");
+  document.body.appendChild(adElement);
+
   adScript.onload = () => {
     (window.adsbygoogle = window.adsbygoogle || []).push({});
   }
-}, 1000); // 延迟 1 秒插入广告代码
-
-// 显示广告容器
-function showAdContainer() {
-  if (window.adContainer) {
-    window.adContainer.style.display = "block";
-  }
 }
-
-// 隐藏广告容器
-function hideAdContainer() {
-  if (window.adContainer) {
-    window.adContainer.style.display = "none";
-  }
-}
-      /////
+      //
       var container = document.querySelector("#unity-container");
       var canvas = document.querySelector("#unity-canvas");
       var loadingBar = document.querySelector("#unity-loading-bar");
