@@ -104,6 +104,15 @@
       };
     }
   </script>
+  <script type="text/javascript">
+    document.addEventListener('DOMContentLoaded', function() {
+        var closeButton = document.getElementById('closeButton');
+        closeButton.addEventListener('click', function() {
+            // 获取父级div并隐藏它
+            this.parentNode.style.display = 'none';
+        });
+    });
+  </script>
   <!---->
 </head>
 <body>
