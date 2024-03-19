@@ -77,9 +77,9 @@
     <button id="showAdBtn">Show Ads</button>
     <div class="fullscreen-bg"></div> <!-- 全屏背景层 -->
     <div id="myDiv" class="centered-div">
-        <!-- 其他内容 -->
+        <!-- 其他内容 
         <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4694110216243855"
-            crossorigin="anonymous"></script>
+            crossorigin="anonymous"></script> -->
         <!-- AdSense 广告单元 -->
         <ins class="adsbygoogle example_responsive_1 adsense-ad"
             style="display:block"
@@ -96,19 +96,57 @@
             </div>
             <!-- <button id="closeButton" class="close-button">关闭</button> -->
         </ins>
+        <!-- 
         <script>
             (adsbygoogle = window.adsbygoogle || []).push({});
         </script>
+        -->
     </div>
     <script>
+      function loadAdsenseScript() {
+        // 创建 script 元素
+        var script = document.createElement('script');
+        script.async = true;
+        script.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4694110216243855";
+        script.crossorigin = "anonymous";
+        // 将 script 元素添加到 DOM 中
+        document.head.appendChild(script);
+        // 添加事件监听器，等待脚本加载完成
+        script.onload = function() {
+          console.log('AdSense script loaded.');
+        };
+        // 处理脚本加载失败的情况
+        script.onerror = function() {
+          console.error('Failed to load AdSense script.');
+        };
+      }
       function showAdContainer() {
         var adContainer = document.getElementById('myDiv');
-        adContainer.style.display = 'block'; /* 显示广告容器 */
+        if (adContainer) {
+          adContainer.style.display = 'block'; /* 显示广告容器 */
+        }
         var bgLayer = document.querySelector('.fullscreen-bg');
-        bgLayer.style.display = 'block'; /* 显示背景层 */
+        if (bgLayer) {
+          bgLayer.style.display = 'block'; /* 显示背景层 */
+        }
+      }
+      function checkAndPushAdsense() {
+        // 检查 AdSense 脚本是否已经加载
+        if (window.adsbygoogle && window.adsbygoogle.length > 0) {
+          // 脚本已经加载，执行 push 操作
+          (adsbygoogle = window.adsbygoogle || []).push({});
+        } else {
+          // 脚本尚未加载，延迟执行 checkAndPushAdsense 函数
+          setTimeout(checkAndPushAdsense, 250);
+        }
       }
       document.getElementById('showAdBtn').addEventListener('click', function() {
-        showAdContainer(); /* 当按钮被点击时调用显示广告容器的函数 */
+        // 加载 AdSense 脚本
+        loadAdsenseScript();
+        // 显示背景层和广告容器
+        showAdContainer();
+        // 检查 AdSense 脚本是否已经加载，并执行 push 操作
+        checkAndPushAdsense();
       });
     </script>
     <div id="unity-container" class="unity-desktop">
