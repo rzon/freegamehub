@@ -18,6 +18,7 @@
           @media(min-width: 500px) { .example_responsive_1 { width: 468px; height: 468px; } }
           @media(min-width: 800px) { .example_responsive_1 { width: 580px; height: 580px; } }
           .centered-div {
+              display: none; /* 默认隐藏广告容器 */
               z-index: 1000;
               position: absolute;
               top: 0;
@@ -46,6 +47,7 @@
               height: 24px;
           }
           .fullscreen-bg {
+            display: none; /* 默认隐藏背景层 */
             position: fixed; /* 固定定位，全屏显示 */
             top: 0;
             left: 0;
@@ -72,32 +74,43 @@
       </script>
   </head>
   <body>
-  <div class="fullscreen-bg"></div> <!-- 全屏背景层 -->
-  <div id="myDiv" class="centered-div">
-      <!-- 其他内容 -->
-      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4694110216243855"
-          crossorigin="anonymous"></script>
-      <!-- AdSense 广告单元 -->
-      <ins class="adsbygoogle example_responsive_1 adsense-ad"
-          style="display:block"
-          data-ad-client="ca-pub-4694110216243855"
-          data-ad-slot="5973147255"
-          data-ad-format="auto"
-          data-full-width-responsive="true">
-          <!-- 关闭按钮 -->
-          <div id="closeButton" class="close-button">
-            <svg viewBox="0 0 48 48" fill="#FFF">
-              <path d="M38 12.83L35.17 10 24 21.17 12.83 10 10 12.83 21.17 24 10 35.17 12.83 38 24 26.83 35.17 38 38 35.17 26.83 24z"></path>
-              <path d="M0 0h48v48H0z" fill="none"></path>
-            </svg>
-          </div>
-          <!-- <button id="closeButton" class="close-button">关闭</button> -->
-      </ins>
-      <script>
-          (adsbygoogle = window.adsbygoogle || []).push({});
-      </script>
-  </div>
-
+    <button id="showAdBtn">Show Ads</button>
+    <div class="fullscreen-bg"></div> <!-- 全屏背景层 -->
+    <div id="myDiv" class="centered-div">
+        <!-- 其他内容 -->
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4694110216243855"
+            crossorigin="anonymous"></script>
+        <!-- AdSense 广告单元 -->
+        <ins class="adsbygoogle example_responsive_1 adsense-ad"
+            style="display:block"
+            data-ad-client="ca-pub-4694110216243855"
+            data-ad-slot="5973147255"
+            data-ad-format="auto"
+            data-full-width-responsive="true">
+            <!-- 关闭按钮 -->
+            <div id="closeButton" class="close-button">
+              <svg viewBox="0 0 48 48" fill="#FFF">
+                <path d="M38 12.83L35.17 10 24 21.17 12.83 10 10 12.83 21.17 24 10 35.17 12.83 38 24 26.83 35.17 38 38 35.17 26.83 24z"></path>
+                <path d="M0 0h48v48H0z" fill="none"></path>
+              </svg>
+            </div>
+            <!-- <button id="closeButton" class="close-button">关闭</button> -->
+        </ins>
+        <script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+    </div>
+    <script>
+      function showAdContainer() {
+        var adContainer = document.getElementById('myDiv');
+        adContainer.style.display = 'block'; /* 显示广告容器 */
+        var bgLayer = document.querySelector('.fullscreen-bg');
+        bgLayer.style.display = 'block'; /* 显示背景层 */
+      }
+      document.getElementById('showAdBtn').addEventListener('click', function() {
+        showAdContainer(); /* 当按钮被点击时调用显示广告容器的函数 */
+      });
+    </script>
     <div id="unity-container" class="unity-desktop">
       <canvas id="unity-canvas" width=580 height=928></canvas>
       <div id="unity-loading-bar">
