@@ -6,7 +6,6 @@
     <title>Unity WebGL Player | Match N Duel</title>
     <link rel="shortcut icon" href="TemplateData/favicon.ico">
     <link rel="stylesheet" href="TemplateData/style.css">
-
       <style>
           .adsense-ad {
               position: absolute;
@@ -26,7 +25,7 @@
               right: 0;
               transform: translateY(50%); /* 垂直居中 */
               width: 100%; /* 宽度为页面宽度 */
-              height: 100vh; /* 高度为页面高度的100% */
+              height: 50vh; /* 高度为页面高度的100% */
               /* 根据需要添加其他样式 */
               /*background-color: #f0f0f0;*/ /* 示例背景色 */
               /*padding: 20px;*/ /* 为了内容不会紧贴着边框 */
@@ -38,11 +37,13 @@
               position: absolute; /* 绝对定位 */
               top: 1px; /* 距离顶部10px */
               right: 1px; /* 距离右边10px */
-              background-color: #ccc; /* 示例背景色 */
+              background-color: rgba(204, 204, 204, 0.5); /* 示例背景色 */
               border: none; /* 无边框 */
               cursor: pointer; /* 鼠标悬停时变为手型 */
               /*padding: 5px 10px;*/ /* 内边距 */
               z-index: 1001;
+              width: 24px;
+              height: 24px;
           }
       </style>
       <script type="text/javascript">
@@ -71,7 +72,13 @@
           (adsbygoogle = window.adsbygoogle || []).push({});
       </script>
       <!-- 关闭按钮 -->
-      <button id="closeButton" class="close-button">关闭</button>
+      <div id="closeButton" class="close-button">
+        <svg viewBox="0 0 48 48" fill="#FFF">
+          <path d="M38 12.83L35.17 10 24 21.17 12.83 10 10 12.83 21.17 24 10 35.17 12.83 38 24 26.83 35.17 38 38 35.17 26.83 24z"></path>
+          <path d="M0 0h48v48H0z" fill="none"></path>
+        </svg>
+      </div>
+      <!-- <button id="closeButton" class="close-button">关闭</button> -->
   </div>
 
     <div id="unity-container" class="unity-desktop">
