@@ -58,81 +58,90 @@
             backdrop-filter: blur(5px); /* 添加模糊效果 */
           }
       </style>
-      <script type="text/javascript">
-          document.addEventListener('DOMContentLoaded', function() {
-              var closeButton = document.getElementById('closeButton');
-              closeButton.addEventListener('click', function() {
-                  // 获取父级div并隐藏它
-                  this.parentNode.style.display = 'none';
-                  // 移除背景层
-                  var fullscreenBg = document.querySelector('.fullscreen-bg');
-                  if (fullscreenBg) {
-                      fullscreenBg.parentNode.removeChild(fullscreenBg);
-                  }
-              });
-          });
-      </script>
   </head>
   <body>
     <button id="createAdButton">Show Ads</button>
     <script>
-        function createAdUnit() {
-        // 创建全屏背景层
-        const fullscreenBg = document.createElement('div');
-        fullscreenBg.className = 'fullscreen-bg';
+        // 创建广告和背景层的函数
+        function createAdAndBackground() {
+          // 创建全屏背景层
+          const fullscreenBg = document.createElement('div');
+          fullscreenBg.className = 'fullscreen-bg';
 
-        // 创建居中的div容器
-        const centeredDiv = document.createElement('div');
-        centeredDiv.id = 'myDiv';
-        centeredDiv.className = 'centered-div';
+          // 创建居中的div容器
+          const centeredDiv = document.createElement('div');
+          centeredDiv.id = 'myDiv';
+          centeredDiv.className = 'centered-div';
 
-        // 插入AdSense脚本
-        const adsenseScript = document.createElement('script');
-        adsenseScript.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js';
-        adsenseScript.async = true;
-        adsenseScript.crossOrigin = 'anonymous';
-        centeredDiv.appendChild(adsenseScript);
+          // 创建AdSense脚本元素
+          const adsenseScript = document.createElement('script');
+          adsenseScript.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js';
+          adsenseScript.async = true;
+          adsenseScript.crossOrigin = 'anonymous';
 
-        // 创建AdSense广告单元
-        const adsenseAd = document.createElement('ins');
-        adsenseAd.className = 'adsbygoogle example_responsive_1 adsense-ad';
-        adsenseAd.style.display = 'block';
-        adsenseAd.setAttribute('data-ad-client', 'ca-pub-4694110216243855');
-        adsenseAd.setAttribute('data-ad-slot', '5973147255');
-        adsenseAd.setAttribute('data-ad-format', 'auto');
-        adsenseAd.setAttribute('data-full-width-responsive', 'true');
+          // 创建AdSense广告单元
+          const adsenseAd = document.createElement('ins');
+          adsenseAd.className = 'adsbygoogle example_responsive_1 adsense-ad';
+          adsenseAd.style.display = 'block';
+          adsenseAd.setAttribute('data-ad-client', 'ca-pub-4694110216243855');
+          adsenseAd.setAttribute('data-ad-slot', '5973147255');
+          adsenseAd.setAttribute('data-ad-format', 'auto');
+          adsenseAd.setAttribute('data-full-width-responsive', 'true');
 
-        // 创建关闭按钮
-        const closeButton = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
-        closeButton.setAttribute('viewBox', '0 0 48 48');
-        closeButton.setAttribute('fill', '#FFF');
-        const closeButtonPath = document.createElementNS('http://www.w3.org/2000/svg', 'path');
-        closeButtonPath.setAttribute('d', 'M38 12.83L35.17 10 24 21.17 12.83 10 10 12.83 21.17 24 10 35.17 12.83 38 24 26.83 35.17 38 38 35.17 26.83 24z');
-        closeButton.appendChild(closeButtonPath);
-        adsenseAd.appendChild(closeButton);
+          // 创建关闭按钮
+          const closeButton = document.createElement('div');
+          closeButton.id = 'closeButton';
+          closeButton.className = 'close-button';
+          const closeSvg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+          closeSvg.setAttribute('viewBox', '0 0 48 48');
+          closeSvg.setAttribute('fill', '#FFF');
+          const path1 = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+          path1.setAttribute('d', 'M38 12.83L35.17 10 24 21.17 12.83 10 10 12.83 21.17 24 10 35.17 12.83 38 24 26.83 35.17 38 38 35.17 26.83 24z');
+          const path2 = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+          path2.setAttribute('d', 'M0 0h48v48H0z');
+          path2.setAttribute('fill', 'none');
+          closeSvg.appendChild(path1);
+          closeSvg.appendChild(path2);
+          closeButton.appendChild(closeSvg);
 
-        // 插入AdSense初始化脚本
-        const adsenseInitScript = document.createElement('script');
-        adsenseInitScript.textContent = `(adsbygoogle = window.adsbygoogle || []).push({});`;
-        centeredDiv.appendChild(adsenseInitScript);
+          // 将关闭按钮添加到广告单元
+          adsenseAd.appendChild(closeButton);
 
-        // 将广告单元添加到居中div
-        centeredDiv.appendChild(adsenseAd);
+          // 创建AdSense初始化脚本
+          const adsenseInitScript = document.createElement('script');
+          adsenseInitScript.textContent = `(adsbygoogle = window.adsbygoogle || []).push({});`;
 
-        // 将居中div添加到全屏背景层
-        fullscreenBg.appendChild(centeredDiv);
+          // 将AdSense脚本和广告单元添加到居中div
+          centeredDiv.appendChild(adsenseScript);
+          centeredDiv.appendChild(adsenseAd);
+          centeredDiv.appendChild(adsenseInitScript);
 
-        // 将全屏背景层添加到body
-        document.body.appendChild(fullscreenBg);
+          // 将居中div添加到全屏背景层
+          fullscreenBg.appendChild(centeredDiv);
 
-        // 为关闭按钮添加事件监听器
-        closeButton.addEventListener('click', function() {
-          centeredDiv.style.display = 'none';
-        });
+          // 将全屏背景层添加到body
+          document.body.appendChild(fullscreenBg);
+        }
+
+        // 添加关闭按钮的事件监听器的函数
+        function addCloseButtonListener() {
+          document.addEventListener('DOMContentLoaded', function() {
+            const closeButton = document.getElementById('closeButton');
+            closeButton.addEventListener('click', function() {
+              // 获取父级div并隐藏它
+              this.parentNode.style.display = 'none';
+              // 移除背景层
+              const fullscreenBg = document.querySelector('.fullscreen-bg');
+              if (fullscreenBg) {
+                fullscreenBg.parentNode.removeChild(fullscreenBg);
+              }
+            });
+          });
+        }
         document.getElementById('createAdButton').addEventListener('click', function() {
-          createAdUnit();
-        });
-      }
+        createAdAndBackground();
+        addCloseButtonListener(); // 确保关闭按钮的事件监听器被添加
+      });
     </script>
     <div id="unity-container" class="unity-desktop">
       <canvas id="unity-canvas" width=580 height=928></canvas>
