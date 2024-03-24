@@ -77,8 +77,7 @@
               fullscreenBgElem.style.display = "none";
           }
 
-
-          function showAds() {
+          function showAdsCommon() {
               var fullscreenBgElem = document.querySelector('.fullscreen-bg');
               fullscreenBgElem.style.display = "block";
               document.getElementById('myDiv').style.display = "block";
@@ -89,6 +88,17 @@
 
               // 正常的 innserHTML 不会执行 script, 用 jQuery 包来执行含有 script 的代码
               $("#myDiv").html(googleAdsTemplateHtml);
+          }
+
+          // 无倒计时函数
+          function showAdsWithoutCountDown() {
+              showAdsCommon();
+              document.getElementById("countdownDiv").style.display = "none";
+              document.getElementById("closeButton").style.display = "block";
+          }
+
+          function showAds() {
+              showAdsCommon();
 
               // 开始倒计时,
               var countdownSpan = document.getElementById('countdownSpan');
@@ -119,7 +129,8 @@
       </script>
   </head>
   <body>
-    <button id="showAdBtn" onclick="showAds()">Show Ads</button>
+  <button id="showAdBtn" onclick="showAds()">Show Ads</button>
+  <button onclick="showAdsWithoutCountDown()">Show Ads Without Countdown</button>
 
     <script type="text/template" id="adsTemplate">
       {adsbygoogleScriptContent}
