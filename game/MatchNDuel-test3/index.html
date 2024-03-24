@@ -35,6 +35,7 @@
           }
 
           .close-button {
+              display: none;
               position: absolute; /* 绝对定位 */
               top: -25px; /* 距离顶部10px */
               right: 17px; /* 距离右边10px */
@@ -45,6 +46,12 @@
               z-index: 1002;
               width: 24px;
               height: 24px;
+          }
+          .countdownText {
+            position: absolute; /* 绝对定位 */
+            top: -25px; /* 距离顶部10px */
+            right: 10px;
+            color: #ccc;
           }
           .fullscreen-bg {
             display: none; /* 默认隐藏背景层 */
@@ -58,116 +65,89 @@
             backdrop-filter: blur(5px); /* 添加模糊效果 */
           }
       </style>
+      <script type="text/javascript" src="/assets/js/jquery-3.7.1.min.js"></script>
       <script type="text/javascript">
-          document.addEventListener('DOMContentLoaded', function() {
-              var closeButton = document.getElementById('closeButton');
-              closeButton.addEventListener('click', function() {
-                  // 获取父级div并隐藏它
-                  this.parentNode.style.display = 'none';
-                  // 移除背景层
-                  var fullscreenBg = document.querySelector('.fullscreen-bg');
-                  if (fullscreenBg) {
-                      fullscreenBg.parentNode.removeChild(fullscreenBg);
+          var adsbygoogleScript = "<script async src=\"https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4694110216243855\" crossorigin=\"anonymous\"><\/script>";
+          var adsbygoogleBottomScript = "<script>(adsbygoogle = window.adsbygoogle || []).push({});<\/script>";
+
+          function closeAds() {
+              document.getElementById('myDiv').style.display = "none";
+
+              var fullscreenBgElem = document.querySelector('.fullscreen-bg');
+              fullscreenBgElem.style.display = "none";
+          }
+
+
+          function showAds() {
+              var fullscreenBgElem = document.querySelector('.fullscreen-bg');
+              fullscreenBgElem.style.display = "block";
+              document.getElementById('myDiv').style.display = "block";
+
+              var googleAdsTemplateHtml = document.getElementById("adsTemplate").innerHTML;
+              googleAdsTemplateHtml = googleAdsTemplateHtml.replace(/{adsbygoogleScriptContent}/g, adsbygoogleScript);
+              googleAdsTemplateHtml = googleAdsTemplateHtml.replace(/{adsbygoogleBottomScriptContent}/g, adsbygoogleBottomScript);
+
+              // 正常的 innserHTML 不会执行 script, 用 jQuery 包来执行含有 script 的代码
+              $("#myDiv").html(googleAdsTemplateHtml);
+
+              // 开始倒计时,
+              var countdownSpan = document.getElementById('countdownSpan');
+
+              // 初始倒计时时间（秒）
+              var countdownNumber = parseInt(countdownSpan.textContent, 10);
+
+              // 倒计时函数
+              function countdown() {
+                  // 如果倒计时大于0，则更新倒计时并继续
+                  if (countdownNumber > 0) {
+                      // 更新倒计时数字
+                      countdownSpan.textContent = countdownNumber;
+                      // 减少1秒
+                      countdownNumber--;
+                      // 1秒后再次调用 countdown 函数
+                      setTimeout(countdown, 1000);
+                  } else {
+                      // 当倒计时结束时，你可以在这里添加其他代码，比如关闭某个元素
+//                      console.log('Countdown finished!');
+                      document.getElementById("countdownDiv").style.display = "none";
+                      document.getElementById("closeButton").style.display = "block";
                   }
-              });
-          });
+              }
+
+              countdown()
+          }
       </script>
   </head>
   <body>
-    <button id="showAdBtn">Show Ads</button>
+    <button id="showAdBtn" onclick="showAds()">Show Ads</button>
+
+    <script type="text/template" id="adsTemplate">
+      {adsbygoogleScriptContent}
+      <!-- AdSense 广告单元 -->
+      <ins class="adsbygoogle example_responsive_1 adsense-ad"
+           style="display:block"
+           data-ad-client="ca-pub-4694110216243855"
+           data-ad-slot="5973147255"
+           data-ad-format="auto"
+           data-full-width-responsive="true">
+        <!-- 关闭按钮 -->
+        <div id="countdownDiv" class="countdownText">
+          Close after <span id="countdownSpan">5</span> seconds
+        </div>
+        <div id="closeButton" class="close-button" onclick="closeAds()">
+          <svg viewBox="0 0 48 48" fill="#FFF">
+            <path d="M38 12.83L35.17 10 24 21.17 12.83 10 10 12.83 21.17 24 10 35.17 12.83 38 24 26.83 35.17 38 38 35.17 26.83 24z"></path>
+            <path d="M0 0h48v48H0z" fill="none"></path>
+          </svg>
+        </div>
+      </ins>
+      {adsbygoogleBottomScriptContent}
+    </script>
+
     <div class="fullscreen-bg"></div> <!-- 全屏背景层 -->
     <div id="myDiv" class="centered-div">
-        <!-- 其他内容 
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4694110216243855"
-            crossorigin="anonymous"></script> -->
-        <!-- AdSense 广告单元 -->
-        <ins class="adsbygoogle example_responsive_1 adsense-ad"
-            style="display:block"
-            data-ad-client="ca-pub-4694110216243855"
-            data-ad-slot="5973147255"
-            data-ad-format="auto"
-            data-full-width-responsive="true">
-            <!-- 关闭按钮 -->
-            <div id="closeButton" class="close-button">
-              <svg viewBox="0 0 48 48" fill="#FFF">
-                <path d="M38 12.83L35.17 10 24 21.17 12.83 10 10 12.83 21.17 24 10 35.17 12.83 38 24 26.83 35.17 38 38 35.17 26.83 24z"></path>
-                <path d="M0 0h48v48H0z" fill="none"></path>
-              </svg>
-            </div>
-            <!-- <button id="closeButton" class="close-button">关闭</button> -->
-        </ins>
-        <!-- 
-        <script>
-            (adsbygoogle = window.adsbygoogle || []).push({});
-        </script>
-        -->
     </div>
-    <script>
-      document.addEventListener('DOMContentLoaded', function() {
-  console.log('DOM fully loaded and parsed');
-  // 加载 AdSense 脚本
-  loadAdsenseScript();
-});
 
-function loadAdsenseScript() {
-  // 创建 script 元素
-  var script = document.createElement('script');
-  script.async = true;
-  script.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4694110216243855";
-  script.crossorigin = "anonymous";
-
-  // 将 script 元素添加到 DOM 中
-  document.head.appendChild(script);
-
-  // 添加事件监听器，等待脚本加载完成
-  script.onload = function() {
-    console.log('AdSense script loaded.');
-    // 检查广告单元是否已经存在于 DOM 中
-    var adUnit = document.querySelector('.adsense-ad');
-    if (adUnit) {
-      console.log('AdSense ad unit found in DOM.');
-    } else {
-      console.log('AdSense ad unit not found in DOM.');
-    }
-  };
-
-  // 处理脚本加载失败的情况
-  script.onerror = function() {
-    console.error('Failed to load AdSense script.');
-  };
-}
-
-function showAdContainer() {
-  var adContainer = document.getElementById('myDiv');
-  if (adContainer) {
-    adContainer.style.display = 'block'; /* 显示广告容器 */
-  }
-
-  var bgLayer = document.querySelector('.fullscreen-bg');
-  if (bgLayer) {
-    bgLayer.style.display = 'block'; /* 显示背景层 */
-  }
-}
-
-document.getElementById('showAdBtn').addEventListener('click', function() {
-  // 显示背景层和广告容器
-  showAdContainer();
-  // 检查 AdSense 脚本是否已经加载，并执行 push 操作
-  checkAndPushAdsense();
-});
-
-function checkAndPushAdsense() {
-  // 检查 AdSense 脚本是否已经加载
-  if (window.adsbygoogle && window.adsbygoogle.length > 0) {
-    // 脚本已经加载，执行 push 操作
-    (adsbygoogle = window.adsbygoogle || []).push({});
-  } else {
-    // 脚本尚未加载，延迟执行 checkAndPushAdsense 函数
-    setTimeout(checkAndPushAdsense, 250);
-  }
-}
-
-    </script>
     <div id="unity-container" class="unity-desktop">
       <canvas id="unity-canvas" width=580 height=928></canvas>
       <div id="unity-loading-bar">
