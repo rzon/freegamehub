@@ -78,8 +78,7 @@
           fullscreenBgElem.style.display = "none";
       }
 
-
-      function showAds() {
+      function showAdsCommon() {
           var fullscreenBgElem = document.querySelector('.fullscreen-bg');
           fullscreenBgElem.style.display = "block";
           document.getElementById('myDiv').style.display = "block";
@@ -90,6 +89,17 @@
 
           // 正常的 innserHTML 不会执行 script, 用 jQuery 包来执行含有 script 的代码
           $("#myDiv").html(googleAdsTemplateHtml);
+      }
+
+      // 无倒计时函数
+      function showAdsWithoutCountDown() {
+          showAdsCommon();
+          document.getElementById("countdownDiv").style.display = "none";
+          document.getElementById("closeButton").style.display = "block";
+      }
+
+      function showAds() {
+          showAdsCommon();
 
           // 开始倒计时,
           var countdownSpan = document.getElementById('countdownSpan');
@@ -123,33 +133,34 @@
   <body>
     <!---->
     <button id="showAdBtn" onclick="showAds()">Show Ads</button>
-
-    <script type="text/template" id="adsTemplate">
-      {adsbygoogleScriptContent}
-      <!-- AdSense 广告单元 -->
-      <ins class="adsbygoogle example_responsive_1 adsense-ad"
-           style="display:block"
-           data-ad-client="ca-pub-4694110216243855"
-           data-ad-slot="5973147255"
-           data-ad-format="auto"
-           data-full-width-responsive="true">
-        <!-- 关闭按钮 -->
-        <div id="countdownDiv" class="countdownText">
-          Close after <span id="countdownSpan">5</span> seconds
-        </div>
-        <div id="closeButton" class="close-button" onclick="closeAds()">
-          <svg viewBox="0 0 48 48" fill="#FFF">
-            <path d="M38 12.83L35.17 10 24 21.17 12.83 10 10 12.83 21.17 24 10 35.17 12.83 38 24 26.83 35.17 38 38 35.17 26.83 24z"></path>
-            <path d="M0 0h48v48H0z" fill="none"></path>
-          </svg>
-        </div>
-      </ins>
-      {adsbygoogleBottomScriptContent}
-    </script>
-
-    <div class="fullscreen-bg"></div> <!-- 全屏背景层 -->
-    <div id="myDiv" class="centered-div">
-    </div>
+    <button onclick="showAdsWithoutCountDown()">Show Ads Without Countdown</button>
+  
+      <script type="text/template" id="adsTemplate">
+        {adsbygoogleScriptContent}
+        <!-- AdSense 广告单元 -->
+        <ins class="adsbygoogle example_responsive_1 adsense-ad"
+             style="display:block"
+             data-ad-client="ca-pub-4694110216243855"
+             data-ad-slot="5973147255"
+             data-ad-format="auto"
+             data-full-width-responsive="true">
+          <!-- 关闭按钮 -->
+          <div id="countdownDiv" class="countdownText">
+            Close after <span id="countdownSpan">5</span> seconds
+          </div>
+          <div id="closeButton" class="close-button" onclick="closeAds()">
+            <svg viewBox="0 0 48 48" fill="#FFF">
+              <path d="M38 12.83L35.17 10 24 21.17 12.83 10 10 12.83 21.17 24 10 35.17 12.83 38 24 26.83 35.17 38 38 35.17 26.83 24z"></path>
+              <path d="M0 0h48v48H0z" fill="none"></path>
+            </svg>
+          </div>
+        </ins>
+        {adsbygoogleBottomScriptContent}
+      </script>
+  
+      <div class="fullscreen-bg"></div> <!-- 全屏背景层 -->
+      <div id="myDiv" class="centered-div">
+      </div>
     <!---->
    
     <div id="unity-container" class="unity-desktop">
@@ -169,29 +180,7 @@
     </div>
     
     <script>
-          //
-//           window.onload = function() {
-//   // 插入广告代码
-//   var adScript = document.createElement("script");
-//   adScript.async = true;
-//   adScript.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js";
-//   document.body.appendChild(adScript);
 
-//   // 创建广告单元
-//   var adElement = document.createElement("ins");
-//   adElement.className = "adsbygoogle adsense-ad example_responsive_1";
-//   adElement.style.display = "block";
-//   adElement.setAttribute("data-ad-client", "ca-pub-4694110216243855");
-//   adElement.setAttribute("data-ad-slot", "5973147255");
-//   adElement.setAttribute("data-ad-format", "auto");
-//   adElement.setAttribute("data-full-width-responsive", "true");
-//   document.body.appendChild(adElement);
-
-//   adScript.onload = () => {
-//     (window.adsbygoogle = window.adsbygoogle || []).push({});
-//   }
-// }
-      //
       var container = document.querySelector("#unity-container");
       var canvas = document.querySelector("#unity-canvas");
       var loadingBar = document.querySelector("#unity-loading-bar");
