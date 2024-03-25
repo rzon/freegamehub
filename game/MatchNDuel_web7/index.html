@@ -128,6 +128,54 @@
           countdown()
       }
   </script>
+
+
+<script>
+  var tk_code="CNFIGBJC77U60BOILT6G";
+var gg_code="G-1RP6E6GC5H";
+
+//TikTok 基础代码
+    !function (w, d, t) {
+    w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie"],ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);ttq.instance=function(t){for(var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n]);return e},ttq.load=function(e,n){var i="https://analytics.tiktok.com/i18n/pixel/events.js";ttq._i=ttq._i||{},ttq._i[e]=[],ttq._i[e]._u=i,ttq._t=ttq._t||{},ttq._t[e]=+new Date,ttq._o=ttq._o||{},ttq._o[e]=n||{};var o=document.createElement("script");o.type="text/javascript",o.async=!0,o.src=i+"?sdkid="+e+"&lib="+t;var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(o,a)};
+
+    ttq.load(tk_code);
+    ttq.page();
+    }(window, document, 'ttq');
+
+//Google 基础代码
+    var script = document.createElement('script');
+    script.src = 'https://www.googletagmanager.com/gtag/js?id='+gg_code;
+    script.async = true;
+    document.head.appendChild(script);
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', gg_code);
+
+//游戏里开始游戏
+function adevent_gamestart()
+{
+    ttq.track('ViewContent', {});
+    gtag("event", "tutorial_begin");
+    console.log("adevent_gamestart click ok");
+}
+//完成一局
+function adevent_competeone()
+{
+    ttq.track('AddPaymentInfo', {});
+    gtag("event", "level_end", {});
+    console.log("adevent_competeone click ok");
+}
+//点击激励广告按钮
+function adevent_clickreward()
+{
+    ttq.track('AddToCart', {});//try pay，尝试支付
+    gtag("event", "begin_checkout", {});//try pay，尝试支付
+    console.log("adevent_clickreward click ok");
+}
+
+</script>
+
     <!---->
   </head>
   <body>
