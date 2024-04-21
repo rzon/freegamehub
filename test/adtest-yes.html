@@ -3,58 +3,19 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AdSense点击确认对话框</title>
-<style>
-.overlay {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: 9999;
-}
-
-.dialog {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-    text-align: center;
-}
-
-.dialog h2 {
-    margin-top: 0;
-}
-
-.btn {
-    display: inline-block;
-    padding: 10px 20px;
-    margin: 10px;
-    cursor: pointer;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    text-decoration: none;
-}
-</style>
+<title>AdSense点击事件追踪</title>
+<!-- 添加 Google Analytics 代码 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-1RP6E6GC5H"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-1RP6E6GC5H');
+</script>
 </head>
 <body>
-<div class="overlay" id="overlay">
-    <div class="dialog" id="dialog">
-        <h2>是否访问网站？</h2>
-        <button class="btn" id="yesBtn">是</button>
-        <button class="btn" id="noBtn">否</button>
-    </div>
-</div>
 
-<!-- 这里放置您的 AdSense 广告代码 -->
+<!-- 模拟的广告元素 -->
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4694110216243855"
      crossorigin="anonymous"></script>
 <!-- freegamehub-展示广告1 -->
@@ -68,35 +29,19 @@
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
 
-
 <script>
-document.addEventListener('DOMContentLoaded', function() {
-    var overlay = document.getElementById('overlay');
-    var dialog = document.getElementById('dialog');
-    var yesBtn = document.getElementById('yesBtn');
-    var noBtn = document.getElementById('noBtn');
-
-    // 监听 AdSense 广告的 adclick 事件
-    window.addEventListener('adclick', function(event) {
-        console.log('AdSense广告被点击');
-        // 显示弹出式对话框
-        overlay.style.display = 'block';
-    });
-
-    // 点击“是”按钮，跳转至广告链接
-    yesBtn.addEventListener('click', function() {
-        console.log('点击了“是”按钮');
-        // 这里替换为您的 AdSense 广告链接
-        var adUrl = 'https://www.google.com';
-        window.location.href = adUrl;
-    });
-
-    // 点击“否”按钮，关闭对话框
-    noBtn.addEventListener('click', function() {
-        console.log('点击了“否”按钮');
-        overlay.style.display = 'none';
-    });
+// 在广告被点击时触发
+document.addEventListener('click', function(event) {
+    if (event.target.classList.contains('adsbygoogle')) {
+        // 发送事件到 Google Analytics
+        gtag('event', 'Ad Click', {
+            'event_category': 'Ad',
+            'event_label': 'Ad Click'
+        });
+        console.log('广告被点击了！');
+    }
 });
 </script>
+
 </body>
 </html>
