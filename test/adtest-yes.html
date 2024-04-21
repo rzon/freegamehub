@@ -3,20 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AdSense点击事件追踪</title>
-<!-- 添加 Google Analytics 代码 -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-1RP6E6GC5H"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-1RP6E6GC5H');
-</script>
+<title>区域点击事件和失焦事件</title>
 </head>
 <body>
 
-<!-- 模拟的广告元素 -->
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4694110216243855"
+<!-- 模拟的广告区域 -->
+<div id="adArea" style="width: 300px; height: 250px; border: 1px solid #ccc; margin: 20px;">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4694110216243855"
      crossorigin="anonymous"></script>
 <!-- freegamehub-展示广告1 -->
 <ins class="adsbygoogle"
@@ -28,36 +21,32 @@
 <script>
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
+</div>
 
 <script>
-// 在广告被点击时触发
-document.addEventListener('click', function(event) {
-    if (event.target.classList.contains('adsbygoogle')) {
-        // 发送事件到 Google Analytics
-        gtag('event', 'ad_click_test', {
-            'event_category': 'Ad',
-            'event_label': 'ad_click_test'
-        });
-        console.log('广告被点击了！');
-        
-        // 在页面上显示提示消息
-        var message = document.createElement('div');
-        message.textContent = '广告已点击！';
-        message.style.position = 'fixed';
-        message.style.top = '50%';
-        message.style.left = '50%';
-        message.style.transform = 'translate(-50%, -50%)';
-        message.style.backgroundColor = '#ffffff';
-        message.style.padding = '20px';
-        message.style.border = '2px solid #000000';
-        message.style.borderRadius = '5px';
-        message.style.zIndex = '9999';
-        document.body.appendChild(message);
-        
-        // 3秒后隐藏提示消息
-        setTimeout(function() {
-            document.body.removeChild(message);
-        }, 3000);
+// 监听区域点击事件
+document.getElementById('adArea').addEventListener('click', function(event) {
+    // 如果点击了广告区域，则打印日志信息
+    console.log('点击了广告区域！');
+    
+    // 判断页面是否失去焦点并打印相应信息
+    if (document.hasFocus()) {
+        console.log('点击了广告区域但页面没有失去焦点');
+    } else {
+        console.log('点击了广告区域且页面失去了焦点');
+    }
+});
+
+// 监听失焦事件
+window.addEventListener('blur', function() {
+    // 如果页面失去焦点，则打印日志信息
+    console.log('失去了焦点！');
+    
+    // 判断是否点击了广告区域并打印相应信息
+    if (document.getElementById('adArea').contains(document.activeElement)) {
+        console.log('点击了广告区域但页面没有失去焦点');
+    } else {
+        console.log('没有点击广告区域但页面失去了焦点');
     }
 });
 </script>
