@@ -66,7 +66,9 @@
      data-ad-client="ca-pub-4694110216243855"
      data-ad-slot="3086654102"></ins>
 <script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
+     (adsbygoogle = window.adsbygoogle || []).push({
+        enable_page_level_ads: true
+    });
 </script>
 </div>
 
@@ -78,13 +80,11 @@ document.addEventListener('DOMContentLoaded', function() {
     var yesBtn = document.getElementById('yesBtn');
     var noBtn = document.getElementById('noBtn');
 
-    // 点击广告时显示对话框
-    var ads = document.getElementsByClassName('adsbygoogle');
-    for (var i = 0; i < ads.length; i++) {
-        ads[i].addEventListener('click', function(event) {
-            overlay.style.display = 'block';
-        });
-    }
+    // 监听 AdSense 广告的 adclick 事件
+    window.addEventListener('adclick', function(event) {
+        // 显示弹出式对话框
+        overlay.style.display = 'block';
+    });
 
     // 点击“是”按钮，跳转至广告链接
     yesBtn.addEventListener('click', function() {
