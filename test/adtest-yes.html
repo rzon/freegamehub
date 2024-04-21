@@ -78,12 +78,14 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // 监听 AdSense 广告的 adclick 事件
     window.addEventListener('adclick', function(event) {
+        console.log('AdSense广告被点击');
         // 显示弹出式对话框
         overlay.style.display = 'block';
     });
 
     // 点击“是”按钮，跳转至广告链接
     yesBtn.addEventListener('click', function() {
+        console.log('点击了“是”按钮');
         // 这里替换为您的 AdSense 广告链接
         var adUrl = 'https://www.google.com';
         window.location.href = adUrl;
@@ -91,6 +93,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // 点击“否”按钮，关闭对话框
     noBtn.addEventListener('click', function() {
+        console.log('点击了“否”按钮');
         overlay.style.display = 'none';
     });
 });
