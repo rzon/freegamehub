@@ -37,6 +37,7 @@
             (adsbygoogle = window.adsbygoogle || []).push({});
         </script>
     </div>
+    <button id="testButton" style="position: fixed; bottom: 10px; left: 50%; transform: translateX(-50%);">测试按钮</button>
 
     <script>
         // 在这里添加JavaScript代码
@@ -105,6 +106,13 @@
             }
         };
         document.addEventListener(visibilityChangeEvent, onVisibilityChange);
+        // 监听按钮点击事件
+        document.getElementById('testButton').addEventListener('click', function() {
+            // 当按钮被点击时，发送追踪事件
+            console.log('点了测试按钮');
+            ttq.track('clicktest', {});
+        });
+
     </script>
 </body>
 </html>
