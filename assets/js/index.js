@@ -98,5 +98,4 @@ function appendCsvDataToHtml() {
 
 $(document).ready(function(){
     appendCsvDataToHtml();
-    setInterval(scanAndAddIframes, 1000); // 5000毫秒 = 5秒
 });
