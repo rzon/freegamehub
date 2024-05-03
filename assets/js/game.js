@@ -168,4 +168,9 @@ $(document).ready(function(){
     }
     appendCsvDataToHtml();
     // appendGoogleAdsTemplate();
+    if (isMobile()) {
+        addMobileListenEvent();
+    } else {
+        setInterval(scanAndAddIframes, 1000); // 5000毫秒 = 5秒
+    }
 });

@@ -63,13 +63,34 @@ const eventNameMap = {
       }
     }
   }
+
+function winVisibility() {
+    var hiddenProperty = 'hidden' in document ? 'hidden' : 'webkitHidden' in document ? 'webkitHidden' : 'mozHidden' in document ? 'mozHidden' : null;
+
+    if (!document[hiddenProperty]) {
+        /*if(window.istrack){
+            //执行你要的逻辑
+        }*/
+        console.log("^^^^^^^^^^^^^^^^^^^");
+    }else{
+        // console.log('expect hidden vale is:', hiddenProperty, document[hiddenProperty]);
+        // window.istrack = null;
+        trackAdClick();
+        console.log("********************");
+    }
+}
   
   // 绑定事件监听器
-  document.addEventListener('blur', trackAdClick); // 当页面失去焦点时调用trackAdClick
-  document.addEventListener('focus', () => { // 当页面获得焦点时
-    if (document.visibilityState === 'visible') { // 检查页面是否可见
-      trackAdClick(); // 调用trackAdClick函数
-    }
-  });
-  window.addEventListener('visibilitychange', trackAdClick); // 当页面可见性变化时调用trackAdClick
-  window.addEventListener('blur', trackBlurEvent); // 当页面失去焦点时调用trackBlurEvent
+function addMobileListenEvent() {
+
+    // document.addEventListener('blur', trackAdClick); // 当页面失去焦点时调用trackAdClick
+    // document.addEventListener('focus', () => { // 当页面获得焦点时
+    //     if (document.visibilityState === 'visible') { // 检查页面是否可见
+    //         trackAdClick(); // 调用trackAdClick函数
+    //     }
+    // });
+    // window.addEventListener('visibilitychange', trackAdClick); // 当页面可见性变化时调用trackAdClick
+    // window.addEventListener('visibilitychange', winVisibility);
+    // window.addEventListener('blur', trackBlurEvent); // 当页面失去焦点时调用trackBlurEvent
+    window.addEventListener('blur', trackAdClick); // 当页面失去焦点时调用trackBlurEvent
+}
