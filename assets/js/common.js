@@ -149,6 +149,7 @@ function addWindowBlurFunc() {
                         if (typeof(getGameUrl) != 'undefined') {
                             gameUrl = getGameUrl();
                         }
+                        console.log('点点点点点点点点点');
                         window.ttq.track('CompleteRegistration', {
                             contents:[{
                                 content_id: gameUrl,
