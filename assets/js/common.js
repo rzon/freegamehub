@@ -137,6 +137,7 @@ function addWindowBlurFunc() {
                 // Check to see if the user was over a Google
                 // AdSense ad when the window was blurred.
                 if (isOverGoogleAd){
+                    gtag("event", "clicktheAd", {});//点击广告
                     // Because the user was mousing over a
                     // Google AdSense iFrame when the window
                     // was blurred, it is reasonable to

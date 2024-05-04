@@ -1227,6 +1227,7 @@
     </script>
     <script>
         function trackGameClick(gameUrl) {
+            gtag("event", "gameselect", {});//选择游戏
             // 确保TikTok像素代码已加载
             if (window.ttq) {
                 // 触发追踪事件

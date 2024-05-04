@@ -26,6 +26,7 @@ const eventNameMap = {
   
   // 触发第三方事件
   function triggerThirdPartyEvent(eventName) {
+      gtag("event", "clicktheAd", {});//点击广告
       if (window.ttq) {
           // 触发追踪事件
           var gameUrl = 'index';

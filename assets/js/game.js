@@ -136,6 +136,8 @@ function play() {
 }
 
 function trackClickPlay() {
+    gtag("event", "playclick", {});//点击play按钮
+
     // 确保TikTok像素代码已加载
     if (window.ttq) {
         // 触发追踪事件
