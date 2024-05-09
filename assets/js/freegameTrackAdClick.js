@@ -15,7 +15,7 @@ const eventNameMap = {
       const adIframeElements = [...adIframes]; // 将NodeList转换为数组
       const adContainerElements = [...adContainers]; // 将NodeList转换为数组
       const isAdActive = activeElement && activeElement.tagName.toLowerCase() === 'iframe' && adIframeElements.includes(activeElement); // 检查活动元素是否是广告iframe
-      const isAdContainerClicked = adContainerElements.some(container => container.contains(activeElement)); // 检查活动元素是否在广告容器内
+      const isAdContainerClicked = adContainerElements.find(container => container.contains(activeElement)); // 检查活动元素是否在广告容器内
 
       if (isAdActive && isAdContainerClicked && isAdContainerClicked.getAttribute('data-ad-status') === 'filled') {
         const eventName = 'ad_interaction'; // 定义事件名称
