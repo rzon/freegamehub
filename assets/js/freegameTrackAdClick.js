@@ -17,7 +17,7 @@ const eventNameMap = {
       const isAdActive = activeElement && activeElement.tagName.toLowerCase() === 'iframe' && adIframeElements.includes(activeElement); // 检查活动元素是否是广告iframe
       const isAdContainerClicked = adContainerElements.some(container => container.contains(activeElement)); // 检查活动元素是否在广告容器内
 
-      if (isAdActive && isAdContainerClicked && adContainerElements.some(container => container.getAttribute('data-ad-status') === 'filled')) {
+      if (isAdActive && isAdContainerClicked && isAdContainerClicked.getAttribute('data-ad-status') === 'filled') {
         const eventName = 'ad_interaction'; // 定义事件名称
         triggerThirdPartyEvent(eventName); // 触发第三方事件
       }
