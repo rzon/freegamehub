@@ -2,13 +2,30 @@ body {
     margin: 0;
     padding: 0;
     display: flex;
+    flex-direction: column;/* 设置 body 的样式，使其成为一个 Flexbox 容器，垂直居中对齐子元素 */
     justify-content: center;
     align-items: center;
     min-height: 100vh;
 }
 
-.container {
-    text-align: center;
+#adsense-container, #nav-container, .container {
+    text-align: center; /* 使内容在容器内居中 */
+    margin: 20px 0; /* 在容器之间添加垂直间距 */
+}
+
+#adsense-container {
+    min-width: 300px; /* 设置一个最小宽度 */
+}
+
+.navLogo {
+    font-weight: bold;
+    font-size: 32px;
+    text-overflow: ellipsis;
+    font-family: Helvetica, Arial, sans-serif; /* 如果Helvetica不可用，Arial将作为后备字体 */
+    color: #000;
+    line-height: 60px;
+    height: 100%;
+    /* 如果需要，可以添加额外的样式，如宽度、边距等 */
 }
 
 .gallery {
@@ -41,26 +58,4 @@ body {
 
 .more-btn:hover {
     background-color: #0056b3;
-}
-#adsense-container {
-    min-width: 300px; /* 设置一个最小宽度 */
-    text-align: center; /* 居中广告容器 */
-    margin: 20px 0; /* 顶部和底部间距 */
-}
-
-#nav-container {
-    text-align: center; /* 使导航居中 */
-    margin: 20px 0; /* 添加上下边距 */
-}
-
-
-.navLogo {
-    font-weight: bold;
-    font-size: 32px;
-    text-overflow: ellipsis;
-    font-family: Helvetica, Arial, sans-serif; /* 如果Helvetica不可用，Arial将作为后备字体 */
-    color: #000;
-    line-height: 60px;
-    height: 100%;
-    /* 如果需要，可以添加额外的样式，如宽度、边距等 */
 }
