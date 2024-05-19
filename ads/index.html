@@ -128,7 +128,13 @@
             if (document[hiddenProperty]) { // 修改2: 当页面非激活时执行
                 console.log('页面非激活');
                 if (IframeOnClick.istrack) {
-                    console.log('应该是Adsense的iframe加载完成且判断页面非激活，判定为点了广告页面做了跳转');
+                    window.ttq.track('CompleteRegistration', {
+                        contents:[{
+                            content_id: gameUrl,
+                            content_type:"product",
+                        }]
+                    });
+                    console.log('good job');
                 }
             } else { // 修改3: 当页面激活时执行
                 console.log('页面激活');
