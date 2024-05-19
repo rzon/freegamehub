@@ -1,0 +1,48 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container {
+    text-align: center;
+}
+
+.gallery {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.gallery a {
+    margin: 5px 0;
+}
+
+.gallery img {
+    max-width: 100%;
+    height: auto;
+    width: auto\9; /* IE8 */
+}
+
+.more-btn {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+    max-width: 430px;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.more-btn:hover {
+    background-color: #0056b3;
+}
+#adsense-container {
+    text-align: center; /* 居中广告容器 */
+    margin: 20px 0; /* 顶部和底部间距 */
+}

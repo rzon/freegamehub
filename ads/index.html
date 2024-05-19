@@ -9,11 +9,6 @@
     <title>Play Freegame and Have Fun</title>
     <meta name="keywords" content="Online games, free games, h5 games, free online games, browser games, mobile games, popular games, puzzle games, action games, adventure games, sport games, arcade games, casual games, racing games, ball games, shooting games, gun games" />
     <meta name="description" content="Play the best games on freegamehub.top. Including sport games, arcade games and more. Instantly play online for free!">
-
-    <script type="text/javascript" src="/assets/js/jquery-3.7.1.min.js"></script>
-    <script type="text/javascript" src="/assets/js/common.js"></script>
-    <script type="text/javascript" src="/assets/js/freegameTrackAdClick.js"></script>
-    <script type="text/javascript" src="/assets/js/ad.js"></script>
     <!-- Google 统计 (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-1RP6E6GC5H"></script>
     <script>
@@ -32,348 +27,44 @@
         }(window, document, 'ttq');
     </script>
     <!-- TikTok ads end -->
-    <style type="text/css">
-        * {
-            -webkit-tap-highlight-color: transparent;
-        }
-
-        body,
-        html {
-            margin: 0;
-            padding: 0;
-            width: 100%;
-            height: 100%
-        }
-
-        body {
-            font-family: Poppins, serif
-        }
-
-        .globalMain {
-            display: flex;
-            position: relative;
-            flex-direction: column;
-            align-items: center;
-            width: 100%;
-            min-height: 100vh
-        }
-
-        .globalMain:after {
-            position: fixed;
-            left: 0;
-            top: 0;
-            z-index: -1;
-            width: 100vw;
-            height: 100vh;
-            content: ""
-        }
-
-        .mainStyle {
-            display: flex;
-            overflow-x: hidden;
-            flex-direction: column;
-            align-items: center;
-            width: 100%;
-            min-height: calc(100vh - 125px)
-        }
-
-        a {
-            text-decoration: none
-        }
-
-        .indexStyle[css-index] {
-            /*width: 430px;*/
-            /*width: 380px;*/
-            height: 100%
-        }
-
-        .navLayout[css-nav] {
-            display: flex;
-            top: 0;
-            z-index: 3;
-            height: 3rem;
-            transition: top .5s
-        }
-
-        .whiteBackground[css-nav] {
-            position: relative;
-            width: 100%
-        }
-
-        .navLeft[css-nav] {
-            margin-left: 10px;
-            height: 100%
-        }
-
-        .navLogo[css-nav] {
-            font-weight: bold;
-            font-size: 32px;
-            text-overflow: ellipsis;
-            font-family: Helvetica;
-            color: #000;
-            line-height: 60px;
-            height: 100%
-        }
-
-        @media screen and (min-width:764px) {
-            .footStyle[css-foot] {
-                display: grid;
-                --gridTemplateColumns: 7;
-                grid-template-areas: "in1 in1 in1 in1 in1 in1 in1 ";
-                grid-template-rows: repeat(1, 140px);
-                --cellSpacing: 16px;
-                grid-gap: var(--cellSpacing);
-                grid-template-columns: repeat(var(--gridTemplateColumns), 94px);
-                justify-content: center;
-                align-items: center
-            }
-            .div1[css-foot] {
-                grid-area: in1/in1/in1/in1;
-                background-color: rgba(228, 161, 15, 0)
-            }
-        }
-
-        @media screen and (min-width:544px) and (max-width:763px) {
-            .footStyle[css-foot] {
-                display: grid;
-                --gridTemplateColumns: 5;
-                grid-template-areas: "in1 in1 in1 in1 in1";
-                grid-template-rows: repeat(1, 140px);
-                --cellSpacing: 16px;
-                grid-gap: var(--cellSpacing);
-                grid-template-columns: repeat(var(--gridTemplateColumns), 94px);
-                justify-content: center;
-                align-items: center
-            }
-            .div1[css-foot] {
-                grid-area: in1/in1/in1/in1;
-                background-color: rgba(228, 161, 15, 0)
-            }
-        }
-
-        @media screen and (min-width:104px) and (max-width:543px) {
-            .footStyle[css-foot] {
-                display: grid;
-                --gridTemplateColumns: 3;
-                grid-template-areas: "in1 in1 in1";
-                grid-template-rows: repeat(1, 140px);
-                --cellSpacing: 16px;
-                grid-gap: var(--cellSpacing);
-                grid-template-columns: repeat(var(--gridTemplateColumns), 94px);
-                justify-content: center;
-                align-items: center
-            }
-            .div1[css-foot] {
-                grid-area: in1/in1/in1/in1;
-                background-color: rgba(228, 161, 15, 0)
-            }
-        }
-
-        .foot[css-foot] {
-            width: 100%;
-            font-size: 18px;
-        }
-
-        .footStyle[css-foot] {
-            position: relative;
-            margin-top: 22px;
-            padding-bottom: 80px;
-            width: 100%;
-            background-color: #fff;
-            box-shadow: 0 15px 64px 16px rgba(0, 0, 0, .15);
-            text-align: center;
-            font-family: Helvetica;
-            font-weight: 400;
-            color: #747474 !important
-        }
-
-        .logoStyle[css-foot] {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            width: 100%;
-            min-height: 50px
-        }
-
-        .logoStyle>p[css-foot] {
-            margin-top: 6px !important;
-            margin-top: 0;
-            margin-bottom: 0
-        }
-
-        .logoStyle>a[css-foot]:-webkit-any-link {
-            margin-top: 10px;
-            cursor: pointer;
-            text-decoration: none
-        }
-
-        .logoStyle>a>span[css-foot] {
-            font-family: Helvetica;
-            font-weight: 400;
-            color: #747474 !important
-        }
-
-        .linkText[css-foot] {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-decoration: none;
-            color: #747474 !important
-        }
-
-        .linkText>a[css-foot]:-webkit-any-link {
-            margin-right: 15px;
-            cursor: pointer;
-            text-decoration: none;
-            color: #747474 !important
-        }
-
-        .openSelectStyle[css-foot] {
-            position: absolute;
-            right: calc(50% - 150px);
-            bottom: 90%;
-            width: 200px
-        }
-
-        .gamebox[css-gamebox]{
-            --nav-block-background: #1fb3ff;
-            --hotGame-margin: 8px 0;
-            --hotGame-border-radius: 15px;
-            /*--hotGame-heigth:  4.6rem;*/
-            margin: auto;
-            min-width: 320px;
-            max-width: 450px;
-            margin: 0 auto;
-            padding: 0 10px 8px;
-        }
-
-        .gamebox[css-gamebox] .flexCenter{
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        .gamebox[css-gamebox] > .nav-block {
-            /*height: 1rem;*/
-            height: 60px;
-            width: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background: var(--nav-block-background);
-            border-radius: 8px;
-            box-shadow: 0 3px 18px 0 rgb(0 0 0 / 16%);
-        }
-        .gamebox[css-gamebox] > .nav-block >a{
-            height: 100%;
-            width: 100%;
-            font-size: 25px;
-            text-decoration: none;
-            color:#fff;
-            font-weight: bolder;
-        }
-        .gamebox[css-gamebox]>*>.hotGame{
-            height:var(--hotGame-heigth);
-            width: 100%;
-            border-radius: var(--hotGame-border-radius);
-            box-shadow: 0 3px 18px 0 rgb(0 0 0 / 16%);
-            margin: var(--hotGame-margin);
-        }
-        .gamebox[css-gamebox]>*>.hotGame, .gamebox[css-gamebox]>*>.hotGame>.hotGame-body{
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
-        }
-        .gamebox[css-gamebox]>*>.hotGame>a{
-            width: 100%;
-            height: 100%;
-            display: flex;
-        }
-        .gamebox[css-gamebox]>*>.hotGame>a>img{
-            width: 100%;
-            height:100%;
-            border-radius: var(--hotGame-border-radius);
-            object-fit: cover;
-        }
-    </style>
+    <link rel="stylesheet" href="/ads/assets/styles.css">
 </head>
-
 <body>
-    <div id="globalMain" class="globalMain globalImg" css-index>
-        <div class="mainStyle" css-index>
-            <div id="topAdsArea" style="width: 100%; height: 210px;">
-                <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4694110216243855"
-                        crossorigin="anonymous"></script>
-                <!-- freegamehub-展示广告竖1 -->
-                <ins class="adsbygoogle"
-                     style="display:block"
-                     data-ad-client="ca-pub-4694110216243855"
-                     data-ad-slot="8563230117"
-                     data-ad-format="auto"
-                     data-full-width-responsive="true"></ins>
-                <script>
-                    (adsbygoogle = window.adsbygoogle || []).push({});
-                </script>
-            </div>
-            <div id="indexStyle" class="indexStyle" css-index css-index>
-                <div id="navLayout" class="navLayout " css-nav>
-                    <div id="whiteBackground" class="whiteBackground" css-nav>
-                        <div id="navigationStyle" class="navigationStyle" css-nav>
-                            <div class="navLeft" css-nav>
-                                <a class="navLogo" css-nav href="./"><span style="color:red;">F</span>reeGameHub</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="gamebox" css-gamebox="">
-                <div id="gameArea">
-                </div>
-
-                <div id="moreGameNav" class="nav-block">
-                    <a class="flexCenter" href="/">
-                        More Games
-                    </a>
-                </div>
-            </div>
-        </div>
-
-        <div class="foot" css-foot>
-            <div class="footStyle" css-foot>
-                <div class="div1" css-foot>
-                    <div class="linkText" style="height: 10px; line-height: 10px" css-foot>
-                        <a href="../terms_of_service.html" css-foot target="_blank">Terms</a>
-                        <a href="../privacy_policy.html" css-foot target="_blank">Privacy</a>
-                        <a href="../cookies_policy.html" css-foot target="_blank">Cookies</a>
-                    </div>
-                    <div class="logoStyle" css-foot>
-                        <p css-foot>
-                            © 2024 freegamehub.top
-                        </p>
-                    </div>
-                </div>
-                <div class="openSelectStyle" css-foot>
-
-                </div>
-            </div>
-        </div>
+    <!-- 谷歌Adsense广告代码 -->    
+    <div id="adsense-container">
+        <!-- Adsense代码 -->
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4694110216243855"
+            crossorigin="anonymous"></script>
+        <!-- freegamehub-展示广告test -->
+        <ins class="adsbygoogle"
+            style="display:block"
+            data-ad-client="ca-pub-4694110216243855"
+            data-ad-slot="3448551492"
+            data-ad-format="auto"
+            data-full-width-responsive="true"></ins>
+        <script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
     </div>
-
-    <!--
-    <div id="bottomDiv">
-        <div class="adsbygoogle" data-ad-status="filled"></div>
-    </div>
-    -->
-
-    <script id="gameTemplate" type="text/template">
-        <div class="hotGame" title="">
-            <a href="/game.html?game={gameUrl}">
-                <img data-src="/ad/pic/{gamePic}" src="/ad/pic/{gamePic}" lazy="loaded" alt="">
-            </a>
+    <div class="container">
+        <div class="gallery">
+            <a href="https://id.fanstoon.us/comic/pelangganseksidirestoran/5789.html?utm_source=TiktokFanstoon"><img src="/ads/pic/1.png" alt="Image 1"></a>
+            <a href="https://id.fanstoon.us/comic/catatantukangledengkamar/5485.html?utm_source=TiktokFanstoon"><img src="/ads/pic/2.png" alt="Image 2"></a>
+            <a href="https://id.fanstoon.us/comic/janganberitahuibu/5515.html?utm_source=TiktokFanstoon "><img src="/ads/pic/3.png" alt="Image 3"></a>
+            <a href="https://id.fanstoon.us/comic/kehidupankohabitasi/5536.html?utm_source=TiktokFanstoon"><img src="/ads/pic/4.png" alt="Image 4"></a>
+            <a href="https://id.fanstoon.us/comic/rokkakakipar/5825.html?utm_source=TiktokFanstoon"><img src="/ads/pic/5.png" alt="Image 5"></a>
+            <a href="https://id.fanstoon.us/comic/nyonyarumahpribadi/5723.html?utm_source=TiktokFanstoon"><img src="/ads/pic/6.png" alt="Image 6"></a>
+            <a href="https://id.fanstoon.us/comic/madam/5675.html?utm_source=TiktokFanstoon"><img src="/ads/pic/7.png" alt="Image 7"></a>
+            <a href="https://id.fanstoon.us/comic/kecanduanpelecehan/5525.html?utm_source=TiktokFanstoon"><img src="/ads/pic/8.png" alt="Image 8"></a>
+            <a href="https://id.fanstoon.us/comic/makingfriendswithstreamersbyhacking/5696.html?utm_source=TiktokFanstoon"><img src="/ads/pic/9.png" alt="Image 9"></a>
+            <a href="https://id.fanstoon.us/comic/magangpenyelamwanita/5691.html?utm_source=TiktokFanstoon"><img src="/ads/pic/10.png" alt="Image 10"></a>
+            <a href="https://id.fanstoon.us/comic/lubangrahasiapenuhnikmat/5670.html?utm_source=TiktokFanstoon"><img src="/ads/pic/11.png" alt="Image 11"></a>
+            <a href="https://id.fanstoon.us/comic/meledaktongkatbesar/5707.html?utm_source=TiktokFanstoon   "><img src="/ads/pic/12.png" alt="Image 12"></a>
+            <a href="https://id.fanstoon.us/comic/malamtanpatidur/5702.html?utm_source=TiktokFanstoon"><img src="/ads/pic/13.png" alt="Image 13"></a>
+            <a href="https://id.fanstoon.us/comic/mobydickyansae/5718.html?utm_source=TiktokFanstoon"><img src="/ads/pic/14.png" alt="Image 14"></a>
+            <a href="https://id.fanstoon.us/comic/pelajarandewasarahasia/5783.html?utm_source=TiktokFanstoon"><img src="/ads/pic/15.png" alt="Image 15"></a>
         </div>
-    </script>
-
-    <script id="frameTemplate" type="text/template">
-        <iframe src="/ad/iframe.html" width="100" height="100" frameborder="1" class="adsbygoogle"></iframe>
-    </script>
+        <a class="more-btn" href="https://id.fanstoon.us/?utm_source=TiktokFanstoon">More Game</a>
+    </div>
 </body>
 </html>
