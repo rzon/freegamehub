@@ -10,6 +10,7 @@ body {
 }
 
 #adsense-container {
+    text-align: center;
     width: 100%; /* 宽度跟随 body */
     height: auto; /* 高度自动 */
     margin: 0; /* 垂直边距为0 */
@@ -18,7 +19,7 @@ body {
 /* 其余样式保持不变 */
 #nav-container, .container {
     text-align: center;
-    margin: 20px 0;
+    margin: 0px 0;
 }
 
 .container {
