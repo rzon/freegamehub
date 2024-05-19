@@ -125,14 +125,14 @@
         }
 
         function onVisibilityChange() {
-            if (!document[hiddenProperty]) {
+            if (document[hiddenProperty]) { // 修改2: 当页面非激活时执行
                 console.log('页面非激活');
                 if (IframeOnClick.istrack) {
                     console.log('应该是Adsense的iframe加载完成且判断页面非激活，判定为点了广告页面做了跳转');
                 }
-            } else {
+            } else { // 修改3: 当页面激活时执行
                 console.log('页面激活');
-                IframeOnClick.istrack = null;
+                IframeOnClick.istrack = null; // 修改4: 当页面激活时设置istrack为null
             }
         }
 
