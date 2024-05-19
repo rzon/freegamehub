@@ -149,6 +149,25 @@
             console.log('点击位置：', event.clientX, event.clientY);
         });
 
+        
+
+
+        // 获取 adsense-container 元素
+        var adsenseContainer = document.getElementById('adsense-container');
+
+        // 在 adsense-container 上添加点击事件监听器
+        adsenseContainer.addEventListener('click', function(event) {
+            console.log('点击位置：', event.clientX, event.clientY);
+            // 检查事件的目标元素是否为 iframe
+            if (event.target.tagName === 'IFRAME') {
+                // 执行与 iframe 点击相关的事件处理逻辑
+                console.log('iframe点击位置：', event.clientX, event.clientY);
+                console.log('IFRAME clicked:', event.target.src);
+                // ... 进行后续操作 ...
+            }
+        });
+
+
 
 
     </script>
