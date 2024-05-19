@@ -1,36 +1,39 @@
 body {
     margin: 0;
     padding: 0;
+    width: 100%;
+    height: 100%;
     display: flex;
-    flex-direction: column;/* 设置 body 的样式，使其成为一个 Flexbox 容器，垂直居中对齐子元素 */
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
-}
-
-#adsense-container, #nav-container, .container {
-    text-align: center; /* 使内容在容器内居中 */
-    margin: 20px 0; /* 在容器之间添加垂直间距 */
 }
 
 #adsense-container {
-    min-width: 300px; /* 设置一个最小宽度 */
+    width: 100%; /* 宽度跟随 body */
+    height: auto; /* 高度自动 */
+    margin: 0; /* 垂直边距为0 */
+}
+
+/* 其余样式保持不变 */
+#nav-container, .container {
+    text-align: center;
+    margin: 20px 0;
 }
 
 .container {
-    text-align: center; /* 使内容在容器内居中 */
-    margin: 0px 0; /* 在容器之间添加垂直间距 */
+    text-align: center;
+    margin: 0px 0;
 }
 
 .navLogo {
     font-weight: bold;
     font-size: 32px;
     text-overflow: ellipsis;
-    font-family: Helvetica, Arial, sans-serif; /* 如果Helvetica不可用，Arial将作为后备字体 */
+    font-family: Helvetica, Arial, sans-serif;
     color: #000;
     line-height: 60px;
     height: 100%;
-    /* 如果需要，可以添加额外的样式，如宽度、边距等 */
 }
 
 .gallery {
