@@ -128,12 +128,14 @@
             if (document[hiddenProperty]) { // 修改2: 当页面非激活时执行
                 console.log('页面非激活');
                 if (IframeOnClick.istrack) {
-                    window.ttq.track('CompleteRegistration', {
-                        contents:[{
-                            content_id: gameUrl,
-                            content_type:"product",
-                        }]
-                    });
+                    if (window.ttq) {
+                        window.ttq.track('CompleteRegistration', {
+                            contents:[{
+                                content_id:"adsensead",
+                                content_type:"product",
+                            }]
+                        });
+                    }
                     console.log('good job');
                 }
             } else { // 修改3: 当页面激活时执行
