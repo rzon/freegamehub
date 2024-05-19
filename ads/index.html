@@ -78,9 +78,9 @@
             iframes: [],
             interval: null,
 
-            Iframe: function() {
-                this.element = arguments[0];
-                this.cb = arguments[1];
+            Iframe: function(element, cb) {
+                this.element = element;
+                this.cb = cb;
                 this.hasTracked = false;
             },
 
@@ -97,49 +97,46 @@
             checkClick: function() {
                 if (document.activeElement) {
                     var activeElement = document.activeElement;
-                    var tagName = activeElement.tagName;
                     for (var i in this.iframes) {
-                        if (activeElement === this.iframes[i].element) {
-                            if (this.iframes[i].hasTracked == false) {
-                                this.iframes[i].cb.apply(window, []);
-                                this.iframes[i].hasTracked = true; 
-                            }
+                        if (activeElement === this.iframes[i].element && !this.iframes[i].hasTracked) {
+                            this.iframes[i].cb.apply(window, []);
+                            this.iframes[i].hasTracked = true; 
                         }
                     }
                 }
             }
         };
 
-        // 页面加载完成后初始化广告监听
         window.onload = function() {
-            // 假设adsense-container中已经包含了iframe
             var adsenseIframe = document.getElementById('adsense-container').getElementsByTagName('iframe')[0];
             IframeOnClick.track(adsenseIframe, function() {
-                // 当检测到点击时，发送追踪事件
-                console.log('应该是广告加载完成');
-                //ttq.track('clickplay', {});
+                console.log('点击了iframe区域');
+                IframeOnClick.istrack = true;
             });
         };
 
-        // 页面激活状态监听
         var hiddenProperty = 'hidden' in document ? 'hidden' : 'webkitHidden' in document ? 'webkitHidden' : 'mozHidden' in document ? 'mozHidden' : null;
-        var visibilityChangeEvent = hiddenProperty.replace(/hidden/i, 'visibilitychange');
-        var onVisibilityChange = function(){
+        var visibilityChangeEvent = hiddenProperty ? hiddenProperty.replace(/hidden/i, 'visibilitychange') : null;
+
+        if (visibilityChangeEvent) {
+            document.addEventListener(visibilityChangeEvent, onVisibilityChange);
+        } else {
+            console.log('页面不支持 visibilitychange 事件');
+        }
+
+        function onVisibilityChange() {
             if (!document[hiddenProperty]) {
                 console.log('页面非激活');
-                if(IframeOnClick.istrack){
-                    // 执行业务逻辑
+                if (IframeOnClick.istrack) {
                     console.log('应该是Adsense的iframe加载完成且判断页面非激活，判定为点了广告页面做了跳转');
-                    //ttq.track('clickAdsense', {});
                 }
             } else {
                 console.log('页面激活');
                 IframeOnClick.istrack = null;
             }
-        };
-        document.addEventListener(visibilityChangeEvent, onVisibilityChange);
+        }
 
-        // 获取adsense-container元素
+/*         // 获取adsense-container元素
         var adsenseContainer = document.getElementById('adsense-container');
         console.log('Adsense容器', adsenseContainer);
 
@@ -147,7 +144,7 @@
         adsenseContainer.addEventListener('click', function(event) {
             // 打印点击位置
             console.log('点击位置：', event.clientX, event.clientY);
-        });
+        }); */
 
         
 
