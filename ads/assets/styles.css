@@ -17,6 +17,11 @@ body {
     min-width: 300px; /* 设置一个最小宽度 */
 }
 
+.container {
+    text-align: center; /* 使内容在容器内居中 */
+    margin: 0px 0; /* 在容器之间添加垂直间距 */
+}
+
 .navLogo {
     font-weight: bold;
     font-size: 32px;
