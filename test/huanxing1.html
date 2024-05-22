@@ -12,16 +12,36 @@
 
         function redirectToExternalBrowser() {
             if (isFacebookInAppBrowser()) {
-                // 构建intent URL
+                var userAgent = navigator.userAgent.toLowerCase();
                 var intentUrl = 'intent://' + window.location.href.split('//')[1] + '#Intent;scheme=http;package=com.android.chrome;end';
-                window.location.href = intentUrl;
+
+                if (userAgent.indexOf('android') > -1) {
+                    // Android设备上尝试使用intent URL
+                    window.location.href = intentUrl;
+                } else {
+                    // iOS设备上提示用户点击链接
+                    document.getElementById('redirect-message').style.display = 'block';
+                    document.getElementById('external-link').href = window.location.href;
+                }
             }
         }
 
         window.onload = redirectToExternalBrowser;
     </script>
+    <style>
+        #redirect-message {
+            display: none;
+            background-color: yellow;
+            padding: 20px;
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
+    <div id="redirect-message">
+        <p>检测到您正在使用Facebook内部浏览器访问此页面。请点击下面的链接在外部浏览器中打开：</p>
+        <a id="external-link" href="#" target="_blank">在外部浏览器中打开</a>
+    </div>
     <p>这是您的网页内容...</p>
 </body>
 </html>
