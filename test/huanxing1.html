@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redirect Example</title>
+    <script>
+        function isFacebookInAppBrowser() {
+            var ua = navigator.userAgent || navigator.vendor || window.opera;
+            return (ua.indexOf('FBAN') > -1) || (ua.indexOf('FBAV') > -1);
+        }
+
+        function redirectToExternalBrowser() {
+            if (isFacebookInAppBrowser()) {
+                // 构建intent URL
+                var intentUrl = 'intent://' + window.location.href.split('//')[1] + '#Intent;scheme=http;package=com.android.chrome;end';
+                window.location.href = intentUrl;
+            }
+        }
+
+        window.onload = redirectToExternalBrowser;
+    </script>
+</head>
+<body>
+    <p>这是您的网页内容...</p>
+</body>
+</html>
