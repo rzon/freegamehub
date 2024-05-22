@@ -3,45 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Redirect Example</title>
+    <title>External Browser Wakeup Test</title>
     <script>
-        function isFacebookInAppBrowser() {
+        // 检测是否在Facebook内部浏览器
+        function isFacebookWebView() {
             var ua = navigator.userAgent || navigator.vendor || window.opera;
-            return (ua.indexOf('FBAN') > -1) || (ua.indexOf('FBAV') > -1);
+            return (ua.indexOf("FBAN") > -1) || (ua.indexOf("FBAV") > -1);
         }
 
-        function redirectToExternalBrowser() {
-            if (isFacebookInAppBrowser()) {
-                var userAgent = navigator.userAgent.toLowerCase();
-                var intentUrl = 'intent://' + window.location.href.split('//')[1] + '#Intent;scheme=http;package=com.android.chrome;end';
+        // 尝试唤醒外部浏览器
+        function openExternalBrowser(url) {
+            var a = document.createElement("a");
+            a.href = url;
+            a.rel = "noreferrer";
+            a.target = "_blank";
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+        }
 
-                if (userAgent.indexOf('android') > -1) {
-                    // Android设备上尝试使用intent URL
-                    window.location.href = intentUrl;
-                } else {
-                    // iOS设备上提示用户点击链接
-                    document.getElementById('redirect-message').style.display = 'block';
-                    document.getElementById('external-link').href = window.location.href;
-                }
+        // 当页面加载时执行
+        window.onload = function() {
+            if (isFacebookWebView()) {
+                // 替换为你的目标URL
+                var externalUrl = "https://www.example.com";
+                openExternalBrowser(externalUrl);
             }
-        }
-
-        window.onload = redirectToExternalBrowser;
+        };
     </script>
-    <style>
-        #redirect-message {
-            display: none;
-            background-color: yellow;
-            padding: 20px;
-            text-align: center;
-        }
-    </style>
 </head>
 <body>
-    <div id="redirect-message">
-        <p>检测到您正在使用Facebook内部浏览器访问此页面。请点击下面的链接在外部浏览器中打开：</p>
-        <a id="external-link" href="#" target="_blank">在外部浏览器中打开</a>
-    </div>
-    <p>这是您的网页内容...</p>
+    <h1>External Browser Wakeup Test Page</h1>
+    <p>If you are seeing this message, the external browser was not successfully opened.</p>
 </body>
 </html>
