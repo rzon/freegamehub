@@ -3,13 +3,13 @@
 <head>
     <meta charset="utf-8">
     <title>ABC Merge Fight</title>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-EG9G8JFGHX"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
 
-        gtag('config', 'G-XXXXXXXXXX', {
+        gtag('config', 'G-EG9G8JFGHX', {
             'page_path': window.location.pathname + window.location.search
         });
     </script>
@@ -66,11 +66,8 @@
                 ]
             }, function(btn) {
                 if (btn === 'invite') {
-                    //const inviteLink = "https://t.me/ABCMergeFight_bot?start=utm_source=share_tg";
                     const inviteLink = "https://t.me/share/url?url=https://t.me/ABCMergeFight_bot?utm_source=share_tg&text=1122";
                     Telegram.WebApp.openTelegramLink(inviteLink);
-                    
-
                 }
             });
         }
