@@ -30,6 +30,7 @@
             const params = {};
             const queryString = window.location.search.substring(1);
             const regex = /([^&=]+)=([^&]*)/g;
+            console.log(regex);
             let m;
             while (m = regex.exec(queryString)) {
                 params[decodeURIComponent(m[1])] = decodeURIComponent(m[2]);
@@ -43,6 +44,7 @@
             if (params.start) {
                 const utmParams = params.start;
                 const targetUrl = `https://www.freegamehub.top/tapps/ABCMergeFight_tapps/?${utmParams}`;
+                console.log('url'+targetUrl);
                 window.location.href = targetUrl;
             }
         }
