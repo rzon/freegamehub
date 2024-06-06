@@ -1,6 +1,7 @@
 <!DOCTYPE html>
-<html>
+<html lang="en-us">
 <head>
+    <meta charset="utf-8">
     <title>ABC Merge Fight</title>
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
     <script>
@@ -13,19 +14,24 @@
         });
     </script>
 </head>
-<body>
+<body style="margin: 0px; padding: 0px; overflow: hidden;">
     <h1>Welcome to ABC Merge Fight</h1>
+
+    <!-- 邀请按钮 -->
     <button id="inviteButton">Invite Friends</button>
+
+    <!-- Telegram Web App SDK -->
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
     <script>
+        // 确保 Telegram WebApp API 已经准备好
         Telegram.WebApp.ready();
 
-        // Event occurs whenever theme settings are changed in the user's Telegram app (including switching to night mode).
+        // 当用户的 Telegram 应用程序中的主题设置发生变化时，触发该事件
         Telegram.WebApp.onEvent('themeChanged', function() {
             document.documentElement.className = Telegram.WebApp.colorScheme;
         });
 
-        // Function to call showPopup API
+        // 调用 showPopup API 的函数
         function showPopup() {
             Telegram.WebApp.showPopup({
                 title: 'Invite Friends',
@@ -35,13 +41,13 @@
                 ]
             }, function(btn) {
                 if (btn === 'invite') {
-                    const inviteLink = "https://example.com/abc-merge-fight?utm_source=share_tg";
+                    const inviteLink = "https://www.freegamehub.top/tapps/ABCMergeFight_tapps/?utm_source=share_tg";
                     Telegram.WebApp.openLink(inviteLink);
                 }
             });
-        };
+        }
 
-        // Add event listener to invite button
+        // 为邀请按钮添加事件监听器
         document.getElementById('inviteButton').addEventListener('click', showPopup);
     </script>
 </body>
