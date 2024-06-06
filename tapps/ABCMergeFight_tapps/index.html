@@ -23,8 +23,31 @@
     <!-- Telegram Web App SDK -->
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
     <script>
-        // 确保 Telegram WebApp API 已经准备好
         Telegram.WebApp.ready();
+
+        // 获取 URL 参数
+        function getQueryParams() {
+            const params = {};
+            const queryString = window.location.search.substring(1);
+            const regex = /([^&=]+)=([^&]*)/g;
+            let m;
+            while (m = regex.exec(queryString)) {
+                params[decodeURIComponent(m[1])] = decodeURIComponent(m[2]);
+            }
+            return params;
+        }
+
+        // 处理参数并重定向
+        function handleParamsAndRedirect() {
+            const params = getQueryParams();
+            if (params.start) {
+                const utmParams = params.start;
+                const targetUrl = `https://www.freegamehub.top/tapps/ABCMergeFight_tapps/?${utmParams}`;
+                window.location.href = targetUrl;
+            }
+        }
+
+        handleParamsAndRedirect();
 
         // 当用户的 Telegram 应用程序中的主题设置发生变化时，触发该事件
         Telegram.WebApp.onEvent('themeChanged', function() {
@@ -41,7 +64,7 @@
                 ]
             }, function(btn) {
                 if (btn === 'invite') {
-                    const inviteLink = "https://www.freegamehub.top/tapps/ABCMergeFight_tapps/?utm_source=share_tg";
+                    const inviteLink = "https://t.me/ABCMergeFight_bot?start=utm_source=share_tg";
                     Telegram.WebApp.openLink(inviteLink);
                 }
             });
