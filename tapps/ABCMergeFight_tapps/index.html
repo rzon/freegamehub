@@ -66,8 +66,11 @@
                 ]
             }, function(btn) {
                 if (btn === 'invite') {
-                    const inviteLink = "https://t.me/ABCMergeFight_bot?start=utm_source=share_tg";
+                    //const inviteLink = "https://t.me/ABCMergeFight_bot?start=utm_source=share_tg";
+                    const inviteLink = "https://t.me/share/url?url={https://t.me/ABCMergeFight_bot?utm_source=share_tg}&text={1122}";
                     Telegram.WebApp.openTelegramLink(inviteLink);
+                    
+
                 }
             });
         }
