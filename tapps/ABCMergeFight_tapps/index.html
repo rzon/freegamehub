@@ -25,55 +25,45 @@
     <script>
         Telegram.WebApp.ready();
 
-        // 获取 URL 参数
-        function getQueryParams() {
-            const params = {};
-            const queryString = window.location.search.substring(1);
-            const regex = /([^&=]+)=([^&]*)/g;
-            console.log(regex);
-            let m;
-            while (m = regex.exec(queryString)) {
-                params[decodeURIComponent(m[1])] = decodeURIComponent(m[2]);
+        // 获取 initDataUnsafe
+        const initData = Telegram.WebApp.initDataUnsafe;
+        console.log("initData:", initData);
+
+        // 获取 start_param
+        const startParam = initData.start_param;
+        console.log("start_param:", startParam);
+
+        // 获取并打印当前窗口的 URL
+        const currentUrl = window.location.href;
+        console.log("当前窗口的 URL:", currentUrl);
+
+        if (startParam) {
+            // 解析 start_param 参数
+            console.log("Start parameter found:", startParam);
+            const regex = /^([A-Z]+)_(.+)$/;
+            const match = startParam.match(regex);
+
+            if (match) {
+                const utmMedium = match[1];
+                const utmSource = match[2];
+                console.log(`UTM Medium: ${utmMedium}`);
+                console.log(`UTM Source: ${utmSource}`);
+
+                // 拼接新的 URL
+                const newUrl = `${currentUrl}&utm_source=${utmSource}&utm_medium=${utmMedium}`;
+                console.log("新的 URL:", newUrl);
+            } else {
+                console.log("start_param 参数格式不匹配");
             }
-            return params;
+        } else {
+            console.log("没有 start_param 参数");
         }
 
-        // 处理参数并重定向
-        function handleParamsAndRedirect() {
-            const params = getQueryParams();
-            if (params.start) {
-                const utmParams = params.start;
-                const targetUrl = `https://www.freegamehub.top/tapps/ABCMergeFight_tapps/?${utmParams}`;
-                console.log('url'+targetUrl);
-                window.location.href = targetUrl;
-            }
-        }
-
-        handleParamsAndRedirect();
-
-        // 当用户的 Telegram 应用程序中的主题设置发生变化时，触发该事件
-        Telegram.WebApp.onEvent('themeChanged', function() {
-            document.documentElement.className = Telegram.WebApp.colorScheme;
+        // 邀请按钮点击事件
+        document.getElementById('inviteButton').addEventListener('click', function() {
+            const inviteLink = `https://t.me/share/url?url=https://t.me/ABCMergeFight_bot/game?startapp=KACAEE_sharetg&text=Join+ABC+Merge+Fight+now!`;
+            Telegram.WebApp.openTelegramLink(inviteLink);
         });
-
-        // 调用 showPopup API 的函数
-        function showPopup() {
-            Telegram.WebApp.showPopup({
-                title: 'Invite Friends',
-                message: 'Invite your friends to join ABC Merge Fight!',
-                buttons: [
-                    {id: 'invite', type: 'default', text: 'Invite via Telegram'}
-                ]
-            }, function(btn) {
-                if (btn === 'invite') {
-                    const inviteLink = "https://t.me/share/url?url=https://t.me/ABCMergeFight_bot/game?utm_source=share_tg&text=1122";
-                    Telegram.WebApp.openTelegramLink(inviteLink);
-                }
-            });
-        }
-
-        // 为邀请按钮添加事件监听器
-        document.getElementById('inviteButton').addEventListener('click', showPopup);
     </script>
 </body>
 </html>
