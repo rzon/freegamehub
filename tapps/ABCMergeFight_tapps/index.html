@@ -3,7 +3,10 @@
 <head>
     <meta charset="utf-8">
     <title>ABC Merge Fight</title>
+    <!-- Telegram Web App SDK -->
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
     <script>
+        Telegram.WebApp.ready();
         // 获取并解析 start_param 参数
         const initData = Telegram.WebApp.initDataUnsafe;
         const startParam = initData.start_param;
@@ -52,10 +55,9 @@
     <!-- 邀请按钮 -->
     <button id="inviteButton">Invite Friends</button>
 
-    <!-- Telegram Web App SDK -->
-    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+
     <script>
-        Telegram.WebApp.ready();
+        
 
         // 邀请按钮点击事件
         document.getElementById('inviteButton').addEventListener('click', function() {
