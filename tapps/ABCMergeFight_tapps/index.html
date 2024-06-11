@@ -5,6 +5,7 @@
     <title>ABC Merge Fight</title>
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-EG9G8JFGHX"></script>
+    <script src="https://unpkg.com/@tonconnect/ui@latest/dist/tonconnect-ui.min.js"></script>
     <script>
         // 初始化并获取参数
         Telegram.WebApp.ready()
@@ -19,7 +20,7 @@
 
         if (startParam) {
             console.log("Start parameter found:", startParam);
-            const regex = /^([A-Z]+)_(.+)$/;
+            const regex = /^([A-Za-z0-9]+)_(.+)$/
             const match = startParam.match(regex);
 
             if (match) {
@@ -38,7 +39,6 @@
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
-        console.log("非常nice");
         gtag('config', 'G-EG9G8JFGHX', {
             'campaign_source': utmSource,
             'campaign_medium': utmMedium
@@ -51,6 +51,7 @@
 
     <!-- 邀请按钮 -->
     <button id="inviteButton">Invite Friends</button>
+    <div id="ton-connect"></div>
 
     <!-- 邀请按钮事件 -->
     <script>
@@ -58,6 +59,12 @@
         document.getElementById('inviteButton').addEventListener('click', function() {
             const inviteLink = `https://t.me/share/url?url=https://t.me/ABCMergeFight_bot/game?startapp=KACAEE_sharetg&text=Join+ABC+Merge+Fight+now!`;
             Telegram.WebApp.openTelegramLink(inviteLink);
+        });
+    </script>
+    <script>
+        const tonConnectUI = new TON_CONNECT_UI.TonConnectUI({
+            manifestUrl: 'https://<YOUR_APP_URL>/tonconnect-manifest.json',
+            buttonRootId: 'ton-connect'
         });
     </script>
 </body>

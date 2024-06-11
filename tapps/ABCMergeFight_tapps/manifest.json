@@ -1,0 +1,7 @@
+{
+    "url": "https://127.0.0.1:8000",                        // 必填
+    "name": "ABCMergeFight",                      // 必填
+    "iconUrl": "https://127.0.0.1:8000/icon.png",               // 必填
+    "termsOfUseUrl": "https://sites.google.com/view/zonegamershub/",     // 可选
+    "privacyPolicyUrl": "https://sites.google.com/view/zonegamershub/" // 可选
+}
