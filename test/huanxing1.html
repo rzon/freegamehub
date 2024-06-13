@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>External Browser Wakeup Test</title>
+    <script>
+        // 检测是否在Facebook内部浏览器
+        function isFacebookWebView() {
+            var ua = navigator.userAgent || navigator.vendor || window.opera;
+            return (ua.indexOf("FBAN") > -1) || (ua.indexOf("FBAV") > -1);
+        }
+
+        // 尝试唤醒外部浏览器
+        function openExternalBrowser(url) {
+            var a = document.createElement("a");
+            a.href = url;
+            a.rel = "noreferrer";
+            a.target = "_blank";
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+        }
+
+        // 当页面加载时执行
+        window.onload = function() {
+            if (isFacebookWebView()) {
+                // 替换为你的目标URL
+                var externalUrl = "https://www.example.com";
+                openExternalBrowser(externalUrl);
+            }
+        };
+    </script>
+</head>
+<body>
+    <h1>External Browser Wakeup Test Page</h1>
+    <p>If you are seeing this message, the external browser was not successfully opened.</p>
+</body>
+</html>

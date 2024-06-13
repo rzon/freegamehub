@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>移动端广告监听示例</title>
+    <style>
+        /* 在这里添加CSS样式 */
+        #adsense-container {
+            text-align: center; /* 居中广告容器 */
+            margin: 20px 0; /* 顶部和底部间距 */
+        }
+    </style>
+    <script>
+        !function (w, d, t) {
+          w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie"],ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);ttq.instance=function(t){for(var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n]);return e},ttq.load=function(e,n){var i="https://analytics.tiktok.com/i18n/pixel/events.js";ttq._i=ttq._i||{},ttq._i[e]=[],ttq._i[e]._u=i,ttq._t=ttq._t||{},ttq._t[e]=+new Date,ttq._o=ttq._o||{},ttq._o[e]=n||{};var o=document.createElement("script");o.type="text/javascript",o.async=!0,o.src=i+"?sdkid="+e+"&lib="+t;var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(o,a)};
+        
+          ttq.load('CNFIGBJC77U60BOILT6G');
+          ttq.page();
+        }(window, document, 'ttq');
+        </script>
+</head>
+<body>
+    <!-- 谷歌Adsense广告代码 -->    
+    <div id="adsense-container">
+        <!-- Adsense代码 -->
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4694110216243855"
+            crossorigin="anonymous"></script>
+        <!-- freegamehub-展示广告test -->
+        <ins class="adsbygoogle"
+            style="display:block"
+            data-ad-client="ca-pub-4694110216243855"
+            data-ad-slot="3448551492"
+            data-ad-format="auto"
+            data-full-width-responsive="true"></ins>
+        <script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+    </div>
+    <button id="testButton" style="position: fixed; bottom: 10px; left: 50%; transform: translateX(-50%);">测试按钮</button>
+
+    <script>
+        // 在这里添加JavaScript代码
+        // 监听iframe点击的函数
+        var IframeOnClick = {
+            istrack: null,
+            resolution: 200,
+            iframes: [],
+            interval: null,
+
+            Iframe: function() {
+                this.element = arguments[0];
+                this.cb = arguments[1];
+                this.hasTracked = false;
+            },
+
+            track: function(element, cb) {
+                this.iframes.push(new this.Iframe(element, cb));
+                if (!this.interval) {
+                    var _this = this;
+                    this.interval = setInterval(function() {
+                        _this.checkClick();
+                    }, this.resolution);
+                }
+            },
+
+            checkClick: function() {
+                if (document.activeElement) {
+                    var activeElement = document.activeElement;
+                    var tagName = activeElement.tagName;
+                    for (var i in this.iframes) {
+                        if (activeElement === this.iframes[i].element) {
+                            if (this.iframes[i].hasTracked == false) {
+                                this.iframes[i].cb.apply(window, []);
+                                this.iframes[i].hasTracked = true; 
+                            }
+                        }
+                    }
+                }
+            }
+        };
+
+        // 页面加载完成后初始化广告监听
+        window.onload = function() {
+            // 假设adsense-container中已经包含了iframe
+            var adsenseIframe = document.getElementById('adsense-container').getElementsByTagName('iframe')[0];
+            IframeOnClick.track(adsenseIframe, function() {
+                // 当检测到点击时，发送追踪事件
+                ttq.track('clickplay', {});
+            });
+        };
+
+        // 页面激活状态监听
+        var hiddenProperty = 'hidden' in document ? 'hidden' : 'webkitHidden' in document ? 'webkitHidden' : 'mozHidden' in document ? 'mozHidden' : null;
+        var visibilityChangeEvent = hiddenProperty.replace(/hidden/i, 'visibilitychange');
+        var onVisibilityChange = function(){
+            if (!document[hiddenProperty]) {
+                console.log('页面非激活');
+                if(IframeOnClick.istrack){
+                    // 执行业务逻辑
+                    ttq.track('clickAdsense', {});
+                }
+            } else {
+                console.log('页面激活');
+                IframeOnClick.istrack = null;
+            }
+        };
+        document.addEventListener(visibilityChangeEvent, onVisibilityChange);
+        // 监听按钮点击事件
+        document.getElementById('testButton').addEventListener('click', function() {
+            // 当按钮被点击时，发送追踪事件
+            console.log('点了测试按钮');
+            ttq.track('clicktest', {});
+        });
+
+
+/*         document.getElementById('adsense-container').addEventListener('click', function(event) {
+            // 打印点击位置
+            console.log('点击位置：', event.clientX, event.clientY);
+        }); */
+
+        // 获取adsense-container元素
+        var adsenseContainer = document.getElementById('adsense-container');
+        console.log('Adsense容器', adsenseContainer);
+
+        // 添加点击事件监听器
+        adsenseContainer.addEventListener('click', function(event) {
+            // 打印点击位置
+            console.log('点击位置：', event.clientX, event.clientY);
+        });
+
+
+
+    </script>
+</body>
+</html>

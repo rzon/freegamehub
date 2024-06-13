@@ -137,6 +137,7 @@ function addWindowBlurFunc() {
                 // Check to see if the user was over a Google
                 // AdSense ad when the window was blurred.
                 if (isOverGoogleAd){
+                    gtag("event", "clicktheAd", {});//点击广告
                     // Because the user was mousing over a
                     // Google AdSense iFrame when the window
                     // was blurred, it is reasonable to
@@ -148,6 +149,7 @@ function addWindowBlurFunc() {
                         if (typeof(getGameUrl) != 'undefined') {
                             gameUrl = getGameUrl();
                         }
+                        console.log('点点点点点点点点点'+new Date().getTime());
                         window.ttq.track('CompleteRegistration', {
                             contents:[{
                                 content_id: gameUrl,
@@ -164,4 +166,31 @@ function addWindowBlurFunc() {
 
         isAddBlurFunc = true;
     }
+}
+
+function isMobile() {
+    var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+
+    // 列出一些常见的移动浏览器 User Agent 关键字
+    var mobileUserAgentPatterns = [
+        /Android/i,
+        /webOS/i,
+        /iPhone/i,
+        /iPad/i,
+        /iPod/i,
+        /BlackBerry/i,
+        /IEMobile/i,
+        /Opera Mini/i,
+        /Mobile/i
+    ];
+
+    // 检查 User Agent 是否包含任何移动浏览器关键字
+    for (var i = 0; i < mobileUserAgentPatterns.length; i++) {
+        if (userAgent.match(mobileUserAgentPatterns[i])) {
+            return true;
+        }
+    }
+
+    // 如果没有匹配到任何移动浏览器关键字，则认为是 Web 浏览器
+    return false;
 }

@@ -39,6 +39,7 @@
     <!-- TikTok ads end -->
     <script type="text/javascript" src="/assets/js/jquery-3.7.1.min.js"></script>
     <script type="text/javascript" src="/assets/js/common.js"></script>
+    <script type="text/javascript" src="/assets/js/freegameTrackAdClick.js"></script>
     <script type="text/javascript" src="/assets/js/index.js"></script>
     <style>
         * {
@@ -1226,6 +1227,7 @@
     </script>
     <script>
         function trackGameClick(gameUrl) {
+            gtag("event", "gameselect", {});//选择游戏
             // 确保TikTok像素代码已加载
             if (window.ttq) {
                 // 触发追踪事件

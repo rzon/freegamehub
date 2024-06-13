@@ -136,6 +136,8 @@ function play() {
 }
 
 function trackClickPlay() {
+    gtag("event", "playclick", {});//点击play按钮
+
     // 确保TikTok像素代码已加载
     if (window.ttq) {
         // 触发追踪事件
@@ -168,5 +170,9 @@ $(document).ready(function(){
     }
     appendCsvDataToHtml();
     // appendGoogleAdsTemplate();
-    setInterval(scanAndAddIframes, 1000); // 5000毫秒 = 5秒
+    if (isMobile()) {
+        addMobileListenEvent();
+    } else {
+        setInterval(scanAndAddIframes, 1000); // 5000毫秒 = 5秒
+    }
 });
