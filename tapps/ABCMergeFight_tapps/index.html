@@ -7,6 +7,9 @@
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-EG9G8JFGHX"></script>
     <script src="https://unpkg.com/@tonconnect/ui@latest/dist/tonconnect-ui.min.js"></script>
     <script>
+        // 获取并打印当前窗口的 URL
+        const currentUrl = window.location.href;
+        console.log("当前窗口的 URL:", currentUrl);
         // 初始化并获取参数
         Telegram.WebApp.ready()
         const initData = Telegram.WebApp.initDataUnsafe;
