@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "577066231210",
+    "project_id": "snack-squad-survivor",
+    "storage_bucket": "snack-squad-survivor.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:577066231210:android:683806228ff6a58f6677d3",
+        "android_client_info": {
+          "package_name": "com.io.amongus.snacksquadsurvivor"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBRPks_jxtUSL1nKj5fbOjqVuzF2ww09IE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
