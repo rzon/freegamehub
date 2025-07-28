@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Unity WebGL Player | Ant Draw</title>
+    <link rel="shortcut icon" href="TemplateData/favicon.ico">
+    <link rel="stylesheet" href="TemplateData/style.css">
+
+    <!---->
+    <script>
+      var adClient="ca-pub-6259309995888735";
+      var secAdClient="secAdClient";
+      
+      // 获取当前广告客户ID的方法
+      function getAdClient() {
+          return adClient+"#"+secAdClient;
+
+      }
+      
+      // 获取当前广告位ID的方法
+      function getAdSlot() {
+          return "";
+      }
+      
+    </script>
+    <!--
+    <script async data-adbreak-test="on" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6259309995888735" crossorigin="anonymous"> </script>-->
+
+
+      <script>
+         // 获取当前域名并构建adId.txt路径
+         const domain = window.location.origin;
+         console.log("当前域名 "+domain);
+         const adIdPath = `${domain}/adId.txt`;
+         console.log("广告id路径 "+adIdPath);
+
+         // 从adId.txt获取adClient
+         fetch(adIdPath)
+           .then(response => response.text())
+           .then(data => {
+             //adClient = data.trim();
+             //console.log("获取的广告id "+adClient);
+             // 处理多行内容
+             const lines = data.split('\n').filter(line => line.trim() !== '');
+             console.log("adId.txt中的所有字符串:", lines);
+             
+             // 使用第一行作为adClient
+             adClient = lines[0].trim();
+             console.log("使用的广告id: "+adClient);
+             secAdClient = lines[1].trim();
+             console.log("使用的mimi广告id: "+secAdClient);
+             
+             // 获取到adClient后再加载广告脚本
+             const script = document.createElement('script');
+             script.async = true;
+             //script.setAttribute('data-adbreak-test', 'on');
+             script.src = `https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${adClient}`;
+             script.crossOrigin = 'anonymous';
+             script.onload = initAds; // 脚本加载完成后初始化
+             document.head.appendChild(script);
+           });
+       </script>
+    
+
+   
+
+    <script>
+    // 在广告脚本加载完成后初始化
+    const initAds = () => {
+      window.adsbygoogle = window.adsbygoogle || [];
+      window.adBreak = adConfig = function(o) {adsbygoogle.push(o);};
+      adConfig({preloadAdBreaks: 'on'});
+      console.log("adBreak "+adBreak);
+      console.log("广告初始化完成");
+
+    };
+    </script>
+
+     <script type="text/javascript">
+
+      var myUnityInstance;
+      function playinter() {
+        console.log("playinter adBreak "+adBreak);
+          adBreak({
+        type: 'next',  // ad shows at start of next level
+        name: 'restart-game',
+        beforeAd: () => { console.log('Inter beforeAd' +myUnityInstance); myUnityInstance.SendMessage("ADManager","InterCallBack","beforeAd"); },  // You may also want to mute the game's sound.
+        afterAd: () => { console.log('Inter afterAd' +myUnityInstance);myUnityInstance.SendMessage("ADManager","InterCallBack","afterAd"); },    // resume the game flow.
+        });
+      }
+
+      function playreward() {
+        console.log("playreward adBreak "+adBreak);
+
+           adBreak({
+        type: 'reward',  // rewarded ad
+        name: 'reward-continue',
+        beforeReward: (showAdFn) => {
+          showAdFn(); 
+        },
+        beforeAd: () => { myUnityInstance.SendMessage("ADManager","RewardCallBack","beforeAd");  },     // You may also want to mute the game's sound.
+        adDismissed: () => {
+          console.log("未看完广告");
+          myUnityInstance.SendMessage("ADManager","RewardCallBack","adDismissed");// Hide the reward button and continue lose flow.
+       },
+        adViewed: () => {console.log("看完广告"); myUnityInstance.SendMessage("ADManager","RewardCallBack","adViewed");},       // Reward granted - continue game at current score.
+        afterAd: () => { myUnityInstance.SendMessage("ADManager","RewardCallBack","afterAd"); },       // Resume the game flow.
+        });
+      }
+     </script>
+    <!---->
+    <!---->
+
+  </head>
+  <body>
+    <div id="unity-container" class="unity-desktop">
+      <canvas id="unity-canvas" width=580 height=928></canvas>
+      <div id="unity-loading-bar">
+        <div id="unity-logo"></div>
+        <div id="unity-progress-bar-empty">
+          <div id="unity-progress-bar-full"></div>
+        </div>
+      </div>
+      <div id="unity-warning"> </div>
+      <div id="unity-footer" style="height:0;overflow: hidden;">
+        <div id="unity-webgl-logo"></div>
+        <div id="unity-fullscreen-button"></div>
+        <div id="unity-build-title">Ant Draw</div>
+      </div>
+    </div>
+    <script>
+      var container = document.querySelector("#unity-container");
+      var canvas = document.querySelector("#unity-canvas");
+      var loadingBar = document.querySelector("#unity-loading-bar");
+      var progressBarFull = document.querySelector("#unity-progress-bar-full");
+      var fullscreenButton = document.querySelector("#unity-fullscreen-button");
+      var warningBanner = document.querySelector("#unity-warning");
+
+      // Shows a temporary message banner/ribbon for a few seconds, or
+      // a permanent error message on top of the canvas if type=='error'.
+      // If type=='warning', a yellow highlight color is used.
+      // Modify or remove this function to customize the visually presented
+      // way that non-critical warnings and error messages are presented to the
+      // user.
+      function unityShowBanner(msg, type) {
+        function updateBannerVisibility() {
+          warningBanner.style.display = warningBanner.children.length ? 'block' : 'none';
+        }
+        var div = document.createElement('div');
+        div.innerHTML = msg;
+        warningBanner.appendChild(div);
+        if (type == 'error') div.style = 'background: red; padding: 10px;';
+        else {
+          if (type == 'warning') div.style = 'background: yellow; padding: 10px;';
+          setTimeout(function() {
+            warningBanner.removeChild(div);
+            updateBannerVisibility();
+          }, 5000);
+        }
+        updateBannerVisibility();
+      }
+
+      var buildUrl = "Build";
+      var loaderUrl = buildUrl + "/AntFlow.loader.js";
+      var config = {
+        dataUrl: buildUrl + "/AntFlow.data",
+        frameworkUrl: buildUrl + "/AntFlow.framework.js",
+        codeUrl: buildUrl + "/AntFlow.wasm",
+        streamingAssetsUrl: "StreamingAssets",
+        companyName: "rongzong",
+        productName: "Ant Draw",
+        productVersion: "2.0",
+        showBanner: unityShowBanner,
+      };
+
+      // By default Unity keeps WebGL canvas render target size matched with
+      // the DOM size of the canvas element (scaled by window.devicePixelRatio)
+      // Set this to false if you want to decouple this synchronization from
+      // happening inside the engine, and you would instead like to size up
+      // the canvas DOM size and WebGL render target sizes yourself.
+      // config.matchWebGLToCanvasSize = false;
+
+      if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
+        // Mobile device style: fill the whole browser client area with the game canvas:
+
+        var meta = document.createElement('meta');
+        meta.name = 'viewport';
+        meta.content = 'width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, shrink-to-fit=yes';
+        document.getElementsByTagName('head')[0].appendChild(meta);
+        container.className = "unity-mobile";
+        canvas.className = "unity-mobile";
+
+        // To lower canvas resolution on mobile devices to gain some
+        // performance, uncomment the following line:
+        // config.devicePixelRatio = 1;
+      } else {
+        // Desktop style: Render the game canvas in a window that can be maximized to fullscreen:
+
+        canvas.style.width = "580px";
+        canvas.style.height = "928px";
+      }
+
+      loadingBar.style.display = "block";
+
+      var script = document.createElement("script");
+      script.src = loaderUrl;
+      script.onload = () => {
+        createUnityInstance(canvas, config, (progress) => {
+          progressBarFull.style.width = 100 * progress + "%";
+        }).then((unityInstance) => {
+         myUnityInstance=unityInstance;
+            console.log("初始化myUnityInstance "+myUnityInstance );
+          loadingBar.style.display = "none";
+          fullscreenButton.onclick = () => {
+            unityInstance.SetFullscreen(1);       
+          };
+        }).catch((message) => {
+          alert(message);
+        });
+      };
+      document.body.appendChild(script);
+    </script>
+  </body>
+</html>
